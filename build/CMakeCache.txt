@@ -432,6 +432,12 @@ gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 //The directory containing a CMake configuration file for laser_geometry.
 laser_geometry_DIR:PATH=/opt/ros/indigo/share/laser_geometry/cmake
 
+//Value Computed by CMake
+laser_scan_publisher_tutorial_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation_tutorials/laser_scan_publisher_tutorial
+
+//Value Computed by CMake
+laser_scan_publisher_tutorial_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/laser_scan_publisher_tutorial
+
 //Path to a library.
 lib:FILEPATH=/opt/ros/indigo/lib/libvoxel_grid.so
 
@@ -459,8 +465,26 @@ my_stage_SOURCE_DIR:STATIC=/home/pf/rosWS/src/my_stage
 //The directory containing a CMake configuration file for nav_msgs.
 nav_msgs_DIR:PATH=/opt/ros/indigo/share/nav_msgs/cmake
 
+//Value Computed by CMake
+navigation_stage_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation_tutorials/navigation_stage
+
+//Value Computed by CMake
+navigation_stage_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/navigation_stage
+
+//Value Computed by CMake
+navigation_tutorials_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation_tutorials/navigation_tutorials
+
+//Value Computed by CMake
+navigation_tutorials_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/navigation_tutorials
+
 //The directory containing a CMake configuration file for nodelet.
 nodelet_DIR:PATH=/opt/ros/indigo/share/nodelet/cmake
+
+//Value Computed by CMake
+odometry_publisher_tutorial_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation_tutorials/odometry_publisher_tutorial
+
+//Value Computed by CMake
+odometry_publisher_tutorial_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/odometry_publisher_tutorial
 
 //Value Computed by CMake
 openslam_gmapping_BINARY_DIR:STATIC=/home/pf/rosWS/build/openslam_gmapping
@@ -482,6 +506,12 @@ pcl_ros_DIR:PATH=/opt/ros/indigo/share/pcl_ros/cmake
 
 //The directory containing a CMake configuration file for pluginlib.
 pluginlib_DIR:PATH=/opt/ros/indigo/share/pluginlib/cmake
+
+//Value Computed by CMake
+point_cloud_publisher_tutorial_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation_tutorials/point_cloud_publisher_tutorial
+
+//Value Computed by CMake
+point_cloud_publisher_tutorial_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/point_cloud_publisher_tutorial
 
 //Value Computed by CMake
 rbx1_BINARY_DIR:STATIC=/home/pf/rosWS/build/rbx1/rbx1
@@ -530,6 +560,18 @@ rbx1_vision_BINARY_DIR:STATIC=/home/pf/rosWS/build/rbx1/rbx1_vision
 
 //Value Computed by CMake
 rbx1_vision_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rbx1/rbx1_vision
+
+//Value Computed by CMake
+robot_setup_tf_tutorial_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation_tutorials/robot_setup_tf_tutorial
+
+//Value Computed by CMake
+robot_setup_tf_tutorial_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/robot_setup_tf_tutorial
+
+//Value Computed by CMake
+roomba_stage_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation_tutorials/roomba_stage
+
+//Value Computed by CMake
+roomba_stage_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/roomba_stage
 
 //Value Computed by CMake
 ros_tutorials_BINARY_DIR:STATIC=/home/pf/rosWS/build/ros_tutorials/ros_tutorials
@@ -602,6 +644,12 @@ sensor_odometry_LIB_DEPENDS:STATIC=general;sensor_base;
 
 //Dependencies for the target
 sensor_range_LIB_DEPENDS:STATIC=general;sensor_base;
+
+//Value Computed by CMake
+simple_navigation_goals_tutorial_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation_tutorials/simple_navigation_goals_tutorial
+
+//Value Computed by CMake
+simple_navigation_goals_tutorial_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/simple_navigation_goals_tutorial
 
 //Value Computed by CMake
 slam_gmapping_BINARY_DIR:STATIC=/home/pf/rosWS/build/slam_gmapping/slam_gmapping
@@ -790,7 +838,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=26
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=34
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
