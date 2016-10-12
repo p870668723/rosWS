@@ -250,7 +250,7 @@ _catkin_empty_exported_target: cmake_check_build_system
 
 # fast build rule for target.
 _catkin_empty_exported_target/fast:
-	$(MAKE) -f demo/CMakeFiles/_catkin_empty_exported_target.dir/build.make demo/CMakeFiles/_catkin_empty_exported_target.dir/build
+	$(MAKE) -f husky_desktop/husky_desktop/CMakeFiles/_catkin_empty_exported_target.dir/build.make husky_desktop/husky_desktop/CMakeFiles/_catkin_empty_exported_target.dir/build
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
@@ -915,6 +915,188 @@ timers: cmake_check_build_system
 timers/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/timers.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/timers.dir/build
 .PHONY : timers/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_husky_gazebo
+
+# Build rule for target.
+_run_tests_husky_gazebo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_husky_gazebo
+.PHONY : _run_tests_husky_gazebo
+
+# fast build rule for target.
+_run_tests_husky_gazebo/fast:
+	$(MAKE) -f husky_simulator/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo.dir/build.make husky_simulator/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo.dir/build
+.PHONY : _run_tests_husky_gazebo/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_husky_gazebo_roslaunch-check
+
+# Build rule for target.
+_run_tests_husky_gazebo_roslaunch-check: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_husky_gazebo_roslaunch-check
+.PHONY : _run_tests_husky_gazebo_roslaunch-check
+
+# fast build rule for target.
+_run_tests_husky_gazebo_roslaunch-check/fast:
+	$(MAKE) -f husky_simulator/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/build.make husky_simulator/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check.dir/build
+.PHONY : _run_tests_husky_gazebo_roslaunch-check/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_husky_gazebo_roslaunch-check_launch
+
+# Build rule for target.
+_run_tests_husky_gazebo_roslaunch-check_launch: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_husky_gazebo_roslaunch-check_launch
+.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch
+
+# fast build rule for target.
+_run_tests_husky_gazebo_roslaunch-check_launch/fast:
+	$(MAKE) -f husky_simulator/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch.dir/build.make husky_simulator/husky_gazebo/CMakeFiles/_run_tests_husky_gazebo_roslaunch-check_launch.dir/build
+.PHONY : _run_tests_husky_gazebo_roslaunch-check_launch/fast
+
+#=============================================================================
+# Target rules for targets named clean_test_results_husky_gazebo
+
+# Build rule for target.
+clean_test_results_husky_gazebo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results_husky_gazebo
+.PHONY : clean_test_results_husky_gazebo
+
+# fast build rule for target.
+clean_test_results_husky_gazebo/fast:
+	$(MAKE) -f husky_simulator/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/build.make husky_simulator/husky_gazebo/CMakeFiles/clean_test_results_husky_gazebo.dir/build
+.PHONY : clean_test_results_husky_gazebo/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_husky_gazebo
+
+# Build rule for target.
+run_tests_husky_gazebo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_husky_gazebo
+.PHONY : run_tests_husky_gazebo
+
+# fast build rule for target.
+run_tests_husky_gazebo/fast:
+	$(MAKE) -f husky_simulator/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/build.make husky_simulator/husky_gazebo/CMakeFiles/run_tests_husky_gazebo.dir/build
+.PHONY : run_tests_husky_gazebo/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_husky_gazebo_roslaunch-check
+
+# Build rule for target.
+run_tests_husky_gazebo_roslaunch-check: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_husky_gazebo_roslaunch-check
+.PHONY : run_tests_husky_gazebo_roslaunch-check
+
+# fast build rule for target.
+run_tests_husky_gazebo_roslaunch-check/fast:
+	$(MAKE) -f husky_simulator/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/build.make husky_simulator/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check.dir/build
+.PHONY : run_tests_husky_gazebo_roslaunch-check/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_husky_gazebo_roslaunch-check_launch
+
+# Build rule for target.
+run_tests_husky_gazebo_roslaunch-check_launch: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_husky_gazebo_roslaunch-check_launch
+.PHONY : run_tests_husky_gazebo_roslaunch-check_launch
+
+# fast build rule for target.
+run_tests_husky_gazebo_roslaunch-check_launch/fast:
+	$(MAKE) -f husky_simulator/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch.dir/build.make husky_simulator/husky_gazebo/CMakeFiles/run_tests_husky_gazebo_roslaunch-check_launch.dir/build
+.PHONY : run_tests_husky_gazebo_roslaunch-check_launch/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_husky_viz
+
+# Build rule for target.
+_run_tests_husky_viz: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_husky_viz
+.PHONY : _run_tests_husky_viz
+
+# fast build rule for target.
+_run_tests_husky_viz/fast:
+	$(MAKE) -f husky_desktop/husky_viz/CMakeFiles/_run_tests_husky_viz.dir/build.make husky_desktop/husky_viz/CMakeFiles/_run_tests_husky_viz.dir/build
+.PHONY : _run_tests_husky_viz/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_husky_viz_roslaunch-check
+
+# Build rule for target.
+_run_tests_husky_viz_roslaunch-check: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_husky_viz_roslaunch-check
+.PHONY : _run_tests_husky_viz_roslaunch-check
+
+# fast build rule for target.
+_run_tests_husky_viz_roslaunch-check/fast:
+	$(MAKE) -f husky_desktop/husky_viz/CMakeFiles/_run_tests_husky_viz_roslaunch-check.dir/build.make husky_desktop/husky_viz/CMakeFiles/_run_tests_husky_viz_roslaunch-check.dir/build
+.PHONY : _run_tests_husky_viz_roslaunch-check/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_husky_viz_roslaunch-check_launch
+
+# Build rule for target.
+_run_tests_husky_viz_roslaunch-check_launch: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_husky_viz_roslaunch-check_launch
+.PHONY : _run_tests_husky_viz_roslaunch-check_launch
+
+# fast build rule for target.
+_run_tests_husky_viz_roslaunch-check_launch/fast:
+	$(MAKE) -f husky_desktop/husky_viz/CMakeFiles/_run_tests_husky_viz_roslaunch-check_launch.dir/build.make husky_desktop/husky_viz/CMakeFiles/_run_tests_husky_viz_roslaunch-check_launch.dir/build
+.PHONY : _run_tests_husky_viz_roslaunch-check_launch/fast
+
+#=============================================================================
+# Target rules for targets named clean_test_results_husky_viz
+
+# Build rule for target.
+clean_test_results_husky_viz: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results_husky_viz
+.PHONY : clean_test_results_husky_viz
+
+# fast build rule for target.
+clean_test_results_husky_viz/fast:
+	$(MAKE) -f husky_desktop/husky_viz/CMakeFiles/clean_test_results_husky_viz.dir/build.make husky_desktop/husky_viz/CMakeFiles/clean_test_results_husky_viz.dir/build
+.PHONY : clean_test_results_husky_viz/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_husky_viz
+
+# Build rule for target.
+run_tests_husky_viz: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_husky_viz
+.PHONY : run_tests_husky_viz
+
+# fast build rule for target.
+run_tests_husky_viz/fast:
+	$(MAKE) -f husky_desktop/husky_viz/CMakeFiles/run_tests_husky_viz.dir/build.make husky_desktop/husky_viz/CMakeFiles/run_tests_husky_viz.dir/build
+.PHONY : run_tests_husky_viz/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_husky_viz_roslaunch-check
+
+# Build rule for target.
+run_tests_husky_viz_roslaunch-check: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_husky_viz_roslaunch-check
+.PHONY : run_tests_husky_viz_roslaunch-check
+
+# fast build rule for target.
+run_tests_husky_viz_roslaunch-check/fast:
+	$(MAKE) -f husky_desktop/husky_viz/CMakeFiles/run_tests_husky_viz_roslaunch-check.dir/build.make husky_desktop/husky_viz/CMakeFiles/run_tests_husky_viz_roslaunch-check.dir/build
+.PHONY : run_tests_husky_viz_roslaunch-check/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_husky_viz_roslaunch-check_launch
+
+# Build rule for target.
+run_tests_husky_viz_roslaunch-check_launch: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_husky_viz_roslaunch-check_launch
+.PHONY : run_tests_husky_viz_roslaunch-check_launch
+
+# fast build rule for target.
+run_tests_husky_viz_roslaunch-check_launch/fast:
+	$(MAKE) -f husky_desktop/husky_viz/CMakeFiles/run_tests_husky_viz_roslaunch-check_launch.dir/build.make husky_desktop/husky_viz/CMakeFiles/run_tests_husky_viz_roslaunch-check_launch.dir/build
+.PHONY : run_tests_husky_viz_roslaunch-check_launch/fast
 
 #=============================================================================
 # Target rules for targets named _rospy_tutorials_generate_messages_check_deps_AddTwoInts
@@ -2022,6 +2204,175 @@ simple_navigation_goals/fast:
 .PHONY : simple_navigation_goals/fast
 
 #=============================================================================
+# Target rules for targets named _run_tests_stage_ros
+
+# Build rule for target.
+_run_tests_stage_ros: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_stage_ros
+.PHONY : _run_tests_stage_ros
+
+# fast build rule for target.
+_run_tests_stage_ros/fast:
+	$(MAKE) -f stage_ros/CMakeFiles/_run_tests_stage_ros.dir/build.make stage_ros/CMakeFiles/_run_tests_stage_ros.dir/build
+.PHONY : _run_tests_stage_ros/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_stage_ros_rostest
+
+# Build rule for target.
+_run_tests_stage_ros_rostest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_stage_ros_rostest
+.PHONY : _run_tests_stage_ros_rostest
+
+# fast build rule for target.
+_run_tests_stage_ros_rostest/fast:
+	$(MAKE) -f stage_ros/CMakeFiles/_run_tests_stage_ros_rostest.dir/build.make stage_ros/CMakeFiles/_run_tests_stage_ros_rostest.dir/build
+.PHONY : _run_tests_stage_ros_rostest/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_stage_ros_rostest_test_hztest.xml
+
+# Build rule for target.
+_run_tests_stage_ros_rostest_test_hztest.xml: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_stage_ros_rostest_test_hztest.xml
+.PHONY : _run_tests_stage_ros_rostest_test_hztest.xml
+
+# fast build rule for target.
+_run_tests_stage_ros_rostest_test_hztest.xml/fast:
+	$(MAKE) -f stage_ros/CMakeFiles/_run_tests_stage_ros_rostest_test_hztest.xml.dir/build.make stage_ros/CMakeFiles/_run_tests_stage_ros_rostest_test_hztest.xml.dir/build
+.PHONY : _run_tests_stage_ros_rostest_test_hztest.xml/fast
+
+#=============================================================================
+# Target rules for targets named _run_tests_stage_ros_rostest_test_intensity_test.xml
+
+# Build rule for target.
+_run_tests_stage_ros_rostest_test_intensity_test.xml: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_stage_ros_rostest_test_intensity_test.xml
+.PHONY : _run_tests_stage_ros_rostest_test_intensity_test.xml
+
+# fast build rule for target.
+_run_tests_stage_ros_rostest_test_intensity_test.xml/fast:
+	$(MAKE) -f stage_ros/CMakeFiles/_run_tests_stage_ros_rostest_test_intensity_test.xml.dir/build.make stage_ros/CMakeFiles/_run_tests_stage_ros_rostest_test_intensity_test.xml.dir/build
+.PHONY : _run_tests_stage_ros_rostest_test_intensity_test.xml/fast
+
+#=============================================================================
+# Target rules for targets named clean_test_results_stage_ros
+
+# Build rule for target.
+clean_test_results_stage_ros: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results_stage_ros
+.PHONY : clean_test_results_stage_ros
+
+# fast build rule for target.
+clean_test_results_stage_ros/fast:
+	$(MAKE) -f stage_ros/CMakeFiles/clean_test_results_stage_ros.dir/build.make stage_ros/CMakeFiles/clean_test_results_stage_ros.dir/build
+.PHONY : clean_test_results_stage_ros/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_stage_ros
+
+# Build rule for target.
+run_tests_stage_ros: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_stage_ros
+.PHONY : run_tests_stage_ros
+
+# fast build rule for target.
+run_tests_stage_ros/fast:
+	$(MAKE) -f stage_ros/CMakeFiles/run_tests_stage_ros.dir/build.make stage_ros/CMakeFiles/run_tests_stage_ros.dir/build
+.PHONY : run_tests_stage_ros/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_stage_ros_rostest
+
+# Build rule for target.
+run_tests_stage_ros_rostest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_stage_ros_rostest
+.PHONY : run_tests_stage_ros_rostest
+
+# fast build rule for target.
+run_tests_stage_ros_rostest/fast:
+	$(MAKE) -f stage_ros/CMakeFiles/run_tests_stage_ros_rostest.dir/build.make stage_ros/CMakeFiles/run_tests_stage_ros_rostest.dir/build
+.PHONY : run_tests_stage_ros_rostest/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_stage_ros_rostest_test_hztest.xml
+
+# Build rule for target.
+run_tests_stage_ros_rostest_test_hztest.xml: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_stage_ros_rostest_test_hztest.xml
+.PHONY : run_tests_stage_ros_rostest_test_hztest.xml
+
+# fast build rule for target.
+run_tests_stage_ros_rostest_test_hztest.xml/fast:
+	$(MAKE) -f stage_ros/CMakeFiles/run_tests_stage_ros_rostest_test_hztest.xml.dir/build.make stage_ros/CMakeFiles/run_tests_stage_ros_rostest_test_hztest.xml.dir/build
+.PHONY : run_tests_stage_ros_rostest_test_hztest.xml/fast
+
+#=============================================================================
+# Target rules for targets named run_tests_stage_ros_rostest_test_intensity_test.xml
+
+# Build rule for target.
+run_tests_stage_ros_rostest_test_intensity_test.xml: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 run_tests_stage_ros_rostest_test_intensity_test.xml
+.PHONY : run_tests_stage_ros_rostest_test_intensity_test.xml
+
+# fast build rule for target.
+run_tests_stage_ros_rostest_test_intensity_test.xml/fast:
+	$(MAKE) -f stage_ros/CMakeFiles/run_tests_stage_ros_rostest_test_intensity_test.xml.dir/build.make stage_ros/CMakeFiles/run_tests_stage_ros_rostest_test_intensity_test.xml.dir/build
+.PHONY : run_tests_stage_ros_rostest_test_intensity_test.xml/fast
+
+#=============================================================================
+# Target rules for targets named stageros
+
+# Build rule for target.
+stageros: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 stageros
+.PHONY : stageros
+
+# fast build rule for target.
+stageros/fast:
+	$(MAKE) -f stage_ros/CMakeFiles/stageros.dir/build.make stage_ros/CMakeFiles/stageros.dir/build
+.PHONY : stageros/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_cpp
+
+# Build rule for target.
+std_srvs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_cpp
+.PHONY : std_srvs_generate_messages_cpp
+
+# fast build rule for target.
+std_srvs_generate_messages_cpp/fast:
+	$(MAKE) -f stage_ros/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make stage_ros/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
+.PHONY : std_srvs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_lisp
+
+# Build rule for target.
+std_srvs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_lisp
+.PHONY : std_srvs_generate_messages_lisp
+
+# fast build rule for target.
+std_srvs_generate_messages_lisp/fast:
+	$(MAKE) -f stage_ros/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make stage_ros/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
+.PHONY : std_srvs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named std_srvs_generate_messages_py
+
+# Build rule for target.
+std_srvs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_py
+.PHONY : std_srvs_generate_messages_py
+
+# fast build rule for target.
+std_srvs_generate_messages_py/fast:
+	$(MAKE) -f stage_ros/CMakeFiles/std_srvs_generate_messages_py.dir/build.make stage_ros/CMakeFiles/std_srvs_generate_messages_py.dir/build
+.PHONY : std_srvs_generate_messages_py/fast
+
+#=============================================================================
 # Target rules for targets named _turtlesim_generate_messages_check_deps_Color
 
 # Build rule for target.
@@ -2137,45 +2488,6 @@ mimic: cmake_check_build_system
 mimic/fast:
 	$(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/mimic.dir/build.make ros_tutorials/turtlesim/CMakeFiles/mimic.dir/build
 .PHONY : mimic/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_cpp
-
-# Build rule for target.
-std_srvs_generate_messages_cpp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_cpp
-.PHONY : std_srvs_generate_messages_cpp
-
-# fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	$(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_lisp
-
-# Build rule for target.
-std_srvs_generate_messages_lisp: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_lisp
-.PHONY : std_srvs_generate_messages_lisp
-
-# fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	$(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
-
-#=============================================================================
-# Target rules for targets named std_srvs_generate_messages_py
-
-# Build rule for target.
-std_srvs_generate_messages_py: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 std_srvs_generate_messages_py
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	$(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_py.dir/build.make ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
 
 #=============================================================================
 # Target rules for targets named turtle_teleop_key
@@ -3107,6 +3419,20 @@ help:
 	@echo "... talker"
 	@echo "... time_api_sleep"
 	@echo "... timers"
+	@echo "... _run_tests_husky_gazebo"
+	@echo "... _run_tests_husky_gazebo_roslaunch-check"
+	@echo "... _run_tests_husky_gazebo_roslaunch-check_launch"
+	@echo "... clean_test_results_husky_gazebo"
+	@echo "... run_tests_husky_gazebo"
+	@echo "... run_tests_husky_gazebo_roslaunch-check"
+	@echo "... run_tests_husky_gazebo_roslaunch-check_launch"
+	@echo "... _run_tests_husky_viz"
+	@echo "... _run_tests_husky_viz_roslaunch-check"
+	@echo "... _run_tests_husky_viz_roslaunch-check_launch"
+	@echo "... clean_test_results_husky_viz"
+	@echo "... run_tests_husky_viz"
+	@echo "... run_tests_husky_viz_roslaunch-check"
+	@echo "... run_tests_husky_viz_roslaunch-check_launch"
 	@echo "... _rospy_tutorials_generate_messages_check_deps_AddTwoInts"
 	@echo "... _rospy_tutorials_generate_messages_check_deps_BadTwoInts"
 	@echo "... _rospy_tutorials_generate_messages_check_deps_Floats"
@@ -3192,6 +3518,19 @@ help:
 	@echo "... move_base_msgs_generate_messages_lisp"
 	@echo "... move_base_msgs_generate_messages_py"
 	@echo "... simple_navigation_goals"
+	@echo "... _run_tests_stage_ros"
+	@echo "... _run_tests_stage_ros_rostest"
+	@echo "... _run_tests_stage_ros_rostest_test_hztest.xml"
+	@echo "... _run_tests_stage_ros_rostest_test_intensity_test.xml"
+	@echo "... clean_test_results_stage_ros"
+	@echo "... run_tests_stage_ros"
+	@echo "... run_tests_stage_ros_rostest"
+	@echo "... run_tests_stage_ros_rostest_test_hztest.xml"
+	@echo "... run_tests_stage_ros_rostest_test_intensity_test.xml"
+	@echo "... stageros"
+	@echo "... std_srvs_generate_messages_cpp"
+	@echo "... std_srvs_generate_messages_lisp"
+	@echo "... std_srvs_generate_messages_py"
 	@echo "... _turtlesim_generate_messages_check_deps_Color"
 	@echo "... _turtlesim_generate_messages_check_deps_Kill"
 	@echo "... _turtlesim_generate_messages_check_deps_Pose"
@@ -3201,9 +3540,6 @@ help:
 	@echo "... _turtlesim_generate_messages_check_deps_TeleportRelative"
 	@echo "... draw_square"
 	@echo "... mimic"
-	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... std_srvs_generate_messages_py"
 	@echo "... turtle_teleop_key"
 	@echo "... turtlesim_gencpp"
 	@echo "... turtlesim_generate_messages"

@@ -276,48 +276,6 @@ mimic/fast:
 .PHONY : mimic/fast
 
 # Convenience name for target.
-ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_cpp: ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_cpp.dir/rule
-.PHONY : std_srvs_generate_messages_cpp
-
-# fast build rule for target.
-std_srvs_generate_messages_cpp/fast:
-	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_cpp.dir/build.make ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_cpp.dir/build
-.PHONY : std_srvs_generate_messages_cpp/fast
-
-# Convenience name for target.
-ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_lisp: ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_lisp.dir/rule
-.PHONY : std_srvs_generate_messages_lisp
-
-# fast build rule for target.
-std_srvs_generate_messages_lisp/fast:
-	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_lisp.dir/build.make ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_lisp.dir/build
-.PHONY : std_srvs_generate_messages_lisp/fast
-
-# Convenience name for target.
-ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_py.dir/rule:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_srvs_generate_messages_py: ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_py.dir/rule
-.PHONY : std_srvs_generate_messages_py
-
-# fast build rule for target.
-std_srvs_generate_messages_py/fast:
-	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_py.dir/build.make ros_tutorials/turtlesim/CMakeFiles/std_srvs_generate_messages_py.dir/build
-.PHONY : std_srvs_generate_messages_py/fast
-
-# Convenience name for target.
 ros_tutorials/turtlesim/CMakeFiles/turtle_teleop_key.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/turtlesim/CMakeFiles/turtle_teleop_key.dir/rule
 .PHONY : ros_tutorials/turtlesim/CMakeFiles/turtle_teleop_key.dir/rule
@@ -632,9 +590,6 @@ help:
 	@echo "... list_install_components"
 	@echo "... mimic"
 	@echo "... rebuild_cache"
-	@echo "... std_srvs_generate_messages_cpp"
-	@echo "... std_srvs_generate_messages_lisp"
-	@echo "... std_srvs_generate_messages_py"
 	@echo "... test"
 	@echo "... turtle_teleop_key"
 	@echo "... turtlesim_gencpp"

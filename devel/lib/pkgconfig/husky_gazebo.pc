@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/devel
+
+Name: husky_gazebo
+Description: Description of husky_gazebo
+Version: 0.2.5
+Cflags: 
+Libs: -L/home/pf/rosWS/devel/lib 
+Requires: 
