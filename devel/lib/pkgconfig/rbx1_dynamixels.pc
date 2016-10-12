@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/devel
+
+Name: rbx1_dynamixels
+Description: Description of rbx1_dynamixels
+Version: 0.4.0
+Cflags: 
+Libs: -L/home/pf/rosWS/devel/lib 
+Requires: 
