@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/devel
+
+Name: timer_package
+Description: Description of timer_package
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/pf/rosWS/devel/lib 
+Requires: 

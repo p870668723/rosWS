@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pf/rosWS/src/timer_package/src/timer_package_node.cpp
+ros/ros.h
+/home/pf/rosWS/src/timer_package/src/ros/ros.h
+string.h
+-
+ros/time.h
+-
+tf/transform_broadcaster.h
+-
+std_msgs/*.h
+/home/pf/rosWS/src/timer_package/src/std_msgs/*.h
+

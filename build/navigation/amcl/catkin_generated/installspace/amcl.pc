@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/install
+
+Name: amcl
+Description: Description of amcl
+Version: 1.13.1
+Cflags: -I/home/pf/rosWS/install/include
+Libs: -L/home/pf/rosWS/install/lib -lamcl_sensors -lamcl_map -lamcl_pf
+Requires: rosbag roscpp dynamic_reconfigure tf

@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/install
+
+Name: rotate_recovery
+Description: Description of rotate_recovery
+Version: 1.13.1
+Cflags: -I/home/pf/rosWS/install/include
+Libs: -L/home/pf/rosWS/install/lib -lrotate_recovery
+Requires: roscpp pluginlib

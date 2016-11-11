@@ -1,0 +1,8 @@
+prefix=/usr/local
+
+Name: map_load
+Description: Description of map_load
+Version: 0.0.0
+Cflags: 
+Libs: -L/usr/local/lib 
+Requires: 

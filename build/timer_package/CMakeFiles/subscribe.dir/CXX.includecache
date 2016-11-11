@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pf/rosWS/src/timer_package/src/subscribe.cpp
+std_msgs/String.h
+/home/pf/rosWS/src/timer_package/src/std_msgs/String.h
+ros/ros.h
+/home/pf/rosWS/src/timer_package/src/ros/ros.h
+

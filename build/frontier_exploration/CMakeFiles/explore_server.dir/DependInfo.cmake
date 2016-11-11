@@ -17,12 +17,17 @@ SET(CMAKE_TARGET_DEFINITIONS
 
 # Targets to which this target links.
 SET(CMAKE_TARGET_LINKED_INFO_FILES
+  "/home/pf/rosWS/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir/DependInfo.cmake"
+  "/home/pf/rosWS/build/navigation/costmap_2d/CMakeFiles/layers.dir/DependInfo.cmake"
+  "/home/pf/rosWS/build/navigation/voxel_grid/CMakeFiles/voxel_grid.dir/DependInfo.cmake"
   )
 
 # The include file search paths:
 SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/home/pf/rosWS/devel/include"
   "/home/pf/rosWS/src/frontier_exploration/include"
+  "/home/pf/rosWS/src/navigation/costmap_2d/include"
+  "/home/pf/rosWS/src/navigation/voxel_grid/include"
   "/opt/ros/indigo/include"
   "/usr/include/eigen3"
   "/usr/include/pcl-1.7"

@@ -291,3 +291,20 @@ Linking C executable cmTryCompileExec1583249616
 make[1]:正在离开目录 `/home/pf/rosWS/build/CMakeFiles/CMakeTmp'
 
 
+The target system is: Linux - 4.2.0-27-generic - x86_64
+The host system is: Linux - 4.2.0-27-generic - x86_64
+Determining if the include file FL/Fl.H exists passed with the following output:
+Change Dir: /home/pf/rosWS/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3622968604/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3622968604.dir/build.make CMakeFiles/cmTryCompileExec3622968604.dir/build
+make[1]: Entering directory `/home/pf/rosWS/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/pf/rosWS/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3622968604.dir/CheckIncludeFile.cxx.o
+/usr/bin/c++    -Wno-deprecated    -o CMakeFiles/cmTryCompileExec3622968604.dir/CheckIncludeFile.cxx.o -c /home/pf/rosWS/build/CMakeFiles/CMakeTmp/CheckIncludeFile.cxx
+Linking CXX executable cmTryCompileExec3622968604
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3622968604.dir/link.txt --verbose=1
+/usr/bin/c++     -Wno-deprecated     CMakeFiles/cmTryCompileExec3622968604.dir/CheckIncludeFile.cxx.o  -o cmTryCompileExec3622968604 -rdynamic 
+make[1]: Leaving directory `/home/pf/rosWS/build/CMakeFiles/CMakeTmp'
+
+

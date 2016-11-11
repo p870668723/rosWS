@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/devel
+
+Name: nav_core
+Description: Description of nav_core
+Version: 1.13.1
+Cflags: -I/home/pf/rosWS/src/navigation/nav_core/include
+Libs: -L/home/pf/rosWS/devel/lib 
+Requires: std_msgs geometry_msgs tf costmap_2d

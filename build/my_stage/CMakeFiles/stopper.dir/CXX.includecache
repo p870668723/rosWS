@@ -18,10 +18,6 @@ ros/ros.h
 sensor_msgs/LaserScan.h
 /home/pf/rosWS/src/my_stage/src/sensor_msgs/LaserScan.h
 
-/home/pf/rosWS/src/my_stage/src/run_stopper.cpp
-Stopper.h
-/home/pf/rosWS/src/my_stage/src/Stopper.h
-
 /opt/ros/indigo/include/XmlRpcDecl.h
 ros/macros.h
 -

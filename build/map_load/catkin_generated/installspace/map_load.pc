@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/install
+
+Name: map_load
+Description: Description of map_load
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/pf/rosWS/install/lib 
+Requires: 

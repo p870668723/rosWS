@@ -18,6 +18,8 @@ SET(CMAKE_TARGET_LINKED_INFO_FILES
 SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/home/pf/rosWS/devel/include"
   "/home/pf/rosWS/src/frontier_exploration/include"
+  "/home/pf/rosWS/src/navigation/costmap_2d/include"
+  "/home/pf/rosWS/src/navigation/voxel_grid/include"
   "/opt/ros/indigo/include"
   "/usr/include/eigen3"
   "/usr/include/pcl-1.7"

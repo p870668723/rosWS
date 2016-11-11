@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/install
+
+Name: navfn
+Description: Description of navfn
+Version: 1.13.1
+Cflags: -I/home/pf/rosWS/install/include
+Libs: -L/home/pf/rosWS/install/lib -lnavfn
+Requires: nav_core roscpp pluginlib

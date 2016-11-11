@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/devel
+
+Name: move_base
+Description: Description of move_base
+Version: 1.13.1
+Cflags: -I/home/pf/rosWS/devel/include
+Libs: -L/home/pf/rosWS/devel/lib 
+Requires: roscpp dynamic_reconfigure

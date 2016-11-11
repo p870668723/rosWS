@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/devel
+
+Name: move_slow_and_clear
+Description: Description of move_slow_and_clear
+Version: 1.13.1
+Cflags: -I/home/pf/rosWS/src/navigation/move_slow_and_clear/include
+Libs: -L/home/pf/rosWS/devel/lib -lmove_slow_and_clear
+Requires: roscpp pluginlib nav_core
