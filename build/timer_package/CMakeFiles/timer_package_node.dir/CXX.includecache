@@ -15,6 +15,6 @@ ros/time.h
 -
 tf/transform_broadcaster.h
 -
-std_msgs/*.h
-/home/pf/rosWS/src/timer_package/src/std_msgs/*.h
+std_msgs/String.h
+/home/pf/rosWS/src/timer_package/src/std_msgs/String.h
 

@@ -666,10 +666,10 @@ global_planner_LIB_DEPENDS:STATIC=general;navfn;general;costmap_2d;general;layer
 global_planner_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation/global_planner
 
 //Value Computed by CMake
-gmapping_BINARY_DIR:STATIC=/home/pf/rosWS/build/slam_gmapping/gmapping
+gmapping_BINARY_DIR:STATIC=/home/pf/rosWS/build/gmapping-ros/slam_gmapping/gmapping
 
 //Value Computed by CMake
-gmapping_SOURCE_DIR:STATIC=/home/pf/rosWS/src/slam_gmapping/gmapping
+gmapping_SOURCE_DIR:STATIC=/home/pf/rosWS/src/gmapping-ros/slam_gmapping/gmapping
 
 //Dependencies for the target
 gridfastslam_LIB_DEPENDS:STATIC=general;scanmatcher;general;sensor_range;
@@ -853,13 +853,13 @@ odometry_publisher_tutorial_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation_tu
 odometry_publisher_tutorial_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/odometry_publisher_tutorial
 
 //Value Computed by CMake
-openslam_gmapping_BINARY_DIR:STATIC=/home/pf/rosWS/build/openslam_gmapping
+openslam_gmapping_BINARY_DIR:STATIC=/home/pf/rosWS/build/gmapping-ros/openslam_gmapping
 
 //The directory containing a CMake configuration file for openslam_gmapping.
 openslam_gmapping_DIR:PATH=/home/pf/rosWS/devel/share/openslam_gmapping/cmake
 
 //Value Computed by CMake
-openslam_gmapping_SOURCE_DIR:STATIC=/home/pf/rosWS/src/openslam_gmapping
+openslam_gmapping_SOURCE_DIR:STATIC=/home/pf/rosWS/src/gmapping-ros/openslam_gmapping
 
 //The directory containing a CMake configuration file for pcl_conversions.
 pcl_conversions_DIR:PATH=/opt/ros/indigo/share/pcl_conversions/cmake
@@ -1036,10 +1036,13 @@ simple_navigation_goals_tutorial_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigati
 simple_navigation_goals_tutorial_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/simple_navigation_goals_tutorial
 
 //Value Computed by CMake
-slam_gmapping_BINARY_DIR:STATIC=/home/pf/rosWS/build/slam_gmapping/slam_gmapping
+slam_gmapping_BINARY_DIR:STATIC=/home/pf/rosWS/build/gmapping-ros/slam_gmapping/slam_gmapping
 
 //Value Computed by CMake
-slam_gmapping_SOURCE_DIR:STATIC=/home/pf/rosWS/src/slam_gmapping/slam_gmapping
+slam_gmapping_SOURCE_DIR:STATIC=/home/pf/rosWS/src/gmapping-ros/slam_gmapping/slam_gmapping
+
+//Dependencies for the target
+slam_gmapping_nodelet_LIB_DEPENDS:STATIC=general;gridfastslam;general;scanmatcher;general;sensor_base;general;sensor_range;general;sensor_odometry;general;utils;general;/opt/ros/indigo/lib/libtf.so;general;/opt/ros/indigo/lib/libtf2_ros.so;general;/opt/ros/indigo/lib/libactionlib.so;general;/opt/ros/indigo/lib/libmessage_filters.so;general;/opt/ros/indigo/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/indigo/lib/libxmlrpcpp.so;general;/opt/ros/indigo/lib/libtf2.so;general;/opt/ros/indigo/lib/libroscpp_serialization.so;general;/opt/ros/indigo/lib/librosconsole.so;general;/opt/ros/indigo/lib/librosconsole_log4cxx.so;general;/opt/ros/indigo/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/opt/ros/indigo/lib/librostime.so;general;/opt/ros/indigo/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/opt/ros/indigo/lib/librosbag_storage.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/indigo/lib/libroslz4.so;general;/usr/lib/x86_64-linux-gnu/liblz4.so;
 
 //The directory containing a CMake configuration file for smclib.
 smclib_DIR:PATH=/opt/ros/indigo/share/smclib/cmake

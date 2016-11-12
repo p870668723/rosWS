@@ -50,32 +50,6 @@ gmapping/utils/stat.h
 gmapping/gridfastslam/gridslamprocessor.h
 -
 
-/home/pf/rosWS/src/openslam_gmapping/gridfastslam/gridslamprocessor_tree.cpp
-string
--
-deque
--
-list
--
-map
--
-set
--
-fstream
--
-gmapping/utils/stat.h
--
-gmapping/gridfastslam/gridslamprocessor.h
--
-
-/home/pf/rosWS/src/openslam_gmapping/gridfastslam/motionmodel.cpp
-gmapping/gridfastslam/motionmodel.h
--
-gmapping/utils/stat.h
--
-iostream
--
-
 /home/pf/rosWS/src/openslam_gmapping/include/gmapping/grid/accessstate.h
 
 /home/pf/rosWS/src/openslam_gmapping/include/gmapping/grid/array2d.h

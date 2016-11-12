@@ -393,7 +393,7 @@ gridfastslam: cmake_check_build_system
 
 # fast build rule for target.
 gridfastslam/fast:
-	$(MAKE) -f openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/build.make openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/build
+	$(MAKE) -f gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/build.make gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/build
 .PHONY : gridfastslam/fast
 
 #=============================================================================
@@ -406,7 +406,7 @@ scanmatcher: cmake_check_build_system
 
 # fast build rule for target.
 scanmatcher/fast:
-	$(MAKE) -f openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/build.make openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/build
+	$(MAKE) -f gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/build.make gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/build
 .PHONY : scanmatcher/fast
 
 #=============================================================================
@@ -419,7 +419,7 @@ sensor_base: cmake_check_build_system
 
 # fast build rule for target.
 sensor_base/fast:
-	$(MAKE) -f openslam_gmapping/sensor/sensor_base/CMakeFiles/sensor_base.dir/build.make openslam_gmapping/sensor/sensor_base/CMakeFiles/sensor_base.dir/build
+	$(MAKE) -f gmapping-ros/openslam_gmapping/sensor/sensor_base/CMakeFiles/sensor_base.dir/build.make gmapping-ros/openslam_gmapping/sensor/sensor_base/CMakeFiles/sensor_base.dir/build
 .PHONY : sensor_base/fast
 
 #=============================================================================
@@ -432,7 +432,7 @@ sensor_odometry: cmake_check_build_system
 
 # fast build rule for target.
 sensor_odometry/fast:
-	$(MAKE) -f openslam_gmapping/sensor/sensor_odometry/CMakeFiles/sensor_odometry.dir/build.make openslam_gmapping/sensor/sensor_odometry/CMakeFiles/sensor_odometry.dir/build
+	$(MAKE) -f gmapping-ros/openslam_gmapping/sensor/sensor_odometry/CMakeFiles/sensor_odometry.dir/build.make gmapping-ros/openslam_gmapping/sensor/sensor_odometry/CMakeFiles/sensor_odometry.dir/build
 .PHONY : sensor_odometry/fast
 
 #=============================================================================
@@ -445,7 +445,7 @@ sensor_range: cmake_check_build_system
 
 # fast build rule for target.
 sensor_range/fast:
-	$(MAKE) -f openslam_gmapping/sensor/sensor_range/CMakeFiles/sensor_range.dir/build.make openslam_gmapping/sensor/sensor_range/CMakeFiles/sensor_range.dir/build
+	$(MAKE) -f gmapping-ros/openslam_gmapping/sensor/sensor_range/CMakeFiles/sensor_range.dir/build.make gmapping-ros/openslam_gmapping/sensor/sensor_range/CMakeFiles/sensor_range.dir/build
 .PHONY : sensor_range/fast
 
 #=============================================================================
@@ -458,7 +458,7 @@ utils: cmake_check_build_system
 
 # fast build rule for target.
 utils/fast:
-	$(MAKE) -f openslam_gmapping/utils/CMakeFiles/utils.dir/build.make openslam_gmapping/utils/CMakeFiles/utils.dir/build
+	$(MAKE) -f gmapping-ros/openslam_gmapping/utils/CMakeFiles/utils.dir/build.make gmapping-ros/openslam_gmapping/utils/CMakeFiles/utils.dir/build
 .PHONY : utils/fast
 
 #=============================================================================
@@ -1797,7 +1797,7 @@ _run_tests_gmapping: cmake_check_build_system
 
 # fast build rule for target.
 _run_tests_gmapping/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping.dir/build.make slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping.dir/build
 .PHONY : _run_tests_gmapping/fast
 
 #=============================================================================
@@ -1810,7 +1810,7 @@ _run_tests_gmapping_rostest: cmake_check_build_system
 
 # fast build rule for target.
 _run_tests_gmapping_rostest/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest.dir/build.make slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest.dir/build
 .PHONY : _run_tests_gmapping_rostest/fast
 
 #=============================================================================
@@ -1823,7 +1823,7 @@ _run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.te
 
 # fast build rule for target.
 _run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test.dir/build.make slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test.dir/build
 .PHONY : _run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test/fast
 
 #=============================================================================
@@ -1836,7 +1836,7 @@ _run_tests_gmapping_rostest_test_basic_localization_stage.launch: cmake_check_bu
 
 # fast build rule for target.
 _run_tests_gmapping_rostest_test_basic_localization_stage.launch/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_stage.launch.dir/build.make slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_stage.launch.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_stage.launch.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_stage.launch.dir/build
 .PHONY : _run_tests_gmapping_rostest_test_basic_localization_stage.launch/fast
 
 #=============================================================================
@@ -1849,7 +1849,7 @@ _run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch: cmake_c
 
 # fast build rule for target.
 _run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch.dir/build.make slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch.dir/build
 .PHONY : _run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch/fast
 
 #=============================================================================
@@ -1862,7 +1862,7 @@ _run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch: cmake_
 
 # fast build rule for target.
 _run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch.dir/build.make slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch.dir/build
 .PHONY : _run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch/fast
 
 #=============================================================================
@@ -1875,7 +1875,7 @@ _run_tests_gmapping_rostest_test_basic_localization_symmetry.launch: cmake_check
 
 # fast build rule for target.
 _run_tests_gmapping_rostest_test_basic_localization_symmetry.launch/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_symmetry.launch.dir/build.make slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_symmetry.launch.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_symmetry.launch.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_symmetry.launch.dir/build
 .PHONY : _run_tests_gmapping_rostest_test_basic_localization_symmetry.launch/fast
 
 #=============================================================================
@@ -1888,7 +1888,7 @@ _run_tests_gmapping_rostest_test_basic_localization_upside_down.launch: cmake_ch
 
 # fast build rule for target.
 _run_tests_gmapping_rostest_test_basic_localization_upside_down.launch/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_upside_down.launch.dir/build.make slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_upside_down.launch.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_upside_down.launch.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/_run_tests_gmapping_rostest_test_basic_localization_upside_down.launch.dir/build
 .PHONY : _run_tests_gmapping_rostest_test_basic_localization_upside_down.launch/fast
 
 #=============================================================================
@@ -1901,7 +1901,7 @@ clean_test_results_gmapping: cmake_check_build_system
 
 # fast build rule for target.
 clean_test_results_gmapping/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/clean_test_results_gmapping.dir/build.make slam_gmapping/gmapping/CMakeFiles/clean_test_results_gmapping.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/clean_test_results_gmapping.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/clean_test_results_gmapping.dir/build
 .PHONY : clean_test_results_gmapping/fast
 
 #=============================================================================
@@ -1914,7 +1914,7 @@ gmapping-rtest: cmake_check_build_system
 
 # fast build rule for target.
 gmapping-rtest/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/gmapping-rtest.dir/build.make slam_gmapping/gmapping/CMakeFiles/gmapping-rtest.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping-rtest.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping-rtest.dir/build
 .PHONY : gmapping-rtest/fast
 
 #=============================================================================
@@ -1927,7 +1927,7 @@ gmapping_basic_localization_stage_groundtruth.pgm: cmake_check_build_system
 
 # fast build rule for target.
 gmapping_basic_localization_stage_groundtruth.pgm/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/gmapping_basic_localization_stage_groundtruth.pgm.dir/build.make slam_gmapping/gmapping/CMakeFiles/gmapping_basic_localization_stage_groundtruth.pgm.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping_basic_localization_stage_groundtruth.pgm.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping_basic_localization_stage_groundtruth.pgm.dir/build
 .PHONY : gmapping_basic_localization_stage_groundtruth.pgm/fast
 
 #=============================================================================
@@ -1940,7 +1940,7 @@ gmapping_basic_localization_stage_indexed.bag: cmake_check_build_system
 
 # fast build rule for target.
 gmapping_basic_localization_stage_indexed.bag/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/gmapping_basic_localization_stage_indexed.bag.dir/build.make slam_gmapping/gmapping/CMakeFiles/gmapping_basic_localization_stage_indexed.bag.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping_basic_localization_stage_indexed.bag.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping_basic_localization_stage_indexed.bag.dir/build
 .PHONY : gmapping_basic_localization_stage_indexed.bag/fast
 
 #=============================================================================
@@ -1953,7 +1953,7 @@ gmapping_hallway_slow_2011-03-04-21-41-33.bag: cmake_check_build_system
 
 # fast build rule for target.
 gmapping_hallway_slow_2011-03-04-21-41-33.bag/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/gmapping_hallway_slow_2011-03-04-21-41-33.bag.dir/build.make slam_gmapping/gmapping/CMakeFiles/gmapping_hallway_slow_2011-03-04-21-41-33.bag.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping_hallway_slow_2011-03-04-21-41-33.bag.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping_hallway_slow_2011-03-04-21-41-33.bag.dir/build
 .PHONY : gmapping_hallway_slow_2011-03-04-21-41-33.bag/fast
 
 #=============================================================================
@@ -1966,7 +1966,7 @@ gmapping_test_replay_crash.bag: cmake_check_build_system
 
 # fast build rule for target.
 gmapping_test_replay_crash.bag/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/gmapping_test_replay_crash.bag.dir/build.make slam_gmapping/gmapping/CMakeFiles/gmapping_test_replay_crash.bag.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping_test_replay_crash.bag.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping_test_replay_crash.bag.dir/build
 .PHONY : gmapping_test_replay_crash.bag/fast
 
 #=============================================================================
@@ -1979,7 +1979,7 @@ gmapping_test_turtlebot.bag: cmake_check_build_system
 
 # fast build rule for target.
 gmapping_test_turtlebot.bag/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/gmapping_test_turtlebot.bag.dir/build.make slam_gmapping/gmapping/CMakeFiles/gmapping_test_turtlebot.bag.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping_test_turtlebot.bag.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping_test_turtlebot.bag.dir/build
 .PHONY : gmapping_test_turtlebot.bag/fast
 
 #=============================================================================
@@ -1992,7 +1992,7 @@ gmapping_test_upside_down.bag: cmake_check_build_system
 
 # fast build rule for target.
 gmapping_test_upside_down.bag/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/gmapping_test_upside_down.bag.dir/build.make slam_gmapping/gmapping/CMakeFiles/gmapping_test_upside_down.bag.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping_test_upside_down.bag.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/gmapping_test_upside_down.bag.dir/build
 .PHONY : gmapping_test_upside_down.bag/fast
 
 #=============================================================================
@@ -2005,7 +2005,7 @@ run_tests_gmapping: cmake_check_build_system
 
 # fast build rule for target.
 run_tests_gmapping/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping.dir/build.make slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping.dir/build
 .PHONY : run_tests_gmapping/fast
 
 #=============================================================================
@@ -2018,7 +2018,7 @@ run_tests_gmapping_rostest: cmake_check_build_system
 
 # fast build rule for target.
 run_tests_gmapping_rostest/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest.dir/build.make slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest.dir/build
 .PHONY : run_tests_gmapping_rostest/fast
 
 #=============================================================================
@@ -2031,7 +2031,7 @@ run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.tes
 
 # fast build rule for target.
 run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test.dir/build.make slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test.dir/build
 .PHONY : run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test/fast
 
 #=============================================================================
@@ -2044,7 +2044,7 @@ run_tests_gmapping_rostest_test_basic_localization_stage.launch: cmake_check_bui
 
 # fast build rule for target.
 run_tests_gmapping_rostest_test_basic_localization_stage.launch/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_stage.launch.dir/build.make slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_stage.launch.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_stage.launch.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_stage.launch.dir/build
 .PHONY : run_tests_gmapping_rostest_test_basic_localization_stage.launch/fast
 
 #=============================================================================
@@ -2057,7 +2057,7 @@ run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch: cmake_ch
 
 # fast build rule for target.
 run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch.dir/build.make slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch.dir/build
 .PHONY : run_tests_gmapping_rostest_test_basic_localization_stage_replay.launch/fast
 
 #=============================================================================
@@ -2070,7 +2070,7 @@ run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch: cmake_c
 
 # fast build rule for target.
 run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch.dir/build.make slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch.dir/build
 .PHONY : run_tests_gmapping_rostest_test_basic_localization_stage_replay2.launch/fast
 
 #=============================================================================
@@ -2083,7 +2083,7 @@ run_tests_gmapping_rostest_test_basic_localization_symmetry.launch: cmake_check_
 
 # fast build rule for target.
 run_tests_gmapping_rostest_test_basic_localization_symmetry.launch/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_symmetry.launch.dir/build.make slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_symmetry.launch.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_symmetry.launch.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_symmetry.launch.dir/build
 .PHONY : run_tests_gmapping_rostest_test_basic_localization_symmetry.launch/fast
 
 #=============================================================================
@@ -2096,7 +2096,7 @@ run_tests_gmapping_rostest_test_basic_localization_upside_down.launch: cmake_che
 
 # fast build rule for target.
 run_tests_gmapping_rostest_test_basic_localization_upside_down.launch/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_upside_down.launch.dir/build.make slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_upside_down.launch.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_upside_down.launch.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/run_tests_gmapping_rostest_test_basic_localization_upside_down.launch.dir/build
 .PHONY : run_tests_gmapping_rostest_test_basic_localization_upside_down.launch/fast
 
 #=============================================================================
@@ -2109,7 +2109,7 @@ slam_gmapping: cmake_check_build_system
 
 # fast build rule for target.
 slam_gmapping/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/build.make slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/build
 .PHONY : slam_gmapping/fast
 
 #=============================================================================
@@ -2122,7 +2122,7 @@ slam_gmapping_replay: cmake_check_build_system
 
 # fast build rule for target.
 slam_gmapping_replay/fast:
-	$(MAKE) -f slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/build.make slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/build
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/build
 .PHONY : slam_gmapping_replay/fast
 
 #=============================================================================
