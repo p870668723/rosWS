@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/install
+
+Name: rqt_bag_plugins
+Description: Description of rqt_bag_plugins
+Version: 0.4.3
+Cflags: 
+Libs: -L/home/pf/rosWS/install/lib 
+Requires: 

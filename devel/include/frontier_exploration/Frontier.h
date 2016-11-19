@@ -26,7 +26,7 @@ struct Frontier_
 {
   typedef Frontier_<ContainerAllocator> Type;
 
-  Frontier_()    //pf: familar to the construct function
+  Frontier_()
     : size(0)
     , min_distance(0.0)
     , initial()
@@ -45,7 +45,7 @@ struct Frontier_
 
 
    typedef uint32_t _size_type;
-  _size_type size;                                       //familar to the member of class
+  _size_type size;
 
    typedef double _min_distance_type;
   _min_distance_type min_distance;

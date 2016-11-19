@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/devel
+
+Name: rqt_srv
+Description: Description of rqt_srv
+Version: 0.4.3
+Cflags: 
+Libs: -L/home/pf/rosWS/devel/lib 
+Requires: 

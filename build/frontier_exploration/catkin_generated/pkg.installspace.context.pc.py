@@ -5,4 +5,4 @@ PROJECT_CATKIN_DEPENDS = "costmap_2d;dynamic_reconfigure;geometry_msgs;roscpp;tf
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lexplore_costmap;-l:/usr/lib/libpcl_common.so;-l:/usr/lib/x86_64-linux-gnu/libboost_system.so;-l:/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;-l:/usr/lib/x86_64-linux-gnu/libboost_thread.so;-l:/usr/lib/x86_64-linux-gnu/libboost_date_time.so;-l:/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;-l:/usr/lib/x86_64-linux-gnu/libboost_serialization.so;-l:/usr/lib/x86_64-linux-gnu/libpthread.so".split(';') if "-lexplore_costmap;-l:/usr/lib/libpcl_common.so;-l:/usr/lib/x86_64-linux-gnu/libboost_system.so;-l:/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;-l:/usr/lib/x86_64-linux-gnu/libboost_thread.so;-l:/usr/lib/x86_64-linux-gnu/libboost_date_time.so;-l:/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;-l:/usr/lib/x86_64-linux-gnu/libboost_serialization.so;-l:/usr/lib/x86_64-linux-gnu/libpthread.so" != "" else []
 PROJECT_NAME = "frontier_exploration"
 PROJECT_SPACE_DIR = "/home/pf/rosWS/install"
-PROJECT_VERSION = "0.3.0"
+PROJECT_VERSION = "0.3.1"

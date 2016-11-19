@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/devel
+
+Name: rqt_py_common
+Description: Description of rqt_py_common
+Version: 0.4.3
+Cflags: -I/home/pf/rosWS/devel/include
+Libs: -L/home/pf/rosWS/devel/lib 
+Requires: 

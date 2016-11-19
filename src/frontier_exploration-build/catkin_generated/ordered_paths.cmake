@@ -1,0 +1,1 @@
+set(ORDERED_PATHS "/home/pf/rosWS/devel/lib;/opt/ros/indigo/lib")

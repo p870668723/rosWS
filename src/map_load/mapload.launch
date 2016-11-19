@@ -1,5 +1,5 @@
 <launch>
-	<arg name="map_file" default="$(find map_load)/map/test.pgm"/>
+	<arg name="map_file" default="$(find map_load)/map/willow-full-0.05.pgm"/>
 	<!-- Run the map server -->
 	<node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file) 0.05" />
 </launch>
