@@ -119,6 +119,8 @@ boost/thread/mutex.hpp
 -
 boost/scoped_ptr.hpp
 -
+boost/concept_check.hpp
+-
 ros/ros.h
 /opt/ros/indigo/include/actionlib/client/ros/ros.h
 ros/callback_queue.h

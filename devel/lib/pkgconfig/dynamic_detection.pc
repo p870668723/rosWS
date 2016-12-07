@@ -1,0 +1,8 @@
+prefix=/home/pf/rosWS/devel
+
+Name: dynamic_detection
+Description: Description of dynamic_detection
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/pf/rosWS/devel/lib 
+Requires: 

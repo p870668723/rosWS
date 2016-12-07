@@ -1226,6 +1226,12 @@ dwa_local_planner_LIB_DEPENDS:STATIC=general;base_local_planner;general;trajecto
 //Value Computed by CMake
 dwa_local_planner_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation/dwa_local_planner
 
+//Value Computed by CMake
+dynamic_detection_BINARY_DIR:STATIC=/home/pf/rosWS/build/dynamic_detection
+
+//Value Computed by CMake
+dynamic_detection_SOURCE_DIR:STATIC=/home/pf/rosWS/src/dynamic_detection
+
 //The directory containing a CMake configuration file for dynamic_reconfigure.
 dynamic_reconfigure_DIR:PATH=/opt/ros/indigo/share/dynamic_reconfigure/cmake
 
@@ -2054,7 +2060,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=62
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=85
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -2406,6 +2412,8 @@ QT_DESIGNER_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: QT_DOC_DIR
 QT_DOC_DIR-ADVANCED:INTERNAL=1
 QT_HEADERS_DIR:INTERNAL=/usr/include/qt4
+//ADVANCED property for variable: QT_LIBRARY_DIR
+QT_LIBRARY_DIR-ADVANCED:INTERNAL=1
 //Qt library dir
 QT_LIBRARY_DIR:INTERNAL=/usr/lib/x86_64-linux-gnu
 //ADVANCED property for variable: QT_LINGUIST_EXECUTABLE

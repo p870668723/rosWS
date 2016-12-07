@@ -7,5 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PATH="/home/pf/rosWS/devel/bin:$PATH"
 export PWD="/home/pf/rosWS/build"
