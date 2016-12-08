@@ -15,6 +15,12 @@ sensor_msgs/Range.h
 -
 sensor_msgs/LaserScan.h
 -
+map_msgs/ProjectedMap.h
+-
+nav_msgs/OccupancyGrid.h
+-
+geometry_msgs/Pose.h
+-
 unistd.h
 -
 stdio.h
@@ -26,5 +32,7 @@ stdlib.h
 time.h
 -
 queue
+-
+vector
 -
 
