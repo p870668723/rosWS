@@ -19,6 +19,8 @@ map_msgs/ProjectedMap.h
 -
 nav_msgs/OccupancyGrid.h
 -
+nav_msgs/Odometry.h
+-
 geometry_msgs/Pose.h
 -
 unistd.h
@@ -34,5 +36,7 @@ time.h
 queue
 -
 vector
+-
+math.h
 -
 
