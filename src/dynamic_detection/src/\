@@ -7,7 +7,6 @@
 #include <nav_msgs/Odometry.h>
 #include <geometry_msgs/Pose.h>
 #include <unistd.h>
-#include <tf/transform_broadcaster.h>
 #include <stdio.h>
 #include <pthread.h>
 #include <stdlib.h>
@@ -18,10 +17,10 @@
 
 #define BEAM_THRESH 0.05
 #define BEAMS 1080
-#define MAX_RANGE 5
+#define MAX_RANGE 6
 #define SOLUTION 0.1
-#define map_x 200
-#define map_y 200
+#define map_x 120
+#define map_y 120
 
 /********************************话题订阅回调函数声明*****************************************/
 /*************************************************************************************/
@@ -35,7 +34,7 @@ void rbtPose(const nav_msgs::Odometry& rvtPs);
 
 void pthread_publish(void);
 std::queue<int> beam_substract(float *minuend,float * subtrahend,int n );//激光束对应的beam作差,如果超过阈值,则认为有动态物体.
-void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m);//地图更新函数,根据mark_beam来跟新动态物体的位置
+void map_update(int **map,float *beams, std::queue<int> mark_beam);//地图更新函数,根据mark_beam来跟新动态物体的位置
 
 /********************************全局变量声明*****************************************/
 /*************************************************************************************/
@@ -46,7 +45,7 @@ nav_msgs::OccupancyGrid Map_Msg;//栅格地图消息
 geometry_msgs::Pose RobotCenter;//地图中心,应该定义为机器人的中心
 int map[map_x][map_y];          //地图数组
 float AngleIncrement;
-float AglRbt;
+
 
 int main(int argc, char *argv[])
 {
@@ -57,7 +56,6 @@ int main(int argc, char *argv[])
     ros::Publisher pub=nh.advertise<nav_msgs::OccupancyGrid>("/substracted",1000);
     ros::Subscriber sub=nh.subscribe("/base_scan",1000,&data_substract);
     ros::Subscriber robot_pose=nh.subscribe("/odom",1000,&rbtPose);
-
     ros::Rate rate(5);
     while(ros::ok())
     {
@@ -83,11 +81,13 @@ void data_substract(const sensor_msgs::LaserScan& msg)
     {
         scan_data[frames][j] = msg.ranges[j];
     }
+    frames++;
+    if(frames>10) {frames=0;}
     //激光束作差
     if(frames==10) { mark_beam = beam_substract(scan_data[10],scan_data[0],BEAMS);}
     else mark_beam = beam_substract(scan_data[frames],scan_data[frames+1],BEAMS);
 
-    for(int i=0;i<map_x*map_y;i++)
+    for(int i=0;i<14400;i++)
     {
         *((int*)map+i)=0;
     }
@@ -96,29 +96,22 @@ void data_substract(const sensor_msgs::LaserScan& msg)
         ROS_INFO("MARKED_BEAM: %d",mark_beam.front());
         mark_beam.pop();
         /*调用地图更新函数*/
-        map_update((int **)map,*(scan_data+frames),(std::queue<int>)mark_beam,AglRbt);
+        map_update((int **)map,*(scan_data+frames),(std::queue<int>)mark_beam);
     }
 
     std::vector<signed char> VMap(*map,*map+(map_x*map_y));//将数组地图转化为向量,用以发布消息的赋值.
     Map_Msg.data=VMap;//
-
-    frames++;
-    if(frames>10) {frames=0;}
-
 }
 
 //订阅机器人位姿的回调函数.
 void rbtPose(const nav_msgs::Odometry& rbtPs)
 {
     //地图中心初始化
-    //RobotCenter=rbtPs.pose.pose;
-    RobotCenter.position.x=rbtPs.pose.pose.position.x-5;
-    RobotCenter.position.y=rbtPs.pose.pose.position.y-5;
-    //RobotCenter.orientation.x=0;
-    //RobotCenter.orientation.y=0;
-    RobotCenter.orientation.z=0;
-    //RobotCenter=rbtPs.pose.pose;
-    AglRbt=tf::getYaw(rbtPs.pose.pose.orientation);
+    RobotCenter.position.x=rbtPs.pose.pose.position.x+3;
+    RobotCenter.position.y=rbtPs.pose.pose.position.y+3;
+    RobotCenter.orientation=rbtPs.pose.pose.orientation;
+    //tf::getYaw(RobotCenter.orientation)*57.3;
+    //RobotCenter.orientation.x=7;
     //地图信息配置
     Map_Msg.info.width=map_x;
     Map_Msg.info.height=map_y;
@@ -148,7 +141,7 @@ std::queue<int> beam_substract(float *minuend,float * subtrahend,int n )
 }
 
 //地图更新函数
-void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m)
+void map_update(int **map,float *beams, std::queue<int> mark_beam)
 {
     int x_grid;
     int y_grid;
@@ -158,14 +151,13 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
     {
         if(!mark_beam.empty())
         {
-            //ROS_INFO("ANG: %f",AglRbt);
-            theta=2.35+AglRbt_m+AngleIncrement*mark_beam.front();//此处的0.23为地图与机器人坐标的矫正值
-            ROS_INFO("theta: %f",theta);
-            //theta=theta*3.14/180;
+            theta=AngleIncrement*mark_beam.front();
             range=beams[mark_beam.front()];
             mark_beam.pop();
-            x_grid=2*range*cos(theta)/SOLUTION;//变动激光击中的点的x坐标
-            y_grid=-2*range*sin(theta)/SOLUTION;//变动激光击中的点的y坐标
+            x_grid=range*cos(theta)/SOLUTION;//变动激光击中的点的x坐标
+            y_grid=range*sin(theta)/SOLUTION;//变动激光击中的点的y坐标
+            //for(int i=0;i<14400;i++)
+            //*((int *)map+i)=0;
 
             *((int *)map +(map_x*map_y/2+map_y/2)+ (x_grid-1)*map_y + y_grid)=100;
 
