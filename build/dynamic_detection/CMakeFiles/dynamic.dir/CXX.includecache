@@ -7,8 +7,6 @@
 #IncludeRegexTransform: 
 
 /home/pf/rosWS/src/dynamic_detection/src/dynamic.cpp
-ros/ros.h
--
 std_msgs/Header.h
 -
 sensor_msgs/Range.h

@@ -1,4 +1,4 @@
-#include <ros/ros.h>
+﻿#include <ros/ros.h>
 #include <std_msgs/Header.h>
 #include <sensor_msgs/Range.h>
 #include <sensor_msgs/LaserScan.h>
@@ -33,21 +33,22 @@ void rbtPose(const nav_msgs::Odometry& rvtPs);
 /*************************************************************************************/
 void data_substract(const sensor_msgs::LaserScan& msg);
 void rbtPose(const nav_msgs::Odometry& rvtPs);
-
+void cal_centroid(std::queue<int> group_x,std::queue<int> group_y,int *centroid);
 void pthread_publish(void);
-std::queue<int> beam_substract(double *minuend,double * subtrahend,int n );//激光束对应的beam作差,如果超过阈值,则认为有动态物体.
-void map_update(int **map,double *beams, std::queue<int> mark_beam,double AglRbt_m);//地图更新函数,根据mark_beam来跟新动态物体的位置
+std::queue<int> beam_substract(float *minuend,float * subtrahend,int n );//激光束对应的beam作差,如果超过阈值,则认为有动态物体.
+void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m);//地图更新函数,根据mark_beam来跟新动态物体的位置
+void kalman_vel(int *coordinate);//kalman filter
 
 /********************************全局变量声明*****************************************/
 /*************************************************************************************/
 time_t tm;
-double scan_data[11][1081]={{0}};      //一共保存11帧数据,每组数据有1081个beams.
+float scan_data[11][1081]={{0}};      //一共保存11帧数据,每组数据有1081个beams.
 static int frames=0;            //静态数据
 nav_msgs::OccupancyGrid Map_Msg;//栅格地图消息
 geometry_msgs::Pose RobotCenter;//地图中心,应该定义为机器人的中心
 int map[map_x][map_y];          //地图数组
-double AngleIncrement;
-double AglRbt;
+float AngleIncrement;
+float AglRbt;
 
 int main(int argc, char *argv[])
 {
@@ -62,7 +63,6 @@ int main(int argc, char *argv[])
     ros::Rate rate(5);
     while(ros::ok())
     {
-
         pub.publish(Map_Msg);
         ROS_INFO("PUBLISH...");
         ros::spinOnce();
@@ -88,7 +88,7 @@ void data_substract(const sensor_msgs::LaserScan& msg)
     if(frames==10) { mark_beam = beam_substract(scan_data[10],scan_data[0],BEAMS);}
     else mark_beam = beam_substract(scan_data[frames],scan_data[frames+1],BEAMS);
 
-    for(int i=0;i<map_x*map_y;i++)
+    for(int i=0;i<map_x*map_y;i++)// clear the whole map
     {
         *((int*)map+i)=0;
     }
@@ -129,14 +129,15 @@ void rbtPose(const nav_msgs::Odometry& rbtPs)
 
 /******************************普通函数************************************/
 //两帧激光束之间作差函数,
-std::queue<int> beam_substract(double *minuend,double * subtrahend,int n )
+std::queue<int> beam_substract(float *minuend,float * subtrahend,int n )
 {
     std::queue<int> marked_beam;
-    double result;
+
+    float result;
     for(int i=0;i<n;i++)
     {
       result=  minuend[i]-subtrahend[i];
-      if(result>BEAM_THRESH || result<-BEAM_THRESH)
+      if(result>BEAM_THRESH || result<-BEAM_THRESH  )
       {
           marked_beam.push(i);
       }
@@ -145,36 +146,67 @@ std::queue<int> beam_substract(double *minuend,double * subtrahend,int n )
 }
 
 //地图更新函数
-void map_update(int **map,double *beams, std::queue<int> mark_beam,double AglRbt_m)
+void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m)
 {
     int x_grid;
     int y_grid;
-    double theta=0;
-    double range=0;
-    while(1)
+    float theta=0;
+    float range=0;
+    std::queue<int> x_group;
+    std::queue<int> y_group;
+    int ctrd[2]={0,0};
+
+    while(!mark_beam.empty())
     {
-        if(!mark_beam.empty())
-        {
-            theta=2.355+AglRbt_m+AngleIncrement*mark_beam.front();//此处的0.255为地图与机器人坐标的矫正值
-            while(1)//normalize the angle
-            {
-                if(theta>PI)
-                    theta = theta-2*PI;
-                else if(theta<-PI)
-                    theta =theta+2*PI;
-                else break;
-            }
-            range=beams[mark_beam.front()];
-            mark_beam.pop();
-            x_grid=(range*cos(theta)/SOLUTION);//变动激光击中的点的x坐标
-            y_grid=-(range*sin(theta)/SOLUTION);//变动激光击中的点的y坐标
-            //x_grid=0;
+        theta=2.355+AglRbt_m+AngleIncrement*mark_beam.front();//此处的2.355为地图与机器人坐标的矫正值
+//        while(1)//normalize the angle
+//        {
+//            if(theta>PI)
+//                theta = theta-2*PI;
+//            else if(theta<-PI)
+//                theta =theta+2*PI;
+//            else break;
+//        }
+        range=beams[mark_beam.front()];
+        mark_beam.pop();
+//        if(range>5) continue;//雷达边界附近的激光舍去 ...this code will cause running error :Floating point exception  (core dumped)
 
-            *((int *)map +(map_x*map_y/2+map_y/2)+ (x_grid-1)*map_y + y_grid)=100;
+        x_grid=(range*cos(theta)/SOLUTION);//变动激光击中的点的x坐标
+        y_grid=-(range*sin(theta)/SOLUTION);//变动激光击中的点的y坐标
 
-        }
-        else break;
+        x_group.push(x_grid);
+        y_group.push(y_grid);
+
+        //*((int *)map +(map_x*map_y/2+map_y/2)+ (x_grid-1)*map_y + y_grid)=100;
     }
+    cal_centroid(x_group,y_group,ctrd);
+    *((int *)map +(map_x*map_y/2+map_y/2)+ (ctrd[0]-1)*map_y + ctrd[1])=100;
 }
 
+/*@des 计算质心函数
+ * @group_x x坐标队列
+ * @centroid 一个二维数组,作为分别包含质点的x坐标和y坐标
+ **/
+void cal_centroid(std::queue<int> group_x,std::queue<int> group_y,int *centroid)
+{
+    int sum_x=0,sum_y=0,num=0;
+    num=group_x.size();
+    while(!group_x.empty())
+    {
+        sum_x += group_x.front();
+        sum_y += group_y.front();
 
+        group_x.pop();
+        group_y.pop();
+    }
+    centroid[0] = sum_x/num;
+    centroid[1] = sum_y/num;
+}
+/*@des
+ * @
+ * @
+ * @
+ * */
+void kalman_vel(int *coordinate)
+{
+}
