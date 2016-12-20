@@ -19,6 +19,8 @@ nav_msgs/OccupancyGrid.h
 -
 nav_msgs/Odometry.h
 -
+nav_msgs/Path.h
+-
 geometry_msgs/Pose.h
 -
 unistd.h
