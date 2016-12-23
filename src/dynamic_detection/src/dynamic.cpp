@@ -59,7 +59,7 @@ float kalman_filter(kal_param *k_flt,int input);//kalman filter
 /*************************************************************************************/
 //x,y卡尔曼滤波的参数
 kal_param x_pos_param={0,0,1,1,0,0,0,0};
-kal_param y_pos_param;
+kal_param y_pos_param={0,0,1,1,0,0,0,0};
 kal_param x_vel_param;
 kal_param y_vel_param;
 

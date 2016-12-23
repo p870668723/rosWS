@@ -53,7 +53,7 @@ void cal_centroid(std::queue<int> group_x,std::queue<int> group_y,int *centroid)
 void pthread_publish(void);
 std::queue<int> beam_substract(float *minuend,float * subtrahend,int n );//激光束对应的beam作差,如果超过阈值,则认为有动态物体.
 void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m);//地图更新函数,根据mark_beam来跟新动态物体的位置
-float kalman_filter(int *coordinate);//kalman filter
+float kalman_filter(kal_param *k_flt,int input);//kalman filter
 
 /********************************全局变量声明*****************************************/
 /*************************************************************************************/
@@ -212,8 +212,8 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
     cal_centroid(x_group,y_group,ctrd);
 
 //    last_average_range=SOLUTION*sqrt(ctrd[0]^2+ctrd[1]^2);
-//	kalman_filter(x_pos_param, ctrd[0]);
-//	ctrd[1]=kalman_filter(y_pos_param, ctrd[1]);
+//	ctrd[0]=kalman_filter(&x_pos_param, ctrd[0]);
+//	ctrd[1]=kalman_filter(&y_pos_param, ctrd[1]);
 
     *((int *)map + (map_x*map_y/2+map_y/2) + (ctrd[0]-1)*map_y + ctrd[1])=100;
 }

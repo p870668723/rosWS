@@ -12,5 +12,4 @@ Point_custom;
 
 void search_8_neighbor();
 queue<int> Search_region(int** map,int x_total, int y_total);
-
 #endif
