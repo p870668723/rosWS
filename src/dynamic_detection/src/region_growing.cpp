@@ -13,13 +13,11 @@ queue<int> Search_region(int** map,int x_total, int y_total)
 
     Point_custom map_copy[x_total][y_total];
 
-    int x=0,y=0;
-
     for(int i=0 ; i<x_total; i++)
         for(int j=0 ; j<y_total;j++)
         {
 
-            map_copy[i][j].value = *( (int *)map + i*y_total + y );//将地图元素拷贝到一个二维数组
+            map_copy[i][j].value = *( (int *)map + i*y_total + j );//将地图元素拷贝到一个二维数组
             map_copy[i][j].x = i;
             map_copy[i][j].y = j;
             map_copy[i][j].status_search=0;
@@ -40,10 +38,74 @@ queue<int> Search_region(int** map,int x_total, int y_total)
 
     while(!points.empty())
     {
-        Point_custom temp_p = points.front();
+        queue<Point_custom> region_front;//搜索前沿,里面包含待搜索的点
+
+        Point_custom check_point;//待考察的点的周围的点,即检查这些点的值是否为占据状态;
+        Point_custom temp_p;//待考察的点
+
+        region_front.push(points.front());//搜索起始点
         points.pop();
-        if(map_copy[temp_p.x][temp_p.y].value)
+
+        while(!region_front.empty()) //存在待搜索的点
         {
+            temp_p=region_front.front();//取出待考察的点
+            region_front.pop();
+
+            check_point = map_copy[temp_p.x][temp_p.y+1];//search the right point
+            if(check_point.value && check_point.status_search==0)
+            {
+                region_front.push(check_point);
+                map_copy[temp_p.x][temp_p.y+1].status_search=1;
+            }
+
+            check_point = map_copy[temp_p.x-1][temp_p.y+1];//search the right top point
+            if(check_point.value && check_point.status_search==0)
+            {
+                region_front.push(check_point);
+                map_copy[temp_p.x-1][temp_p.y+1].status_search=1;
+            }
+
+            check_point = map_copy[temp_p.x-1][temp_p.y];//search the top point
+            if(check_point.value && check_point.status_search==0)
+            {
+                region_front.push(check_point);
+                map_copy[temp_p.x-1][temp_p.y].status_search=1;
+            }
+
+            check_point = map_copy[temp_p.x-1][temp_p.y-1];//search the left top point
+            if(check_point.value && check_point.status_search==0)
+            {
+                region_front.push(check_point);
+                map_copy[temp_p.x-1][temp_p.y-1].status_search=1;
+            }
+
+            check_point = map_copy[temp_p.x-1][temp_p.y];//search the left  point
+            if(check_point.value && check_point.status_search==0)
+            {
+                region_front.push(check_point);
+                map_copy[temp_p.x-1][temp_p.y].status_search=1;
+            }
+
+            check_point = map_copy[temp_p.x-1][temp_p.y-1];//search the left down point
+            if(check_point.value && check_point.status_search==0)
+            {
+                region_front.push(check_point);
+                map_copy[temp_p.x-1][temp_p.y-1].status_search=1;
+            }
+
+            check_point = map_copy[temp_p.x+1][temp_p.y];//search the down point
+            if(check_point.value && check_point.status_search==0)
+            {
+                region_front.push(check_point);
+                map_copy[temp_p.x+1][temp_p.y].status_search=1;
+            }
+
+            check_point = map_copy[temp_p.x+1][temp_p.y+1];//search the right down point
+            if(check_point.value && check_point.status_search==0)
+            {
+                region_front.push(check_point);
+                map_copy[temp_p.x+1][temp_p.y+1].status_search=1;
+            }
 
         }
     }
