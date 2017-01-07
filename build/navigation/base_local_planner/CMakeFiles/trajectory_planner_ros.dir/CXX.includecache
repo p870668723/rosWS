@@ -296,6 +296,26 @@ geometry_msgs/Point.h
 base_local_planner/planar_laser_scan.h
 -
 
+/home/pf/rosWS/src/navigation/base_local_planner/src/trajectory_planner.cpp
+base_local_planner/trajectory_planner.h
+-
+costmap_2d/footprint.h
+-
+string
+-
+sstream
+-
+math.h
+-
+angles/angles.h
+-
+boost/algorithm/string.hpp
+-
+ros/console.h
+-
+queue
+-
+
 /home/pf/rosWS/src/navigation/base_local_planner/src/trajectory_planner_ros.cpp
 base_local_planner/trajectory_planner_ros.h
 -
@@ -473,6 +493,10 @@ class_loader/class_loader_register_macro.h
 /opt/ros/indigo/include/class_loader/class_loader/class_loader_register_macro.h
 class_loader/class_loader_core.h
 /opt/ros/indigo/include/class_loader/class_loader/class_loader_core.h
+memory
+-
+functional
+-
 
 /opt/ros/indigo/include/class_loader/class_loader_core.h
 Poco/SharedLibrary.h

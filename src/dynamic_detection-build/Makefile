@@ -472,6 +472,30 @@ src/dynamic.cpp.s:
 	$(MAKE) -f CMakeFiles/dynamic.dir/build.make CMakeFiles/dynamic.dir/src/dynamic.cpp.s
 .PHONY : src/dynamic.cpp.s
 
+src/region_growing.o: src/region_growing.cpp.o
+.PHONY : src/region_growing.o
+
+# target to build an object file
+src/region_growing.cpp.o:
+	$(MAKE) -f CMakeFiles/dynamic.dir/build.make CMakeFiles/dynamic.dir/src/region_growing.cpp.o
+.PHONY : src/region_growing.cpp.o
+
+src/region_growing.i: src/region_growing.cpp.i
+.PHONY : src/region_growing.i
+
+# target to preprocess a source file
+src/region_growing.cpp.i:
+	$(MAKE) -f CMakeFiles/dynamic.dir/build.make CMakeFiles/dynamic.dir/src/region_growing.cpp.i
+.PHONY : src/region_growing.cpp.i
+
+src/region_growing.s: src/region_growing.cpp.s
+.PHONY : src/region_growing.s
+
+# target to generate assembly for a file
+src/region_growing.cpp.s:
+	$(MAKE) -f CMakeFiles/dynamic.dir/build.make CMakeFiles/dynamic.dir/src/region_growing.cpp.s
+.PHONY : src/region_growing.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -511,6 +535,9 @@ help:
 	@echo "... src/dynamic.o"
 	@echo "... src/dynamic.i"
 	@echo "... src/dynamic.s"
+	@echo "... src/region_growing.o"
+	@echo "... src/region_growing.i"
+	@echo "... src/region_growing.s"
 .PHONY : help
 
 

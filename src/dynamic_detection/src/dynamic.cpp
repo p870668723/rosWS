@@ -16,6 +16,7 @@
 #include <queue>
 #include <vector>
 #include <math.h>
+#include "region_growing.h"
 
 #define PI 3.14159
 #define BEAM_THRESH 0.05
@@ -147,7 +148,6 @@ void rbtPose(const nav_msgs::Odometry& rbtPs)
     Map_Msg.info.height=map_y;
     Map_Msg.info.resolution=SOLUTION;
     Map_Msg.info.origin=RobotCenter;
-    ROS_INFO("IN RBTPOSE");
 
 }
 
@@ -181,41 +181,40 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
     int y_grid;
     float theta=0;
     float range=0;
-    float last_average_range;
+    std::queue<Point_custom> region_ctr;
     std::queue<int> x_group;
     std::queue<int> y_group;
-    int ctrd[2]={0,0};    //ctrd[0]是中心点x的坐标..ctrd[1]是中心点y的坐标
 
     while(!mark_beam.empty())
     {
         theta=2.355+AglRbt_m+AngleIncrement*mark_beam.front();//此处的2.355为地图与机器人坐标的矫正值
-//        while(1)//normalize the angle
-//        {
-//            if(theta>PI)
-//                theta = theta-2*PI;
-//            else if(theta<-PI)
-//                theta =theta+2*PI;
-//            else break;
-//        }
+
         range=beams[mark_beam.front()];
         mark_beam.pop();
         if(range>MAX_RANGE-0.2) continue;//雷达边界附近的激光舍去
-		x_grid=(range*cos(theta)/SOLUTION);//变动激光击中的点的x坐标
-        y_grid=-(range*sin(theta)/SOLUTION);//变动激光击中的点的y坐标
+		x_grid=(range*cos(theta)/SOLUTION);//变动激光击中的点的x坐标,以地图中心为原点
+        y_grid=-(range*sin(theta)/SOLUTION);//变动激光击中的点的y坐标,以地图中心为原点
 
         x_group.push(x_grid);
         y_group.push(y_grid);
 
-//        *((int *)map +(map_x*map_y/2+map_y/2)+ (x_grid-1)*map_y + y_grid)=100;
+        *((int *)map +(map_x*map_y/2+map_y/2)+ (x_grid-1)*map_y + y_grid)=20;//将所有的击中点标记到地图之中,以提供给Search_region()函数搜索
 
     }
-    cal_centroid(x_group,y_group,ctrd);
 
-//    last_average_range=SOLUTION*sqrt(ctrd[0]^2+ctrd[1]^2);
-//	ctrd[0]=kalman_filter(&x_pos_param, ctrd[0]);
-//	ctrd[1]=kalman_filter(&y_pos_param, ctrd[1]);
+    region_ctr = Search_region(map,map_x,map_y);
 
-    *((int *)map + (map_x*map_y/2+map_y/2) + (ctrd[0]-1)*map_y + ctrd[1])=100;
+    //for(int i=0;i<map_x*map_y;i++)
+    //    *((int *)map+i)=0;//清空整个地图,用搜索到中心来重画地图
+
+    ROS_INFO("NUM of CENTER: %ld ", region_ctr.size());
+    while(!region_ctr.empty())
+    {
+        //if(region_ctr.front().x<map_x/2 && region_ctr.front().x>-map_x/2 && region_ctr.front().y<map_y/2 && region_ctr.front().y>-map_y/2)
+            *((int *)map + (region_ctr.front().x)*map_y + region_ctr.front().y)=100;  //这里的region_ctr.front().x是以地图的角落为原点的
+        region_ctr.pop();
+    }
+
 }
 
 /*@des 计算质心函数
@@ -228,7 +227,6 @@ void cal_centroid(std::queue<int> group_x,std::queue<int> group_y,int *centroid)
     num=group_x.size();
     while(!group_x.empty())
     {
-
         sum_x += group_x.front();
         sum_y += group_y.front();
 

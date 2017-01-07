@@ -1,16 +1,20 @@
 #ifndef REGION_GROWING_H
 #define REGION_GROWING_H
 
-typedef struct pt
+
+struct Point_custom
 {
 	int x;
 	int y;
 	bool status_search;
 	int value;
-}
-Point_custom;
+	bool operator==(const Point_custom& rhs)
+    {
+        return( x == rhs.x) && (y == rhs.y)&& (value == rhs.value);
+ 
+    }
+};
 
-void search_8_neighbor();
-queue<int> Search_region(int** map,int x_total, int y_total);
+std::queue<Point_custom> Search_region(int** map,int x_total, int y_total);
 
 #endif

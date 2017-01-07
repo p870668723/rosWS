@@ -214,6 +214,28 @@ vector
 global_planner/potential_calculator.h
 -
 
+/home/pf/rosWS/src/navigation/global_planner/src/astar.cpp
+global_planner/astar.h
+-
+costmap_2d/cost_values.h
+-
+
+/home/pf/rosWS/src/navigation/global_planner/src/dijkstra.cpp
+global_planner/dijkstra.h
+-
+algorithm
+-
+
+/home/pf/rosWS/src/navigation/global_planner/src/gradient_path.cpp
+global_planner/gradient_path.h
+-
+algorithm
+-
+stdio.h
+-
+global_planner/planner_core.h
+-
+
 /home/pf/rosWS/src/navigation/global_planner/src/planner_core.cpp
 global_planner/planner_core.h
 -
@@ -275,6 +297,10 @@ class_loader/class_loader_register_macro.h
 /opt/ros/indigo/include/class_loader/class_loader/class_loader_register_macro.h
 class_loader/class_loader_core.h
 /opt/ros/indigo/include/class_loader/class_loader/class_loader_core.h
+memory
+-
+functional
+-
 
 /opt/ros/indigo/include/class_loader/class_loader_core.h
 Poco/SharedLibrary.h

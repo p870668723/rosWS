@@ -110,14 +110,6 @@ QMessageBox
 QPainter
 -
 
-/home/pf/rosWS/src/rqt_common_plugins/rqt_image_view/src/rqt_image_view/ratio_layouted_frame.cpp
-rqt_image_view/ratio_layouted_frame.h
--
-assert.h
--
-QMouseEvent
--
-
 /opt/ros/indigo/include/XmlRpcDecl.h
 ros/macros.h
 -
@@ -151,6 +143,10 @@ class_loader/class_loader_register_macro.h
 /opt/ros/indigo/include/class_loader/class_loader/class_loader_register_macro.h
 class_loader/class_loader_core.h
 /opt/ros/indigo/include/class_loader/class_loader/class_loader_core.h
+memory
+-
+functional
+-
 
 /opt/ros/indigo/include/class_loader/class_loader_core.h
 Poco/SharedLibrary.h
@@ -1769,10 +1765,6 @@ qlineedit.h
 /usr/include/qt4/QtGui/QMessageBox
 qmessagebox.h
 /usr/include/qt4/QtGui/qmessagebox.h
-
-/usr/include/qt4/QtGui/QMouseEvent
-qevent.h
-/usr/include/qt4/QtGui/qevent.h
 
 /usr/include/qt4/QtGui/QPainter
 qpainter.h

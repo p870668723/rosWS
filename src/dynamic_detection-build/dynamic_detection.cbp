@@ -57,6 +57,7 @@
             <Add option="-DROS_PACKAGE_NAME=&quot;dynamic_detection&quot;" />
             <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
             <Add directory="/home/pf/rosWS/devel/include" />
+            <Add directory="/home/pf/rosWS/src/dynamic_detection/src" />
             <Add directory="/opt/ros/indigo/include" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/4.8" />
@@ -84,6 +85,7 @@
             <Add option="-DROS_PACKAGE_NAME=&quot;dynamic_detection&quot;" />
             <Add option="-DROSCONSOLE_BACKEND_LOG4CXX" />
             <Add directory="/home/pf/rosWS/devel/include" />
+            <Add directory="/home/pf/rosWS/src/dynamic_detection/src" />
             <Add directory="/opt/ros/indigo/include" />
             <Add directory="/usr/include" />
             <Add directory="/usr/include/c++/4.8" />
@@ -446,9 +448,13 @@
       </Build>
       <Unit filename="/home/pf/rosWS/src/dynamic_detection/src/dynamic.cpp">
       </Unit>
+      <Unit filename="/home/pf/rosWS/src/dynamic_detection/src/region_growing.cpp">
+      </Unit>
       <Unit filename="/usr/src/gtest/src/gtest-all.cc">
       </Unit>
       <Unit filename="/usr/src/gtest/src/gtest_main.cc">
+      </Unit>
+      <Unit filename="/home/pf/rosWS/src/dynamic_detection/src/region_growing.h">
       </Unit>
       <Unit filename="/home/pf/rosWS/src/dynamic_detection/CMakeLists.txt">
           <Option virtualFolder="CMake Files\" />

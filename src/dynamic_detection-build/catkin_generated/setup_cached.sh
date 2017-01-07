@@ -8,7 +8,9 @@
 
 # modified environment variables
 export CMAKE_PREFIX_PATH="/home/pf/rosWS/src/dynamic_detection-build/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/pf/rosWS/src/dynamic_detection-build/devel/lib:$LD_LIBRARY_PATH"
 export PATH="/home/pf/rosWS/devel/bin:/opt/ros/indigo/bin:/usr/lib/x86_64-linux-gnu/qt5/bin:/usr/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PKG_CONFIG_PATH="/home/pf/rosWS/src/dynamic_detection-build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/pf/rosWS/src/dynamic_detection-build"
 export ROSLISP_PACKAGE_DIRECTORIES="/home/pf/rosWS/src/dynamic_detection-build/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
 export ROS_PACKAGE_PATH="/home/pf/rosWS/src/dynamic_detection:$ROS_PACKAGE_PATH"

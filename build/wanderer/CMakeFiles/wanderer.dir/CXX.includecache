@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+/home/pf/rosWS/src/wanderer/src/run_wanderer.cpp
+wanderer.h
+/home/pf/rosWS/src/wanderer/src/wanderer.h
+
 /home/pf/rosWS/src/wanderer/src/wanderer.cpp
 wanderer.h
 /home/pf/rosWS/src/wanderer/src/wanderer.h

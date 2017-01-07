@@ -91,7 +91,7 @@ CMAKE_AR:FILEPATH=/usr/bin/ar
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
-CMAKE_BUILD_TYPE:STRING=Debug
+CMAKE_BUILD_TYPE:STRING=
 
 //Enable/Disable color output during build.
 CMAKE_COLOR_MAKEFILE:BOOL=ON
@@ -1212,12 +1212,6 @@ cpp_common_DIR:PATH=/opt/ros/indigo/share/cpp_common/cmake
 cv_bridge_DIR:PATH=/opt/ros/indigo/share/cv_bridge/cmake
 
 //Value Computed by CMake
-demo_BINARY_DIR:STATIC=/home/pf/rosWS/build/demo
-
-//Value Computed by CMake
-demo_SOURCE_DIR:STATIC=/home/pf/rosWS/src/demo
-
-//Value Computed by CMake
 dwa_local_planner_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation/dwa_local_planner
 
 //Dependencies for the target
@@ -1800,9 +1794,6 @@ slam_gmapping_BINARY_DIR:STATIC=/home/pf/rosWS/build/gmapping-ros/slam_gmapping/
 //Value Computed by CMake
 slam_gmapping_SOURCE_DIR:STATIC=/home/pf/rosWS/src/gmapping-ros/slam_gmapping/slam_gmapping
 
-//Dependencies for the target
-slam_gmapping_nodelet_LIB_DEPENDS:STATIC=general;gridfastslam;general;scanmatcher;general;sensor_base;general;sensor_range;general;sensor_odometry;general;utils;general;/opt/ros/indigo/lib/libtf.so;general;/opt/ros/indigo/lib/libtf2_ros.so;general;/opt/ros/indigo/lib/libactionlib.so;general;/opt/ros/indigo/lib/libmessage_filters.so;general;/opt/ros/indigo/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/indigo/lib/libxmlrpcpp.so;general;/opt/ros/indigo/lib/libtf2.so;general;/opt/ros/indigo/lib/libroscpp_serialization.so;general;/opt/ros/indigo/lib/librosconsole.so;general;/opt/ros/indigo/lib/librosconsole_log4cxx.so;general;/opt/ros/indigo/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/opt/ros/indigo/lib/librostime.so;general;/opt/ros/indigo/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/opt/ros/indigo/lib/librosbag_storage.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/indigo/lib/libroslz4.so;general;/usr/lib/x86_64-linux-gnu/liblz4.so;
-
 //The directory containing a CMake configuration file for smclib.
 smclib_DIR:PATH=/opt/ros/indigo/share/smclib/cmake
 
@@ -1814,9 +1805,6 @@ stage_ros_BINARY_DIR:STATIC=/home/pf/rosWS/build/stage_ros
 
 //Value Computed by CMake
 stage_ros_SOURCE_DIR:STATIC=/home/pf/rosWS/src/stage_ros
-
-//The directory containing a CMake configuration file for std_msg.
-std_msg_DIR:PATH=std_msg_DIR-NOTFOUND
 
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/opt/ros/indigo/share/std_msgs/cmake
