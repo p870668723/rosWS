@@ -10,11 +10,12 @@ struct Point_custom
 	int value;
 	bool operator==(const Point_custom& rhs)
     {
-        return( x == rhs.x) && (y == rhs.y);
+        return( x == rhs.x) && (y == rhs.y)&& (value == rhs.value);
  
     }
 };
 
 std::queue<Point_custom> Search_region(int** map,int x_total, int y_total);
+void preDealExpand(int **map,int MAP_X, int MAP_Y,char threshold);
 
 #endif

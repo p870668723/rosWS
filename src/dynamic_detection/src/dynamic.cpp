@@ -80,10 +80,10 @@ int main(int argc, char *argv[])
     ros::NodeHandle nh;
     ROS_INFO("***********START*************");
 
-    ros::Publisher pub_map=nh.advertise<nav_msgs::OccupancyGrid>("/substracted",1000);  //publish the local map of dynamics
+    ros::Publisher pub_map=nh.advertise<nav_msgs::OccupancyGrid>("/substracted",1);  //publish the local map of dynamics
 //    ros::Publisher pub_velocity=nh.advertise<nav_msgs::Path >("/kalman_filter",1000);      //publish the velocity of dynamics
-    ros::Subscriber sub=nh.subscribe("/base_scan",1000,&data_substract);                                  //subscribe the laser data
-    ros::Subscriber robot_pose=nh.subscribe("/odom",1000,&rbtPose);                                        //subscribe the odometry of robot
+    ros::Subscriber sub=nh.subscribe("/base_scan",1,&data_substract);                                  //subscribe the laser data
+    ros::Subscriber robot_pose=nh.subscribe("/odom",1,&rbtPose);                                        //subscribe the odometry of robot
 //    Velocity_Msg.poses.data();
 
     ros::Rate rate(5);
@@ -210,8 +210,8 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
     ROS_INFO("NUM of CENTER: %ld ", region_ctr.size());
     while(!region_ctr.empty())
     {
-        //if(region_ctr.front().x<map_x/2 && region_ctr.front().x>-map_x/2 && region_ctr.front().y<map_y/2 && region_ctr.front().y>-map_y/2)
-            *((int *)map + (region_ctr.front().x)*map_y + region_ctr.front().y)=100;  //这里的region_ctr.front().x是以地图的角落为原点的
+
+        *((int *)map + (region_ctr.front().x)*map_y + region_ctr.front().y)=100;  //这里的region_ctr.front().x是以地图的角落为原点的
         region_ctr.pop();
     }
 

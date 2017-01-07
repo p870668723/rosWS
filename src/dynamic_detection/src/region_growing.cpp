@@ -15,6 +15,9 @@ std::queue<Point_custom> Search_region(int** map,int x_total, int y_total)
     int sum_x=0,sum_y=0,num_pt_region=0;//used for caculate the data of one region
     Point_custom map_copy[x_total][y_total];
 
+
+    preDealExpand(map, x_total, y_total, 8);
+
     for(int i=0 ; i<x_total; i++)
         for(int j=0 ; j<y_total;j++)
         {
@@ -136,3 +139,31 @@ std::queue<Point_custom> Search_region(int** map,int x_total, int y_total)
 
 }
 
+
+void preDealExpand(int **map, int MAP_X, int MAP_Y, int threshold)
+{
+    std::queue<Point_custom> nonzero;
+    Point_custom p;
+    for(int i=threshold/2; i<(MAP_X-threshold/2); i++) //这里要求i和j 的值大于 threshold/2 ,否则后面的填充方法会越界
+        for(int j=threshold/2; j<(MAP_Y-threshold/2); j++)
+        {
+            if(  *( (int *)map + i*MAP_Y + j) !=0 ) //遍历出所有的非零点
+            {
+            //*( (int *)map + i*y_total + j );
+                p.x=i;
+                p.y=j;
+                nonzero.push(p);
+            }
+        }
+    ROS_INFO("t: %ld",nonzero.size());
+    while(!nonzero.empty())
+    {
+        for(int i=0; i<threshold/2; i++)
+            for(int j=0; j<threshold/2; j++)
+            {
+                //将非零点threshold/2附近的点全部填充
+                *( (int *)map + (nonzero.front().x - threshold/2 +i) * MAP_Y + (nonzero.front().y-threshold/2+j) ) = 20;
+            }
+        nonzero.pop();
+    }
+}
