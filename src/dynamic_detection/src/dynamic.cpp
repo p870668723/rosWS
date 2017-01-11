@@ -9,6 +9,7 @@
 #include <tf/transform_listener.h>
 #include <tf/transform_broadcaster.h>
 #include <geometry_msgs/Pose.h>
+#include <geometry_msgs/PoseStamped.h>
 #include <unistd.h>
 #include <stdio.h>
 #include <pthread.h>
@@ -34,8 +35,6 @@
 /********************************话题订阅回调函数声明*****************************************/
 /*************************************************************************************/
 void data_substract(const sensor_msgs::LaserScan& msg);
-void rbtPose(const nav_msgs::Odometry& rvtPs);
-//void tfPose(const nav_msgs::Odometry& tfPs);
 
 /********************************普通函数声明*****************************************/
 /*************************************************************************************/
@@ -58,10 +57,10 @@ float AngleIncrement;           //激光雷达的增角
 float AglRbt;                   //机器人的角度姿态
 std::list<Point_custom> LastMAP;//由于存储上一帧地图的有效点
 //x,y卡尔曼滤波的参数
-kal_param x_pos_param;
-kal_param y_pos_param;
-kal_param x_vel_param;
-kal_param y_vel_param;
+struct kal_param x_pos_param(0,0,1,2,0,0,0,0);
+struct kal_param y_pos_param(0,0,1,2,0,0,0,0);
+struct kal_param x_vel_param(0,0,1,2,0,0,0,0);
+struct kal_param y_vel_param(0,0,1,2,0,0,0,0);
 
 int main(int argc, char *argv[])
 {
@@ -70,10 +69,20 @@ int main(int argc, char *argv[])
     ROS_INFO("***********START*************");
 
     ros::Publisher pub_map=nh.advertise<nav_msgs::OccupancyGrid>("/substracted",1);  //publish the local map of dynamics
-//    ros::Publisher pub_velocity=nh.advertise<nav_msgs::Path >("/kalman_filter",1000);      //publish the velocity of dynamics
+    ros::Publisher pub_velocity=nh.advertise<nav_msgs::Odometry>("/kalman_filter",1);      //publish the velocity of dynamics
     ros::Subscriber sub=nh.subscribe("/base_scan",1,&data_substract);                                  //subscribe the laser data
-    ros::Subscriber robot_pose=nh.subscribe("/odom",1,&rbtPose);                                        //subscribe the odometry of robot
     tf::TransformListener listener;
+
+/*    //test: if wanna to  send velocity by nav_msgs::Odmetry, you have to specify the tf relationship between this and another frame.I GUESS!
+    nav_msgs::Odometry odo;
+    odo.header.frame_id="odome";
+    odo.pose.pose.position.x=4;
+    odo.pose.pose.position.y=4;
+    odo.pose.pose.orientation=tf::createQuaternionMsgFromYaw(2.1);
+    odo.twist.twist.linear.x=0.5;
+    odo.twist.twist.linear.y=0.5;
+    odo.twist.twist.angular.z=0.5;
+*/
 
     ros::Rate rate(10);
     while(ros::ok())
@@ -82,6 +91,7 @@ int main(int argc, char *argv[])
         listener.waitForTransform("/map","/base_laser_link",ros::Time(0),ros::Duration(10.0));
         listener.lookupTransform("/map","/base_laser_link",ros::Time(0),transform);
 
+        AglRbt = tf::getYaw( transform.getRotation() );//change the quaternion to Eular angle. use the angle to correct the pose of robot
         RobotCenter.position.x=transform.getOrigin().x()-5;
         RobotCenter.position.y=transform.getOrigin().y()-5;
         RobotCenter.orientation.z=0;
@@ -90,6 +100,8 @@ int main(int argc, char *argv[])
         Map_Msg.info.resolution=SOLUTION;
         Map_Msg.info.origin=RobotCenter;
         pub_map.publish(Map_Msg);
+
+//        pub_velocity.publish(odo);//test
 
 //        pub_velocity.publish(Velocity_Msg);
         ROS_INFO("PUBLISH...");
@@ -133,24 +145,6 @@ void data_substract(const sensor_msgs::LaserScan& msg)
     frames++;
     if(frames>10) {frames=0;}
 }
-
-//订阅机器人位姿的回调函数.
-void rbtPose(const nav_msgs::Odometry& rbtPs)
-{
-    //地图中心初始化
-    AglRbt=tf::getYaw(rbtPs.pose.pose.orientation);
- /*   RobotCenter.position.x=rbtPs.pose.pose.position.x-5+0.275*cos(AglRbt); //0.275是激光雷达与机器人中心的距离
-    RobotCenter.position.y=rbtPs.pose.pose.position.y-5-0.275*sin(AglRbt);
-    RobotCenter.orientation.z=0;
-
-    //地图信息配置
-    Map_Msg.info.width=map_x;
-    Map_Msg.info.height=map_y;
-    Map_Msg.info.resolution=SOLUTION;
-    Map_Msg.info.origin=RobotCenter;
-*/
-}
-
 
 
 /******************************普通函数************************************/
@@ -216,7 +210,6 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
         Point_custom mt_p = point_match(LastMAP,ctr_p);
 
         *((int *)map + (ctr_p.x)*map_y + ctr_p.y)=100;  //这里的region_ctr.front().x是以地图的角落为原点的
-        *((int *)map + (mt_p.x)*map_y + mt_p.y)=50;  //这里的region_ctr.front().x是以地图的角落为原点的
 
         float vel_x = 0;
         float vel_y = 0;
@@ -231,11 +224,14 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
         int pos_x = kalman_filter(&x_pos_param, ctr_p.x, 0);
         int pos_y = kalman_filter(&y_pos_param, ctr_p.y, 0);
 
+        *((int *)map + (pos_x)*map_y + pos_y)=50;    //kalman_flter point
+        //*((int *)map + (mt_p.x)*map_y + mt_p.y)=30;  //matched point
+/*
         ROS_INFO("r_pos_x: %d",ctr_p.x);
         ROS_INFO("r_pos_y: %d",ctr_p.y);
         ROS_INFO("pos_x: %d",pos_x);
         ROS_INFO("pos_y: %d",pos_y);
-
+*/
 
         //*((int *)map + xx*map_y + yy)=50;  //这里的 region_ctr.front().x 是以地图的角落为原点的
 
@@ -244,7 +240,6 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
     LastMAP.clear();            //清空"上一帧有效点"队列,准备更新,
     while(!region_cpy.empty())
     {
-        ROS_INFO("O.O");
         LastMAP.push_front(region_cpy.front());//将本帧地图中的有效点保存到上一帧之中
         region_cpy.pop();
     }

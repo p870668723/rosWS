@@ -6,20 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/pf/rosWS/src/dynamic_detection/src/cal_vel.cpp
-cal_vel.h
-/home/pf/rosWS/src/dynamic_detection/src/cal_vel.h
-region_growing.h
-/home/pf/rosWS/src/dynamic_detection/src/region_growing.h
-iostream
--
-math.h
--
-ros/ros.h
--
-iostream
--
-
 /home/pf/rosWS/src/dynamic_detection/src/cal_vel.h
 region_growing.h
 /home/pf/rosWS/src/dynamic_detection/src/region_growing.h
@@ -46,6 +32,8 @@ tf/transform_listener.h
 tf/transform_broadcaster.h
 -
 geometry_msgs/Pose.h
+-
+geometry_msgs/PoseStamped.h
 -
 unistd.h
 -
