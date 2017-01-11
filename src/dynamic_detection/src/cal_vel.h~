@@ -5,5 +5,5 @@
 
 float cal_distance(Point_custom p1, Point_custom p2, float solution);
 Point_custom point_match(std::list<Point_custom> map_last, Point_custom p);
-void cal_velocity();
+void cal_velocity(Point_custom current_p, Point_custom matched_p, float *vx, float *vy);
 #endif

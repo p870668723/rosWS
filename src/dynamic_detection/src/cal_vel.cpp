@@ -15,6 +15,7 @@ float cal_distance(Point_custom p1, Point_custom p2, float solution)
 
 /***********************************************************
  * @des
+ * @mao_last 上一帧地图中的动态物体的重心点
  * @p 当前地图中的需要匹配点
  * @return 上一帧地图中匹配到的点.
  * ********************************************************/
@@ -50,8 +51,11 @@ void cal_velocity(Point_custom current_p, Point_custom matched_p, float *vx, flo
 {
     int delta_X = current_p.x - matched_p.x;
     int delta_Y = current_p.y - matched_p.y;
-    *vx = delta_X/0.1;
-    *vy = delta_Y/0.1;
+    *vx = delta_X*0.05/0.1; //换算到世界尺度下的速度
+    *vy = delta_Y*0.05/0.1;
+
+    *vx = delta_X;
+    *vy = delta_Y;
 }
 
 

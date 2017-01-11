@@ -73,8 +73,6 @@ int main(int argc, char *argv[])
 //    ros::Publisher pub_velocity=nh.advertise<nav_msgs::Path >("/kalman_filter",1000);      //publish the velocity of dynamics
     ros::Subscriber sub=nh.subscribe("/base_scan",1,&data_substract);                                  //subscribe the laser data
     ros::Subscriber robot_pose=nh.subscribe("/odom",1,&rbtPose);                                        //subscribe the odometry of robot
-//    ros::Subscriber tf_pose=nh.subscribe("/tf",1,&tfPose);                                                          //subscribe the pose of tf
-//    Velocity_Msg.poses.data();
     tf::TransformListener listener;
 
     ros::Rate rate(10);
@@ -83,9 +81,16 @@ int main(int argc, char *argv[])
         tf::StampedTransform transform;
         listener.waitForTransform("/map","/base_laser_link",ros::Time(0),ros::Duration(10.0));
         listener.lookupTransform("/map","/base_laser_link",ros::Time(0),transform);
-        ROS_INFO("transform:  y:%f  x:%f",transform.getOrigin().y(),transform.getOrigin().x());
 
+        RobotCenter.position.x=transform.getOrigin().x()-5;
+        RobotCenter.position.y=transform.getOrigin().y()-5;
+        RobotCenter.orientation.z=0;
+        Map_Msg.info.width=map_x;
+        Map_Msg.info.height=map_y;
+        Map_Msg.info.resolution=SOLUTION;
+        Map_Msg.info.origin=RobotCenter;
         pub_map.publish(Map_Msg);
+
 //        pub_velocity.publish(Velocity_Msg);
         ROS_INFO("PUBLISH...");
         ros::spinOnce();
@@ -134,16 +139,16 @@ void rbtPose(const nav_msgs::Odometry& rbtPs)
 {
     //地图中心初始化
     AglRbt=tf::getYaw(rbtPs.pose.pose.orientation);
-    RobotCenter.position.x=rbtPs.pose.pose.position.x-5+0.275*cos(AglRbt); //0.275是激光雷达与机器人中心的距离
+ /*   RobotCenter.position.x=rbtPs.pose.pose.position.x-5+0.275*cos(AglRbt); //0.275是激光雷达与机器人中心的距离
     RobotCenter.position.y=rbtPs.pose.pose.position.y-5-0.275*sin(AglRbt);
     RobotCenter.orientation.z=0;
-//    RobotCenter.orientation=rbtPs.pose.pose.orientation;
 
     //地图信息配置
     Map_Msg.info.width=map_x;
     Map_Msg.info.height=map_y;
     Map_Msg.info.resolution=SOLUTION;
     Map_Msg.info.origin=RobotCenter;
+*/
 }
 
 
@@ -185,15 +190,15 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
     while(!mark_beam.empty())
     {
 //        theta=2.35562 + AglRbt_m + AngleIncrement*mark_beam.front();//此处的2.355 (3*PI/4)为地图与机器人坐标的矫正值
-        theta=-0.7854 + AglRbt_m + AngleIncrement*mark_beam.front();//此处的2.355 (3*PI/4)为地图与机器人坐标的矫正值
+        theta= 2.35562 + AglRbt_m + AngleIncrement*mark_beam.front();//此处的2.355 (3*PI/4)为地图与机器人坐标的矫正值
 
-        range=beams[mark_beam.front()]+0.2;//0.3是调整参数,调整激光折算到栅格地图不匹配的问题
+        range=beams[mark_beam.front()];//0.3是调整参数,调整激光折算到栅格地图不匹配的问题
         mark_beam.pop();
         if(range > MAX_RANGE-0.2) continue;//雷达边界附近的激光舍去
 		//x_grid=(range*cos(theta)/SOLUTION) ;//变动激光击中的点的x坐标,以地图中心为原点
         //y_grid=-(range*sin(theta)/SOLUTION);//变动激光击中的点的y坐标,以地图中心为原点
-        x_grid = -( range*cos(theta) / SOLUTION) ;//变动激光击中的点的x坐标,以地图中心为原点
-        y_grid = (range*sin(theta) / SOLUTION);//变动激光击中的点的y坐标,以地图中心为原点        //将所有的击中点标记到地图之中,以提供给Search_region()函数搜索
+        x_grid = ( range*cos(theta) / SOLUTION) ;//变动激光击中的点的x坐标,以地图中心为原点
+        y_grid = -(range*sin(theta) / SOLUTION);//变动激光击中的点的y坐标,以地图中心为原点        //将所有的击中点标记到地图之中,以提供给Search_region()函数搜索
         *((int *)map +(map_x*map_y/2+map_y/2)+ (x_grid-1)*map_y + y_grid)=20;
     }
 
@@ -206,20 +211,31 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
 
     while(!region_ctr.empty())
     {
+
         Point_custom ctr_p = region_ctr.front();
         Point_custom mt_p = point_match(LastMAP,ctr_p);
 
         *((int *)map + (ctr_p.x)*map_y + ctr_p.y)=100;  //这里的region_ctr.front().x是以地图的角落为原点的
         *((int *)map + (mt_p.x)*map_y + mt_p.y)=50;  //这里的region_ctr.front().x是以地图的角落为原点的
 
-        float vel_x = ctr_p.x - mt_p.x;
-        float vel_y = ctr_p.y - mt_p.y;
+        float vel_x = 0;
+        float vel_y = 0;
+        cal_velocity(ctr_p, mt_p, &vel_x, &vel_y);
+
+        vel_x = kalman_filter(&x_vel_param, vel_x,0);
+        vel_y = kalman_filter(&y_vel_param, vel_y,0);
+
         ROS_INFO("vel_x: %f",vel_x);
         ROS_INFO("vel_y: %f",vel_y);
-        //*((int *)map + (matched_p.x)*map_y + matched_p.y)=100;  //
 
-        //int xx = kalman_filter(&x_pos_param, region_ctr.front().x, 0);
-        //int yy = kalman_filter(&y_pos_param, region_ctr.front().y, 0);
+        int pos_x = kalman_filter(&x_pos_param, ctr_p.x, 0);
+        int pos_y = kalman_filter(&y_pos_param, ctr_p.y, 0);
+
+        ROS_INFO("r_pos_x: %d",ctr_p.x);
+        ROS_INFO("r_pos_y: %d",ctr_p.y);
+        ROS_INFO("pos_x: %d",pos_x);
+        ROS_INFO("pos_y: %d",pos_y);
+
 
         //*((int *)map + xx*map_y + yy)=50;  //这里的 region_ctr.front().x 是以地图的角落为原点的
 
