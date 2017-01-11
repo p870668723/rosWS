@@ -198,7 +198,7 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
 
     region_ctr = Search_region(map,map_x,map_y);
 
-    std::queue<Point_custom> region_cpy = region_ctr;//复制一份
+    std::queue<Point_custom> region_cpy = region_ctr;//复制一份重心地图
     //清空整个地图,用搜索到中心来重画地图
     //for(int i=0;i<map_x*map_y;i++)
     //    *((int *)map+i)=0;
@@ -210,7 +210,7 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
         Point_custom mt_p = point_match(LastMAP,ctr_p);
 
         *((int *)map + (ctr_p.x)*map_y + ctr_p.y)=100;  //这里的region_ctr.front().x是以地图的角落为原点的
-
+        *((int *)map + (mt_p.x)*map_y + mt_p.y)=50;  //输出匹配点到地图上
         float vel_x = 0;
         float vel_y = 0;
         cal_velocity(ctr_p, mt_p, &vel_x, &vel_y);
@@ -224,7 +224,7 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
         int pos_x = kalman_filter(&x_pos_param, ctr_p.x, 0);
         int pos_y = kalman_filter(&y_pos_param, ctr_p.y, 0);
 
-        *((int *)map + (pos_x)*map_y + pos_y)=50;    //kalman_flter point
+        //*((int *)map + (pos_x)*map_y + pos_y)=50;    //kalman_flter point
         //*((int *)map + (mt_p.x)*map_y + mt_p.y)=30;  //matched point
 /*
         ROS_INFO("r_pos_x: %d",ctr_p.x);
@@ -232,9 +232,7 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
         ROS_INFO("pos_x: %d",pos_x);
         ROS_INFO("pos_y: %d",pos_y);
 */
-
         //*((int *)map + xx*map_y + yy)=50;  //这里的 region_ctr.front().x 是以地图的角落为原点的
-
         region_ctr.pop();
     }
     LastMAP.clear();            //清空"上一帧有效点"队列,准备更新,
