@@ -16,6 +16,6 @@ struct Point_custom
 };
 
 std::queue<Point_custom> Search_region(int** map,int x_total, int y_total);
-void preDealExpand(int **map,int MAP_X, int MAP_Y,char threshold);
+void preDealExpand(int **map,int MAP_X, int MAP_Y,int threshold);
 
 #endif

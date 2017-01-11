@@ -1,6 +1,6 @@
 #ifndef REGION_GROWING_H
 #define REGION_GROWING_H
-
+#include <queue>
 
 struct Point_custom
 {

@@ -95,27 +95,82 @@ dynamic_detection/CMakeFiles/dynamic.dir/src/region_growing.cpp.o.provides: dyna
 
 dynamic_detection/CMakeFiles/dynamic.dir/src/region_growing.cpp.o.provides.build: dynamic_detection/CMakeFiles/dynamic.dir/src/region_growing.cpp.o
 
+dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.o: dynamic_detection/CMakeFiles/dynamic.dir/flags.make
+dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.o: /home/pf/rosWS/src/dynamic_detection/src/filter.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pf/rosWS/build/CMakeFiles $(CMAKE_PROGRESS_3)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.o"
+	cd /home/pf/rosWS/build/dynamic_detection && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/dynamic.dir/src/filter.cpp.o -c /home/pf/rosWS/src/dynamic_detection/src/filter.cpp
+
+dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dynamic.dir/src/filter.cpp.i"
+	cd /home/pf/rosWS/build/dynamic_detection && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pf/rosWS/src/dynamic_detection/src/filter.cpp > CMakeFiles/dynamic.dir/src/filter.cpp.i
+
+dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dynamic.dir/src/filter.cpp.s"
+	cd /home/pf/rosWS/build/dynamic_detection && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pf/rosWS/src/dynamic_detection/src/filter.cpp -o CMakeFiles/dynamic.dir/src/filter.cpp.s
+
+dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.o.requires:
+.PHONY : dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.o.requires
+
+dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.o.provides: dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.o.requires
+	$(MAKE) -f dynamic_detection/CMakeFiles/dynamic.dir/build.make dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.o.provides.build
+.PHONY : dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.o.provides
+
+dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.o.provides.build: dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.o
+
+dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.o: dynamic_detection/CMakeFiles/dynamic.dir/flags.make
+dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.o: /home/pf/rosWS/src/dynamic_detection/src/cal_vel.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/pf/rosWS/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.o"
+	cd /home/pf/rosWS/build/dynamic_detection && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/dynamic.dir/src/cal_vel.cpp.o -c /home/pf/rosWS/src/dynamic_detection/src/cal_vel.cpp
+
+dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/dynamic.dir/src/cal_vel.cpp.i"
+	cd /home/pf/rosWS/build/dynamic_detection && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E /home/pf/rosWS/src/dynamic_detection/src/cal_vel.cpp > CMakeFiles/dynamic.dir/src/cal_vel.cpp.i
+
+dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/dynamic.dir/src/cal_vel.cpp.s"
+	cd /home/pf/rosWS/build/dynamic_detection && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S /home/pf/rosWS/src/dynamic_detection/src/cal_vel.cpp -o CMakeFiles/dynamic.dir/src/cal_vel.cpp.s
+
+dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.o.requires:
+.PHONY : dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.o.requires
+
+dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.o.provides: dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.o.requires
+	$(MAKE) -f dynamic_detection/CMakeFiles/dynamic.dir/build.make dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.o.provides.build
+.PHONY : dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.o.provides
+
+dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.o.provides.build: dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.o
+
 # Object files for target dynamic
 dynamic_OBJECTS = \
 "CMakeFiles/dynamic.dir/src/dynamic.cpp.o" \
-"CMakeFiles/dynamic.dir/src/region_growing.cpp.o"
+"CMakeFiles/dynamic.dir/src/region_growing.cpp.o" \
+"CMakeFiles/dynamic.dir/src/filter.cpp.o" \
+"CMakeFiles/dynamic.dir/src/cal_vel.cpp.o"
 
 # External object files for target dynamic
 dynamic_EXTERNAL_OBJECTS =
 
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: dynamic_detection/CMakeFiles/dynamic.dir/src/dynamic.cpp.o
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: dynamic_detection/CMakeFiles/dynamic.dir/src/region_growing.cpp.o
+/home/pf/rosWS/devel/lib/dynamic_detection/dynamic: dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.o
+/home/pf/rosWS/devel/lib/dynamic_detection/dynamic: dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.o
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: dynamic_detection/CMakeFiles/dynamic.dir/build.make
+/home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/libtf.so
+/home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/libtf2_ros.so
+/home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/libactionlib.so
+/home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/libmessage_filters.so
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/libroscpp.so
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /usr/lib/x86_64-linux-gnu/libboost_signals.so
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/libxmlrpcpp.so
+/home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/libtf2.so
+/home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/libroscpp_serialization.so
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/librosconsole.so
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/librosconsole_log4cxx.so
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/librosconsole_backend_interface.so
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /usr/lib/liblog4cxx.so
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/libxmlrpcpp.so
-/home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/libroscpp_serialization.so
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/librostime.so
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
 /home/pf/rosWS/devel/lib/dynamic_detection/dynamic: /opt/ros/indigo/lib/libcpp_common.so
@@ -133,6 +188,8 @@ dynamic_detection/CMakeFiles/dynamic.dir/build: /home/pf/rosWS/devel/lib/dynamic
 
 dynamic_detection/CMakeFiles/dynamic.dir/requires: dynamic_detection/CMakeFiles/dynamic.dir/src/dynamic.cpp.o.requires
 dynamic_detection/CMakeFiles/dynamic.dir/requires: dynamic_detection/CMakeFiles/dynamic.dir/src/region_growing.cpp.o.requires
+dynamic_detection/CMakeFiles/dynamic.dir/requires: dynamic_detection/CMakeFiles/dynamic.dir/src/filter.cpp.o.requires
+dynamic_detection/CMakeFiles/dynamic.dir/requires: dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.o.requires
 .PHONY : dynamic_detection/CMakeFiles/dynamic.dir/requires
 
 dynamic_detection/CMakeFiles/dynamic.dir/clean:

@@ -396,8 +396,11 @@ navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner.cp
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner.cpp.o: /usr/include/pcl-1.7/pcl/PCLPointField.h
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner.cpp.o: /usr/include/pcl-1.7/pcl/PointIndices.h
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner.cpp.o: /usr/include/pcl-1.7/pcl/PolygonMesh.h
+navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner.cpp.o: /usr/include/pcl-1.7/pcl/TextureMesh.h
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner.cpp.o: /usr/include/pcl-1.7/pcl/Vertices.h
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner.cpp.o: /usr/include/pcl-1.7/pcl/common/concatenate.h
+navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner.cpp.o: /usr/include/pcl-1.7/pcl/common/copy_point.h
+navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner.cpp.o: /usr/include/pcl-1.7/pcl/common/impl/copy_point.hpp
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner.cpp.o: /usr/include/pcl-1.7/pcl/common/impl/io.hpp
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner.cpp.o: /usr/include/pcl-1.7/pcl/common/io.h
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner.cpp.o: /usr/include/pcl-1.7/pcl/common/point_tests.h
@@ -820,8 +823,11 @@ navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner_ro
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner_ros.cpp.o: /usr/include/pcl-1.7/pcl/PCLPointField.h
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner_ros.cpp.o: /usr/include/pcl-1.7/pcl/PointIndices.h
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner_ros.cpp.o: /usr/include/pcl-1.7/pcl/PolygonMesh.h
+navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner_ros.cpp.o: /usr/include/pcl-1.7/pcl/TextureMesh.h
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner_ros.cpp.o: /usr/include/pcl-1.7/pcl/Vertices.h
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner_ros.cpp.o: /usr/include/pcl-1.7/pcl/common/concatenate.h
+navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner_ros.cpp.o: /usr/include/pcl-1.7/pcl/common/copy_point.h
+navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner_ros.cpp.o: /usr/include/pcl-1.7/pcl/common/impl/copy_point.hpp
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner_ros.cpp.o: /usr/include/pcl-1.7/pcl/common/impl/io.hpp
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner_ros.cpp.o: /usr/include/pcl-1.7/pcl/common/io.h
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/src/dwa_planner_ros.cpp.o: /usr/include/pcl-1.7/pcl/common/point_tests.h

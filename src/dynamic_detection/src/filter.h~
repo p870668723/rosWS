@@ -1,0 +1,28 @@
+#ifndef _FILTER_H
+#define _FILTER_H
+
+typedef struct KAL_PARAM
+{
+    float C_last;		//转移预测方差
+    float X_last;		//
+
+    float Q;			//转移噪声方差
+    float R;			//测量噪声方差
+
+    float K;			//卡氏增益
+    float X;			//最优数据
+    float C;          	//最优值的协方差
+
+    float input;
+}
+kal_param;
+
+//x,y卡尔曼滤波的参数
+kal_param x_pos_param={0,0,1,1,0,0,0,0};
+kal_param y_pos_param={0,0,1,1,0,0,0,0};
+kal_param x_vel_param;
+kal_param y_vel_param;
+
+float kalman_filter(kal_param *k_flt,int input);
+
+#endif

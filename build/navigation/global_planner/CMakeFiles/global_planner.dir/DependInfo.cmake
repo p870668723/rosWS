@@ -41,6 +41,7 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/include/eigen3"
   "/usr/include/pcl-1.7"
   "/usr/include/ni"
+  "/usr/include/openni2"
   "/usr/include/vtk-5.8"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

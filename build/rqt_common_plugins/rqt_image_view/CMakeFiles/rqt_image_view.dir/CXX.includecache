@@ -110,6 +110,14 @@ QMessageBox
 QPainter
 -
 
+/home/pf/rosWS/src/rqt_common_plugins/rqt_image_view/src/rqt_image_view/ratio_layouted_frame.cpp
+rqt_image_view/ratio_layouted_frame.h
+-
+assert.h
+-
+QMouseEvent
+-
+
 /opt/ros/indigo/include/XmlRpcDecl.h
 ros/macros.h
 -
@@ -1765,6 +1773,10 @@ qlineedit.h
 /usr/include/qt4/QtGui/QMessageBox
 qmessagebox.h
 /usr/include/qt4/QtGui/qmessagebox.h
+
+/usr/include/qt4/QtGui/QMouseEvent
+qevent.h
+/usr/include/qt4/QtGui/qevent.h
 
 /usr/include/qt4/QtGui/QPainter
 qpainter.h

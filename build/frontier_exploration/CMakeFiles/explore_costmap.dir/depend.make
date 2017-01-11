@@ -366,8 +366,11 @@ frontier_exploration/CMakeFiles/explore_costmap.dir/plugins/bounded_explore_laye
 frontier_exploration/CMakeFiles/explore_costmap.dir/plugins/bounded_explore_layer.cpp.o: /usr/include/pcl-1.7/pcl/PCLPointField.h
 frontier_exploration/CMakeFiles/explore_costmap.dir/plugins/bounded_explore_layer.cpp.o: /usr/include/pcl-1.7/pcl/PointIndices.h
 frontier_exploration/CMakeFiles/explore_costmap.dir/plugins/bounded_explore_layer.cpp.o: /usr/include/pcl-1.7/pcl/PolygonMesh.h
+frontier_exploration/CMakeFiles/explore_costmap.dir/plugins/bounded_explore_layer.cpp.o: /usr/include/pcl-1.7/pcl/TextureMesh.h
 frontier_exploration/CMakeFiles/explore_costmap.dir/plugins/bounded_explore_layer.cpp.o: /usr/include/pcl-1.7/pcl/Vertices.h
 frontier_exploration/CMakeFiles/explore_costmap.dir/plugins/bounded_explore_layer.cpp.o: /usr/include/pcl-1.7/pcl/common/concatenate.h
+frontier_exploration/CMakeFiles/explore_costmap.dir/plugins/bounded_explore_layer.cpp.o: /usr/include/pcl-1.7/pcl/common/copy_point.h
+frontier_exploration/CMakeFiles/explore_costmap.dir/plugins/bounded_explore_layer.cpp.o: /usr/include/pcl-1.7/pcl/common/impl/copy_point.hpp
 frontier_exploration/CMakeFiles/explore_costmap.dir/plugins/bounded_explore_layer.cpp.o: /usr/include/pcl-1.7/pcl/common/impl/io.hpp
 frontier_exploration/CMakeFiles/explore_costmap.dir/plugins/bounded_explore_layer.cpp.o: /usr/include/pcl-1.7/pcl/common/io.h
 frontier_exploration/CMakeFiles/explore_costmap.dir/plugins/bounded_explore_layer.cpp.o: /usr/include/pcl-1.7/pcl/common/point_tests.h

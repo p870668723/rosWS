@@ -3085,6 +3085,10 @@ boost/mpl/assert.hpp
 -
 boost/mpl/bool.hpp
 -
+Eigen/Core
+-
+Eigen/src/StlSupport/details.h
+-
 
 /usr/include/pcl-1.7/pcl/point_types.h
 pcl/pcl_macros.h
@@ -3092,6 +3096,12 @@ pcl/pcl_macros.h
 bitset
 -
 pcl/register_point_struct.h
+-
+boost/mpl/contains.hpp
+-
+boost/mpl/fold.hpp
+-
+boost/mpl/vector.hpp
 -
 pcl/impl/point_types.hpp
 -

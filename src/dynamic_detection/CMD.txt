@@ -1,0 +1,2 @@
+roslaunch navigation_stage move_base_gmapping_5cm.launch
+

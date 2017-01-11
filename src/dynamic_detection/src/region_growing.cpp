@@ -4,8 +4,10 @@
 #include "math.h"
 #include "region_growing.h"
 #include <ros/ros.h>
-using namespace std;
+//#include <opencv2/core/core.hpp>
+//#include <opencv2/highgui/highgui.hpp>
 
+using namespace std;
 
 std::queue<Point_custom> Search_region(int** map,int x_total, int y_total)
 {
@@ -15,8 +17,7 @@ std::queue<Point_custom> Search_region(int** map,int x_total, int y_total)
     int sum_x=0,sum_y=0,num_pt_region=0;//used for caculate the data of one region
     Point_custom map_copy[x_total][y_total];
 
-
-    preDealExpand(map, x_total, y_total, 8);
+    preDealExpand(map, x_total, y_total, 6);//地图预膨胀,消除间隙
 
     for(int i=0 ; i<x_total; i++)
         for(int j=0 ; j<y_total;j++)
@@ -124,8 +125,9 @@ std::queue<Point_custom> Search_region(int** map,int x_total, int y_total)
         }
         if(num_pt_region!=0)
         {
-            region_center.x=sum_x / (num_pt_region);
-            region_center.y=sum_y / (num_pt_region);
+            region_center.x = sum_x / (num_pt_region);//计算重心
+            region_center.y = sum_y / (num_pt_region);
+            region_center.value = regions_centers.size()+1;//用value计数本区域的有效点的个数,作为该点的一个特征量,用来匹配.
             regions_centers.push(region_center);
             ROS_INFO("region points number: %d",num_pt_region);//test code
             //一个区域完成,清零,准备下一个区域搜索
@@ -147,7 +149,7 @@ void preDealExpand(int **map, int MAP_X, int MAP_Y, int threshold)
     for(int i=threshold/2; i<(MAP_X-threshold/2); i++) //这里要求i和j 的值大于 threshold/2 ,否则后面的填充方法会越界
         for(int j=threshold/2; j<(MAP_Y-threshold/2); j++)
         {
-            if(  *( (int *)map + i*MAP_Y + j) !=0 ) //遍历出所有的非零点
+            if(  *( (int *)map + i*MAP_Y + j) ==20 ) //遍历出所有的有效点
             {
             //*( (int *)map + i*y_total + j );
                 p.x=i;
@@ -155,11 +157,10 @@ void preDealExpand(int **map, int MAP_X, int MAP_Y, int threshold)
                 nonzero.push(p);
             }
         }
-    ROS_INFO("t: %ld",nonzero.size());
     while(!nonzero.empty())
     {
-        for(int i=0; i<threshold/2; i++)
-            for(int j=0; j<threshold/2; j++)
+        for(int i=0; i<=threshold; i++)
+            for(int j=0; j<=threshold; j++)
             {
                 //将非零点threshold/2附近的点全部填充
                 *( (int *)map + (nonzero.front().x - threshold/2 +i) * MAP_Y + (nonzero.front().y-threshold/2+j) ) = 20;

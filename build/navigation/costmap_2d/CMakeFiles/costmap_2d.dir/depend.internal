@@ -1008,12 +1008,16 @@ navigation/costmap_2d/CMakeFiles/costmap_2d.dir/src/observation_buffer.cpp.o
  /usr/include/pcl-1.7/pcl/PCLPointField.h
  /usr/include/pcl-1.7/pcl/PointIndices.h
  /usr/include/pcl-1.7/pcl/PolygonMesh.h
+ /usr/include/pcl-1.7/pcl/TextureMesh.h
  /usr/include/pcl-1.7/pcl/Vertices.h
  /usr/include/pcl-1.7/pcl/cloud_iterator.h
  /usr/include/pcl-1.7/pcl/common/centroid.h
  /usr/include/pcl-1.7/pcl/common/concatenate.h
+ /usr/include/pcl-1.7/pcl/common/copy_point.h
  /usr/include/pcl-1.7/pcl/common/eigen.h
+ /usr/include/pcl-1.7/pcl/common/impl/accumulators.hpp
  /usr/include/pcl-1.7/pcl/common/impl/centroid.hpp
+ /usr/include/pcl-1.7/pcl/common/impl/copy_point.hpp
  /usr/include/pcl-1.7/pcl/common/impl/eigen.hpp
  /usr/include/pcl-1.7/pcl/common/impl/io.hpp
  /usr/include/pcl-1.7/pcl/common/impl/transforms.hpp

@@ -5,6 +5,8 @@ SET(CMAKE_DEPENDS_LANGUAGES
 
 # Preprocessor definitions for this target.
 SET(CMAKE_TARGET_DEFINITIONS
+  "DISABLE_PCAP"
+  "DISABLE_PNG"
   "ROSCONSOLE_BACKEND_LOG4CXX"
   "ROS_BUILD_SHARED_LIBS=1"
   "ROS_PACKAGE_NAME=\"costmap_2d\""
@@ -49,6 +51,7 @@ SET(CMAKE_C_TARGET_INCLUDE_PATH
   "/usr/include/eigen3"
   "/usr/include/pcl-1.7"
   "/usr/include/ni"
+  "/usr/include/openni2"
   "/home/pf/rosWS/src/navigation/costmap_2d/test"
   )
 SET(CMAKE_CXX_TARGET_INCLUDE_PATH ${CMAKE_C_TARGET_INCLUDE_PATH})

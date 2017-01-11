@@ -388,8 +388,11 @@ navigation/navfn/CMakeFiles/navfn.dir/src/navfn_ros.cpp.o: /usr/include/pcl-1.7/
 navigation/navfn/CMakeFiles/navfn.dir/src/navfn_ros.cpp.o: /usr/include/pcl-1.7/pcl/PCLPointField.h
 navigation/navfn/CMakeFiles/navfn.dir/src/navfn_ros.cpp.o: /usr/include/pcl-1.7/pcl/PointIndices.h
 navigation/navfn/CMakeFiles/navfn.dir/src/navfn_ros.cpp.o: /usr/include/pcl-1.7/pcl/PolygonMesh.h
+navigation/navfn/CMakeFiles/navfn.dir/src/navfn_ros.cpp.o: /usr/include/pcl-1.7/pcl/TextureMesh.h
 navigation/navfn/CMakeFiles/navfn.dir/src/navfn_ros.cpp.o: /usr/include/pcl-1.7/pcl/Vertices.h
 navigation/navfn/CMakeFiles/navfn.dir/src/navfn_ros.cpp.o: /usr/include/pcl-1.7/pcl/common/concatenate.h
+navigation/navfn/CMakeFiles/navfn.dir/src/navfn_ros.cpp.o: /usr/include/pcl-1.7/pcl/common/copy_point.h
+navigation/navfn/CMakeFiles/navfn.dir/src/navfn_ros.cpp.o: /usr/include/pcl-1.7/pcl/common/impl/copy_point.hpp
 navigation/navfn/CMakeFiles/navfn.dir/src/navfn_ros.cpp.o: /usr/include/pcl-1.7/pcl/common/impl/io.hpp
 navigation/navfn/CMakeFiles/navfn.dir/src/navfn_ros.cpp.o: /usr/include/pcl-1.7/pcl/common/io.h
 navigation/navfn/CMakeFiles/navfn.dir/src/navfn_ros.cpp.o: /usr/include/pcl-1.7/pcl/common/point_tests.h

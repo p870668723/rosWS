@@ -1534,8 +1534,11 @@ navigation/base_local_planner/CMakeFiles/base_local_planner.dir/src/map_grid_vis
 navigation/base_local_planner/CMakeFiles/base_local_planner.dir/src/map_grid_visualizer.cpp.o: /usr/include/pcl-1.7/pcl/PCLPointField.h
 navigation/base_local_planner/CMakeFiles/base_local_planner.dir/src/map_grid_visualizer.cpp.o: /usr/include/pcl-1.7/pcl/PointIndices.h
 navigation/base_local_planner/CMakeFiles/base_local_planner.dir/src/map_grid_visualizer.cpp.o: /usr/include/pcl-1.7/pcl/PolygonMesh.h
+navigation/base_local_planner/CMakeFiles/base_local_planner.dir/src/map_grid_visualizer.cpp.o: /usr/include/pcl-1.7/pcl/TextureMesh.h
 navigation/base_local_planner/CMakeFiles/base_local_planner.dir/src/map_grid_visualizer.cpp.o: /usr/include/pcl-1.7/pcl/Vertices.h
 navigation/base_local_planner/CMakeFiles/base_local_planner.dir/src/map_grid_visualizer.cpp.o: /usr/include/pcl-1.7/pcl/common/concatenate.h
+navigation/base_local_planner/CMakeFiles/base_local_planner.dir/src/map_grid_visualizer.cpp.o: /usr/include/pcl-1.7/pcl/common/copy_point.h
+navigation/base_local_planner/CMakeFiles/base_local_planner.dir/src/map_grid_visualizer.cpp.o: /usr/include/pcl-1.7/pcl/common/impl/copy_point.hpp
 navigation/base_local_planner/CMakeFiles/base_local_planner.dir/src/map_grid_visualizer.cpp.o: /usr/include/pcl-1.7/pcl/common/impl/io.hpp
 navigation/base_local_planner/CMakeFiles/base_local_planner.dir/src/map_grid_visualizer.cpp.o: /usr/include/pcl-1.7/pcl/common/io.h
 navigation/base_local_planner/CMakeFiles/base_local_planner.dir/src/map_grid_visualizer.cpp.o: /usr/include/pcl-1.7/pcl/common/point_tests.h
