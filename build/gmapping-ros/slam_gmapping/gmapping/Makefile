@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -499,6 +489,11 @@ slam_gmapping/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/build
 .PHONY : slam_gmapping/fast
 
+# Manual pre-install relink rule for target.
+slam_gmapping/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/preinstall
+.PHONY : slam_gmapping/preinstall
+
 # Convenience name for target.
 gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/rule
@@ -512,6 +507,11 @@ slam_gmapping_replay: gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmappi
 slam_gmapping_replay/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/build
 .PHONY : slam_gmapping_replay/fast
+
+# Manual pre-install relink rule for target.
+slam_gmapping_replay/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/preinstall
+.PHONY : slam_gmapping_replay/preinstall
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -637,7 +637,6 @@ help:
 	@echo "... gmapping_test_upside_down.bag"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... run_tests_gmapping"

@@ -171,6 +171,7 @@
 /home/pf/rosWS/build/navigation/voxel_grid/CMakeFiles/clean_test_results_voxel_grid.dir
 /home/pf/rosWS/build/navigation/clear_costmap_recovery/CMakeFiles/clear_costmap_recovery.dir
 /home/pf/rosWS/build/navigation/clear_costmap_recovery/CMakeFiles/clear_tester.dir
+/home/pf/rosWS/build/dynamic_detection/CMakeFiles/cmd_vel.dir
 /home/pf/rosWS/build/navigation/costmap_2d/CMakeFiles/costmap_2d.dir
 /home/pf/rosWS/build/navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir
 /home/pf/rosWS/build/navigation/costmap_2d/CMakeFiles/costmap_2d_gencfg.dir

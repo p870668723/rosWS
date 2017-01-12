@@ -8,6 +8,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/rqt_image_view.dir/include/rqt_image_view/moc_ratio_layouted_frame.cxx.o"
   "/home/pf/rosWS/devel/lib/librqt_image_view.pdb"
   "/home/pf/rosWS/devel/lib/librqt_image_view.so"
+  "/home/pf/rosWS/devel/lib/librqt_image_view.pdb"
+  "CMakeFiles/CMakeRelink.dir/librqt_image_view.so"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -396,6 +386,11 @@ gridfastslam/fast:
 	$(MAKE) -f gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/build.make gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/build
 .PHONY : gridfastslam/fast
 
+# Manual pre-install relink rule for target.
+gridfastslam/preinstall:
+	$(MAKE) -f gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/build.make gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/preinstall
+.PHONY : gridfastslam/preinstall
+
 #=============================================================================
 # Target rules for targets named scanmatcher
 
@@ -408,6 +403,11 @@ scanmatcher: cmake_check_build_system
 scanmatcher/fast:
 	$(MAKE) -f gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/build.make gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/build
 .PHONY : scanmatcher/fast
+
+# Manual pre-install relink rule for target.
+scanmatcher/preinstall:
+	$(MAKE) -f gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/build.make gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/preinstall
+.PHONY : scanmatcher/preinstall
 
 #=============================================================================
 # Target rules for targets named sensor_base
@@ -435,6 +435,11 @@ sensor_odometry/fast:
 	$(MAKE) -f gmapping-ros/openslam_gmapping/sensor/sensor_odometry/CMakeFiles/sensor_odometry.dir/build.make gmapping-ros/openslam_gmapping/sensor/sensor_odometry/CMakeFiles/sensor_odometry.dir/build
 .PHONY : sensor_odometry/fast
 
+# Manual pre-install relink rule for target.
+sensor_odometry/preinstall:
+	$(MAKE) -f gmapping-ros/openslam_gmapping/sensor/sensor_odometry/CMakeFiles/sensor_odometry.dir/build.make gmapping-ros/openslam_gmapping/sensor/sensor_odometry/CMakeFiles/sensor_odometry.dir/preinstall
+.PHONY : sensor_odometry/preinstall
+
 #=============================================================================
 # Target rules for targets named sensor_range
 
@@ -447,6 +452,11 @@ sensor_range: cmake_check_build_system
 sensor_range/fast:
 	$(MAKE) -f gmapping-ros/openslam_gmapping/sensor/sensor_range/CMakeFiles/sensor_range.dir/build.make gmapping-ros/openslam_gmapping/sensor/sensor_range/CMakeFiles/sensor_range.dir/build
 .PHONY : sensor_range/fast
+
+# Manual pre-install relink rule for target.
+sensor_range/preinstall:
+	$(MAKE) -f gmapping-ros/openslam_gmapping/sensor/sensor_range/CMakeFiles/sensor_range.dir/build.make gmapping-ros/openslam_gmapping/sensor/sensor_range/CMakeFiles/sensor_range.dir/preinstall
+.PHONY : sensor_range/preinstall
 
 #=============================================================================
 # Target rules for targets named utils
@@ -956,6 +966,19 @@ actionlib_msgs_generate_messages_py/fast:
 .PHONY : actionlib_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named cmd_vel
+
+# Build rule for target.
+cmd_vel: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cmd_vel
+.PHONY : cmd_vel
+
+# fast build rule for target.
+cmd_vel/fast:
+	$(MAKE) -f dynamic_detection/CMakeFiles/cmd_vel.dir/build.make dynamic_detection/CMakeFiles/cmd_vel.dir/build
+.PHONY : cmd_vel/fast
+
+#=============================================================================
 # Target rules for targets named dynamic
 
 # Build rule for target.
@@ -1137,6 +1160,11 @@ laser_scan_publisher/fast:
 	$(MAKE) -f navigation_tutorials/laser_scan_publisher_tutorial/CMakeFiles/laser_scan_publisher.dir/build.make navigation_tutorials/laser_scan_publisher_tutorial/CMakeFiles/laser_scan_publisher.dir/build
 .PHONY : laser_scan_publisher/fast
 
+# Manual pre-install relink rule for target.
+laser_scan_publisher/preinstall:
+	$(MAKE) -f navigation_tutorials/laser_scan_publisher_tutorial/CMakeFiles/laser_scan_publisher.dir/build.make navigation_tutorials/laser_scan_publisher_tutorial/CMakeFiles/laser_scan_publisher.dir/preinstall
+.PHONY : laser_scan_publisher/preinstall
+
 #=============================================================================
 # Target rules for targets named map_load_node
 
@@ -1176,6 +1204,11 @@ point_cloud_publisher/fast:
 	$(MAKE) -f navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/build.make navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/build
 .PHONY : point_cloud_publisher/fast
 
+# Manual pre-install relink rule for target.
+point_cloud_publisher/preinstall:
+	$(MAKE) -f navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/build.make navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/preinstall
+.PHONY : point_cloud_publisher/preinstall
+
 #=============================================================================
 # Target rules for targets named _roscpp_tutorials_generate_messages_check_deps_TwoInts
 
@@ -1202,6 +1235,11 @@ add_two_ints_client/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_client.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_client.dir/build
 .PHONY : add_two_ints_client/fast
 
+# Manual pre-install relink rule for target.
+add_two_ints_client/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_client.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_client.dir/preinstall
+.PHONY : add_two_ints_client/preinstall
+
 #=============================================================================
 # Target rules for targets named add_two_ints_server
 
@@ -1214,6 +1252,11 @@ add_two_ints_server: cmake_check_build_system
 add_two_ints_server/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server.dir/build
 .PHONY : add_two_ints_server/fast
+
+# Manual pre-install relink rule for target.
+add_two_ints_server/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server.dir/preinstall
+.PHONY : add_two_ints_server/preinstall
 
 #=============================================================================
 # Target rules for targets named add_two_ints_server_class
@@ -1228,6 +1271,11 @@ add_two_ints_server_class/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server_class.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server_class.dir/build
 .PHONY : add_two_ints_server_class/fast
 
+# Manual pre-install relink rule for target.
+add_two_ints_server_class/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server_class.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server_class.dir/preinstall
+.PHONY : add_two_ints_server_class/preinstall
+
 #=============================================================================
 # Target rules for targets named anonymous_listener
 
@@ -1240,6 +1288,11 @@ anonymous_listener: cmake_check_build_system
 anonymous_listener/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/anonymous_listener.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/anonymous_listener.dir/build
 .PHONY : anonymous_listener/fast
+
+# Manual pre-install relink rule for target.
+anonymous_listener/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/anonymous_listener.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/anonymous_listener.dir/preinstall
+.PHONY : anonymous_listener/preinstall
 
 #=============================================================================
 # Target rules for targets named babbler
@@ -1254,6 +1307,11 @@ babbler/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/babbler.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/babbler.dir/build
 .PHONY : babbler/fast
 
+# Manual pre-install relink rule for target.
+babbler/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/babbler.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/babbler.dir/preinstall
+.PHONY : babbler/preinstall
+
 #=============================================================================
 # Target rules for targets named custom_callback_processing
 
@@ -1266,6 +1324,11 @@ custom_callback_processing: cmake_check_build_system
 custom_callback_processing/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/custom_callback_processing.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/custom_callback_processing.dir/build
 .PHONY : custom_callback_processing/fast
+
+# Manual pre-install relink rule for target.
+custom_callback_processing/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/custom_callback_processing.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/custom_callback_processing.dir/preinstall
+.PHONY : custom_callback_processing/preinstall
 
 #=============================================================================
 # Target rules for targets named listener
@@ -1280,6 +1343,11 @@ listener/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener.dir/build
 .PHONY : listener/fast
 
+# Manual pre-install relink rule for target.
+listener/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener.dir/preinstall
+.PHONY : listener/preinstall
+
 #=============================================================================
 # Target rules for targets named listener_async_spin
 
@@ -1292,6 +1360,11 @@ listener_async_spin: cmake_check_build_system
 listener_async_spin/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_async_spin.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_async_spin.dir/build
 .PHONY : listener_async_spin/fast
+
+# Manual pre-install relink rule for target.
+listener_async_spin/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_async_spin.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_async_spin.dir/preinstall
+.PHONY : listener_async_spin/preinstall
 
 #=============================================================================
 # Target rules for targets named listener_class
@@ -1306,6 +1379,11 @@ listener_class/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_class.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_class.dir/build
 .PHONY : listener_class/fast
 
+# Manual pre-install relink rule for target.
+listener_class/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_class.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_class.dir/preinstall
+.PHONY : listener_class/preinstall
+
 #=============================================================================
 # Target rules for targets named listener_multiple
 
@@ -1318,6 +1396,11 @@ listener_multiple: cmake_check_build_system
 listener_multiple/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_multiple.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_multiple.dir/build
 .PHONY : listener_multiple/fast
+
+# Manual pre-install relink rule for target.
+listener_multiple/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_multiple.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_multiple.dir/preinstall
+.PHONY : listener_multiple/preinstall
 
 #=============================================================================
 # Target rules for targets named listener_threaded_spin
@@ -1332,6 +1415,11 @@ listener_threaded_spin/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_threaded_spin.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_threaded_spin.dir/build
 .PHONY : listener_threaded_spin/fast
 
+# Manual pre-install relink rule for target.
+listener_threaded_spin/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_threaded_spin.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_threaded_spin.dir/preinstall
+.PHONY : listener_threaded_spin/preinstall
+
 #=============================================================================
 # Target rules for targets named listener_unreliable
 
@@ -1344,6 +1432,11 @@ listener_unreliable: cmake_check_build_system
 listener_unreliable/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_unreliable.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_unreliable.dir/build
 .PHONY : listener_unreliable/fast
+
+# Manual pre-install relink rule for target.
+listener_unreliable/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_unreliable.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_unreliable.dir/preinstall
+.PHONY : listener_unreliable/preinstall
 
 #=============================================================================
 # Target rules for targets named listener_with_tracked_object
@@ -1358,6 +1451,11 @@ listener_with_tracked_object/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_tracked_object.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_tracked_object.dir/build
 .PHONY : listener_with_tracked_object/fast
 
+# Manual pre-install relink rule for target.
+listener_with_tracked_object/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_tracked_object.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_tracked_object.dir/preinstall
+.PHONY : listener_with_tracked_object/preinstall
+
 #=============================================================================
 # Target rules for targets named listener_with_userdata
 
@@ -1370,6 +1468,11 @@ listener_with_userdata: cmake_check_build_system
 listener_with_userdata/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_userdata.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_userdata.dir/build
 .PHONY : listener_with_userdata/fast
+
+# Manual pre-install relink rule for target.
+listener_with_userdata/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_userdata.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_userdata.dir/preinstall
+.PHONY : listener_with_userdata/preinstall
 
 #=============================================================================
 # Target rules for targets named node_handle_namespaces
@@ -1384,6 +1487,11 @@ node_handle_namespaces/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/node_handle_namespaces.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/node_handle_namespaces.dir/build
 .PHONY : node_handle_namespaces/fast
 
+# Manual pre-install relink rule for target.
+node_handle_namespaces/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/node_handle_namespaces.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/node_handle_namespaces.dir/preinstall
+.PHONY : node_handle_namespaces/preinstall
+
 #=============================================================================
 # Target rules for targets named notify_connect
 
@@ -1397,6 +1505,11 @@ notify_connect/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/notify_connect.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/notify_connect.dir/build
 .PHONY : notify_connect/fast
 
+# Manual pre-install relink rule for target.
+notify_connect/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/notify_connect.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/notify_connect.dir/preinstall
+.PHONY : notify_connect/preinstall
+
 #=============================================================================
 # Target rules for targets named parameters
 
@@ -1409,6 +1522,11 @@ parameters: cmake_check_build_system
 parameters/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/parameters.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/parameters.dir/build
 .PHONY : parameters/fast
+
+# Manual pre-install relink rule for target.
+parameters/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/parameters.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/parameters.dir/preinstall
+.PHONY : parameters/preinstall
 
 #=============================================================================
 # Target rules for targets named roscpp_tutorials_gencpp
@@ -1514,6 +1632,11 @@ talker/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/talker.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/talker.dir/build
 .PHONY : talker/fast
 
+# Manual pre-install relink rule for target.
+talker/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/talker.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/talker.dir/preinstall
+.PHONY : talker/preinstall
+
 #=============================================================================
 # Target rules for targets named time_api_sleep
 
@@ -1527,6 +1650,11 @@ time_api_sleep/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/time_api_sleep.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/time_api_sleep.dir/build
 .PHONY : time_api_sleep/fast
 
+# Manual pre-install relink rule for target.
+time_api_sleep/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/time_api_sleep.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/time_api_sleep.dir/preinstall
+.PHONY : time_api_sleep/preinstall
+
 #=============================================================================
 # Target rules for targets named timers
 
@@ -1539,6 +1667,11 @@ timers: cmake_check_build_system
 timers/fast:
 	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/timers.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/timers.dir/build
 .PHONY : timers/fast
+
+# Manual pre-install relink rule for target.
+timers/preinstall:
+	$(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/timers.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/timers.dir/preinstall
+.PHONY : timers/preinstall
 
 #=============================================================================
 # Target rules for targets named _run_tests_husky_gazebo
@@ -2229,6 +2362,11 @@ rqt_image_view/fast:
 	$(MAKE) -f rqt_common_plugins/rqt_image_view/CMakeFiles/rqt_image_view.dir/build.make rqt_common_plugins/rqt_image_view/CMakeFiles/rqt_image_view.dir/build
 .PHONY : rqt_image_view/fast
 
+# Manual pre-install relink rule for target.
+rqt_image_view/preinstall:
+	$(MAKE) -f rqt_common_plugins/rqt_image_view/CMakeFiles/rqt_image_view.dir/build.make rqt_common_plugins/rqt_image_view/CMakeFiles/rqt_image_view.dir/preinstall
+.PHONY : rqt_image_view/preinstall
+
 #=============================================================================
 # Target rules for targets named fake_localization
 
@@ -2241,6 +2379,11 @@ fake_localization: cmake_check_build_system
 fake_localization/fast:
 	$(MAKE) -f navigation/fake_localization/CMakeFiles/fake_localization.dir/build.make navigation/fake_localization/CMakeFiles/fake_localization.dir/build
 .PHONY : fake_localization/fast
+
+# Manual pre-install relink rule for target.
+fake_localization/preinstall:
+	$(MAKE) -f navigation/fake_localization/CMakeFiles/fake_localization.dir/build.make navigation/fake_localization/CMakeFiles/fake_localization.dir/preinstall
+.PHONY : fake_localization/preinstall
 
 #=============================================================================
 # Target rules for targets named nav_msgs_generate_messages_cpp
@@ -2606,6 +2749,11 @@ slam_gmapping/fast:
 	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/build
 .PHONY : slam_gmapping/fast
 
+# Manual pre-install relink rule for target.
+slam_gmapping/preinstall:
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping.dir/preinstall
+.PHONY : slam_gmapping/preinstall
+
 #=============================================================================
 # Target rules for targets named slam_gmapping_replay
 
@@ -2618,6 +2766,11 @@ slam_gmapping_replay: cmake_check_build_system
 slam_gmapping_replay/fast:
 	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/build
 .PHONY : slam_gmapping_replay/fast
+
+# Manual pre-install relink rule for target.
+slam_gmapping_replay/preinstall:
+	$(MAKE) -f gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/build.make gmapping-ros/slam_gmapping/gmapping/CMakeFiles/slam_gmapping_replay.dir/preinstall
+.PHONY : slam_gmapping_replay/preinstall
 
 #=============================================================================
 # Target rules for targets named _run_tests_map_server
@@ -2710,6 +2863,11 @@ map_server/fast:
 	$(MAKE) -f navigation/map_server/CMakeFiles/map_server.dir/build.make navigation/map_server/CMakeFiles/map_server.dir/build
 .PHONY : map_server/fast
 
+# Manual pre-install relink rule for target.
+map_server/preinstall:
+	$(MAKE) -f navigation/map_server/CMakeFiles/map_server.dir/build.make navigation/map_server/CMakeFiles/map_server.dir/preinstall
+.PHONY : map_server/preinstall
+
 #=============================================================================
 # Target rules for targets named map_server-map_saver
 
@@ -2723,6 +2881,11 @@ map_server-map_saver/fast:
 	$(MAKE) -f navigation/map_server/CMakeFiles/map_server-map_saver.dir/build.make navigation/map_server/CMakeFiles/map_server-map_saver.dir/build
 .PHONY : map_server-map_saver/fast
 
+# Manual pre-install relink rule for target.
+map_server-map_saver/preinstall:
+	$(MAKE) -f navigation/map_server/CMakeFiles/map_server-map_saver.dir/build.make navigation/map_server/CMakeFiles/map_server-map_saver.dir/preinstall
+.PHONY : map_server-map_saver/preinstall
+
 #=============================================================================
 # Target rules for targets named map_server_image_loader
 
@@ -2735,6 +2898,11 @@ map_server_image_loader: cmake_check_build_system
 map_server_image_loader/fast:
 	$(MAKE) -f navigation/map_server/CMakeFiles/map_server_image_loader.dir/build.make navigation/map_server/CMakeFiles/map_server_image_loader.dir/build
 .PHONY : map_server_image_loader/fast
+
+# Manual pre-install relink rule for target.
+map_server_image_loader/preinstall:
+	$(MAKE) -f navigation/map_server/CMakeFiles/map_server_image_loader.dir/build.make navigation/map_server/CMakeFiles/map_server_image_loader.dir/preinstall
+.PHONY : map_server_image_loader/preinstall
 
 #=============================================================================
 # Target rules for targets named map_server_utest
@@ -2970,6 +3138,11 @@ amcl/fast:
 	$(MAKE) -f navigation/amcl/CMakeFiles/amcl.dir/build.make navigation/amcl/CMakeFiles/amcl.dir/build
 .PHONY : amcl/fast
 
+# Manual pre-install relink rule for target.
+amcl/preinstall:
+	$(MAKE) -f navigation/amcl/CMakeFiles/amcl.dir/build.make navigation/amcl/CMakeFiles/amcl.dir/preinstall
+.PHONY : amcl/preinstall
+
 #=============================================================================
 # Target rules for targets named amcl_basic_localization_stage_indexed.bag
 
@@ -3060,6 +3233,11 @@ amcl_sensors: cmake_check_build_system
 amcl_sensors/fast:
 	$(MAKE) -f navigation/amcl/CMakeFiles/amcl_sensors.dir/build.make navigation/amcl/CMakeFiles/amcl_sensors.dir/build
 .PHONY : amcl_sensors/fast
+
+# Manual pre-install relink rule for target.
+amcl_sensors/preinstall:
+	$(MAKE) -f navigation/amcl/CMakeFiles/amcl_sensors.dir/build.make navigation/amcl/CMakeFiles/amcl_sensors.dir/preinstall
+.PHONY : amcl_sensors/preinstall
 
 #=============================================================================
 # Target rules for targets named amcl_small_loop_crazy_driving_prg_indexed.bag
@@ -3386,6 +3564,11 @@ odometry_publisher/fast:
 	$(MAKE) -f navigation_tutorials/odometry_publisher_tutorial/CMakeFiles/odometry_publisher.dir/build.make navigation_tutorials/odometry_publisher_tutorial/CMakeFiles/odometry_publisher.dir/build
 .PHONY : odometry_publisher/fast
 
+# Manual pre-install relink rule for target.
+odometry_publisher/preinstall:
+	$(MAKE) -f navigation_tutorials/odometry_publisher_tutorial/CMakeFiles/odometry_publisher.dir/build.make navigation_tutorials/odometry_publisher_tutorial/CMakeFiles/odometry_publisher.dir/preinstall
+.PHONY : odometry_publisher/preinstall
+
 #=============================================================================
 # Target rules for targets named rbx1_nav_gencfg
 
@@ -3515,6 +3698,11 @@ robot_pose_ekf: cmake_check_build_system
 robot_pose_ekf/fast:
 	$(MAKE) -f navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf.dir/build.make navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf.dir/build
 .PHONY : robot_pose_ekf/fast
+
+# Manual pre-install relink rule for target.
+robot_pose_ekf/preinstall:
+	$(MAKE) -f navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf.dir/build.make navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf.dir/preinstall
+.PHONY : robot_pose_ekf/preinstall
 
 #=============================================================================
 # Target rules for targets named robot_pose_ekf_gencpp
@@ -3698,6 +3886,11 @@ tf_broadcaster/fast:
 	$(MAKE) -f navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_broadcaster.dir/build.make navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_broadcaster.dir/build
 .PHONY : tf_broadcaster/fast
 
+# Manual pre-install relink rule for target.
+tf_broadcaster/preinstall:
+	$(MAKE) -f navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_broadcaster.dir/build.make navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_broadcaster.dir/preinstall
+.PHONY : tf_broadcaster/preinstall
+
 #=============================================================================
 # Target rules for targets named tf_listener
 
@@ -3710,6 +3903,11 @@ tf_listener: cmake_check_build_system
 tf_listener/fast:
 	$(MAKE) -f navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_listener.dir/build.make navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_listener.dir/build
 .PHONY : tf_listener/fast
+
+# Manual pre-install relink rule for target.
+tf_listener/preinstall:
+	$(MAKE) -f navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_listener.dir/build.make navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_listener.dir/preinstall
+.PHONY : tf_listener/preinstall
 
 #=============================================================================
 # Target rules for targets named move_base_msgs_generate_messages_cpp
@@ -3762,6 +3960,11 @@ simple_navigation_goals: cmake_check_build_system
 simple_navigation_goals/fast:
 	$(MAKE) -f navigation_tutorials/simple_navigation_goals_tutorial/CMakeFiles/simple_navigation_goals.dir/build.make navigation_tutorials/simple_navigation_goals_tutorial/CMakeFiles/simple_navigation_goals.dir/build
 .PHONY : simple_navigation_goals/fast
+
+# Manual pre-install relink rule for target.
+simple_navigation_goals/preinstall:
+	$(MAKE) -f navigation_tutorials/simple_navigation_goals_tutorial/CMakeFiles/simple_navigation_goals.dir/build.make navigation_tutorials/simple_navigation_goals_tutorial/CMakeFiles/simple_navigation_goals.dir/preinstall
+.PHONY : simple_navigation_goals/preinstall
 
 #=============================================================================
 # Target rules for targets named _run_tests_stage_ros
@@ -3892,6 +4095,11 @@ stageros: cmake_check_build_system
 stageros/fast:
 	$(MAKE) -f stage_ros/CMakeFiles/stageros.dir/build.make stage_ros/CMakeFiles/stageros.dir/build
 .PHONY : stageros/fast
+
+# Manual pre-install relink rule for target.
+stageros/preinstall:
+	$(MAKE) -f stage_ros/CMakeFiles/stageros.dir/build.make stage_ros/CMakeFiles/stageros.dir/preinstall
+.PHONY : stageros/preinstall
 
 #=============================================================================
 # Target rules for targets named std_srvs_generate_messages_cpp
@@ -4036,6 +4244,11 @@ draw_square/fast:
 	$(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/draw_square.dir/build.make ros_tutorials/turtlesim/CMakeFiles/draw_square.dir/build
 .PHONY : draw_square/fast
 
+# Manual pre-install relink rule for target.
+draw_square/preinstall:
+	$(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/draw_square.dir/build.make ros_tutorials/turtlesim/CMakeFiles/draw_square.dir/preinstall
+.PHONY : draw_square/preinstall
+
 #=============================================================================
 # Target rules for targets named mimic
 
@@ -4049,6 +4262,11 @@ mimic/fast:
 	$(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/mimic.dir/build.make ros_tutorials/turtlesim/CMakeFiles/mimic.dir/build
 .PHONY : mimic/fast
 
+# Manual pre-install relink rule for target.
+mimic/preinstall:
+	$(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/mimic.dir/build.make ros_tutorials/turtlesim/CMakeFiles/mimic.dir/preinstall
+.PHONY : mimic/preinstall
+
 #=============================================================================
 # Target rules for targets named turtle_teleop_key
 
@@ -4061,6 +4279,11 @@ turtle_teleop_key: cmake_check_build_system
 turtle_teleop_key/fast:
 	$(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/turtle_teleop_key.dir/build.make ros_tutorials/turtlesim/CMakeFiles/turtle_teleop_key.dir/build
 .PHONY : turtle_teleop_key/fast
+
+# Manual pre-install relink rule for target.
+turtle_teleop_key/preinstall:
+	$(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/turtle_teleop_key.dir/build.make ros_tutorials/turtlesim/CMakeFiles/turtle_teleop_key.dir/preinstall
+.PHONY : turtle_teleop_key/preinstall
 
 #=============================================================================
 # Target rules for targets named turtlesim_gencpp
@@ -4166,6 +4389,11 @@ turtlesim_node/fast:
 	$(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/turtlesim_node.dir/build.make ros_tutorials/turtlesim/CMakeFiles/turtlesim_node.dir/build
 .PHONY : turtlesim_node/fast
 
+# Manual pre-install relink rule for target.
+turtlesim_node/preinstall:
+	$(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/turtlesim_node.dir/build.make ros_tutorials/turtlesim/CMakeFiles/turtlesim_node.dir/preinstall
+.PHONY : turtlesim_node/preinstall
+
 #=============================================================================
 # Target rules for targets named _run_tests_voxel_grid
 
@@ -4269,6 +4497,11 @@ voxel_grid: cmake_check_build_system
 voxel_grid/fast:
 	$(MAKE) -f navigation/voxel_grid/CMakeFiles/voxel_grid.dir/build.make navigation/voxel_grid/CMakeFiles/voxel_grid.dir/build
 .PHONY : voxel_grid/fast
+
+# Manual pre-install relink rule for target.
+voxel_grid/preinstall:
+	$(MAKE) -f navigation/voxel_grid/CMakeFiles/voxel_grid.dir/build.make navigation/voxel_grid/CMakeFiles/voxel_grid.dir/preinstall
+.PHONY : voxel_grid/preinstall
 
 #=============================================================================
 # Target rules for targets named voxel_grid_tests
@@ -4452,6 +4685,11 @@ costmap_2d/fast:
 	$(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d.dir/build
 .PHONY : costmap_2d/fast
 
+# Manual pre-install relink rule for target.
+costmap_2d/preinstall:
+	$(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d.dir/preinstall
+.PHONY : costmap_2d/preinstall
+
 #=============================================================================
 # Target rules for targets named costmap_2d_cloud
 
@@ -4464,6 +4702,11 @@ costmap_2d_cloud: cmake_check_build_system
 costmap_2d_cloud/fast:
 	$(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir/build
 .PHONY : costmap_2d_cloud/fast
+
+# Manual pre-install relink rule for target.
+costmap_2d_cloud/preinstall:
+	$(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir/preinstall
+.PHONY : costmap_2d_cloud/preinstall
 
 #=============================================================================
 # Target rules for targets named costmap_2d_gencfg
@@ -4582,6 +4825,11 @@ costmap_2d_markers/fast:
 	$(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d_markers.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d_markers.dir/build
 .PHONY : costmap_2d_markers/fast
 
+# Manual pre-install relink rule for target.
+costmap_2d_markers/preinstall:
+	$(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d_markers.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d_markers.dir/preinstall
+.PHONY : costmap_2d_markers/preinstall
+
 #=============================================================================
 # Target rules for targets named costmap_2d_node
 
@@ -4594,6 +4842,11 @@ costmap_2d_node: cmake_check_build_system
 costmap_2d_node/fast:
 	$(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d_node.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d_node.dir/build
 .PHONY : costmap_2d_node/fast
+
+# Manual pre-install relink rule for target.
+costmap_2d_node/preinstall:
+	$(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d_node.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d_node.dir/preinstall
+.PHONY : costmap_2d_node/preinstall
 
 #=============================================================================
 # Target rules for targets named costmap_2d_simple_driving_test_indexed.bag
@@ -4672,6 +4925,11 @@ layers: cmake_check_build_system
 layers/fast:
 	$(MAKE) -f navigation/costmap_2d/CMakeFiles/layers.dir/build.make navigation/costmap_2d/CMakeFiles/layers.dir/build
 .PHONY : layers/fast
+
+# Manual pre-install relink rule for target.
+layers/preinstall:
+	$(MAKE) -f navigation/costmap_2d/CMakeFiles/layers.dir/build.make navigation/costmap_2d/CMakeFiles/layers.dir/preinstall
+.PHONY : layers/preinstall
 
 #=============================================================================
 # Target rules for targets named map_msgs_generate_messages_cpp
@@ -5141,6 +5399,11 @@ explore_client/fast:
 	$(MAKE) -f frontier_exploration/CMakeFiles/explore_client.dir/build.make frontier_exploration/CMakeFiles/explore_client.dir/build
 .PHONY : explore_client/fast
 
+# Manual pre-install relink rule for target.
+explore_client/preinstall:
+	$(MAKE) -f frontier_exploration/CMakeFiles/explore_client.dir/build.make frontier_exploration/CMakeFiles/explore_client.dir/preinstall
+.PHONY : explore_client/preinstall
+
 #=============================================================================
 # Target rules for targets named explore_costmap
 
@@ -5154,6 +5417,11 @@ explore_costmap/fast:
 	$(MAKE) -f frontier_exploration/CMakeFiles/explore_costmap.dir/build.make frontier_exploration/CMakeFiles/explore_costmap.dir/build
 .PHONY : explore_costmap/fast
 
+# Manual pre-install relink rule for target.
+explore_costmap/preinstall:
+	$(MAKE) -f frontier_exploration/CMakeFiles/explore_costmap.dir/build.make frontier_exploration/CMakeFiles/explore_costmap.dir/preinstall
+.PHONY : explore_costmap/preinstall
+
 #=============================================================================
 # Target rules for targets named explore_server
 
@@ -5166,6 +5434,11 @@ explore_server: cmake_check_build_system
 explore_server/fast:
 	$(MAKE) -f frontier_exploration/CMakeFiles/explore_server.dir/build.make frontier_exploration/CMakeFiles/explore_server.dir/build
 .PHONY : explore_server/fast
+
+# Manual pre-install relink rule for target.
+explore_server/preinstall:
+	$(MAKE) -f frontier_exploration/CMakeFiles/explore_server.dir/build.make frontier_exploration/CMakeFiles/explore_server.dir/preinstall
+.PHONY : explore_server/preinstall
 
 #=============================================================================
 # Target rules for targets named frontier_exploration_gencpp
@@ -5466,6 +5739,11 @@ base_local_planner/fast:
 	$(MAKE) -f navigation/base_local_planner/CMakeFiles/base_local_planner.dir/build.make navigation/base_local_planner/CMakeFiles/base_local_planner.dir/build
 .PHONY : base_local_planner/fast
 
+# Manual pre-install relink rule for target.
+base_local_planner/preinstall:
+	$(MAKE) -f navigation/base_local_planner/CMakeFiles/base_local_planner.dir/build.make navigation/base_local_planner/CMakeFiles/base_local_planner.dir/preinstall
+.PHONY : base_local_planner/preinstall
+
 #=============================================================================
 # Target rules for targets named base_local_planner_gencfg
 
@@ -5687,6 +5965,11 @@ trajectory_planner_ros/fast:
 	$(MAKE) -f navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/build.make navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/build
 .PHONY : trajectory_planner_ros/fast
 
+# Manual pre-install relink rule for target.
+trajectory_planner_ros/preinstall:
+	$(MAKE) -f navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/build.make navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/preinstall
+.PHONY : trajectory_planner_ros/preinstall
+
 #=============================================================================
 # Target rules for targets named carrot_planner
 
@@ -5699,6 +5982,11 @@ carrot_planner: cmake_check_build_system
 carrot_planner/fast:
 	$(MAKE) -f navigation/carrot_planner/CMakeFiles/carrot_planner.dir/build.make navigation/carrot_planner/CMakeFiles/carrot_planner.dir/build
 .PHONY : carrot_planner/fast
+
+# Manual pre-install relink rule for target.
+carrot_planner/preinstall:
+	$(MAKE) -f navigation/carrot_planner/CMakeFiles/carrot_planner.dir/build.make navigation/carrot_planner/CMakeFiles/carrot_planner.dir/preinstall
+.PHONY : carrot_planner/preinstall
 
 #=============================================================================
 # Target rules for targets named _run_tests_clear_costmap_recovery
@@ -5765,6 +6053,11 @@ clear_costmap_recovery/fast:
 	$(MAKE) -f navigation/clear_costmap_recovery/CMakeFiles/clear_costmap_recovery.dir/build.make navigation/clear_costmap_recovery/CMakeFiles/clear_costmap_recovery.dir/build
 .PHONY : clear_costmap_recovery/fast
 
+# Manual pre-install relink rule for target.
+clear_costmap_recovery/preinstall:
+	$(MAKE) -f navigation/clear_costmap_recovery/CMakeFiles/clear_costmap_recovery.dir/build.make navigation/clear_costmap_recovery/CMakeFiles/clear_costmap_recovery.dir/preinstall
+.PHONY : clear_costmap_recovery/preinstall
+
 #=============================================================================
 # Target rules for targets named clear_tester
 
@@ -5830,6 +6123,11 @@ dwa_local_planner/fast:
 	$(MAKE) -f navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/build.make navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/build
 .PHONY : dwa_local_planner/fast
 
+# Manual pre-install relink rule for target.
+dwa_local_planner/preinstall:
+	$(MAKE) -f navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/build.make navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/preinstall
+.PHONY : dwa_local_planner/preinstall
+
 #=============================================================================
 # Target rules for targets named dwa_local_planner_gencfg
 
@@ -5855,6 +6153,11 @@ move_slow_and_clear: cmake_check_build_system
 move_slow_and_clear/fast:
 	$(MAKE) -f navigation/move_slow_and_clear/CMakeFiles/move_slow_and_clear.dir/build.make navigation/move_slow_and_clear/CMakeFiles/move_slow_and_clear.dir/build
 .PHONY : move_slow_and_clear/fast
+
+# Manual pre-install relink rule for target.
+move_slow_and_clear/preinstall:
+	$(MAKE) -f navigation/move_slow_and_clear/CMakeFiles/move_slow_and_clear.dir/build.make navigation/move_slow_and_clear/CMakeFiles/move_slow_and_clear.dir/preinstall
+.PHONY : move_slow_and_clear/preinstall
 
 #=============================================================================
 # Target rules for targets named _navfn_generate_messages_check_deps_MakeNavPlan
@@ -5894,6 +6197,11 @@ navfn: cmake_check_build_system
 navfn/fast:
 	$(MAKE) -f navigation/navfn/CMakeFiles/navfn.dir/build.make navigation/navfn/CMakeFiles/navfn.dir/build
 .PHONY : navfn/fast
+
+# Manual pre-install relink rule for target.
+navfn/preinstall:
+	$(MAKE) -f navigation/navfn/CMakeFiles/navfn.dir/build.make navigation/navfn/CMakeFiles/navfn.dir/preinstall
+.PHONY : navfn/preinstall
 
 #=============================================================================
 # Target rules for targets named navfn_gencpp
@@ -5998,6 +6306,11 @@ navfn_node: cmake_check_build_system
 navfn_node/fast:
 	$(MAKE) -f navigation/navfn/CMakeFiles/navfn_node.dir/build.make navigation/navfn/CMakeFiles/navfn_node.dir/build
 .PHONY : navfn_node/fast
+
+# Manual pre-install relink rule for target.
+navfn_node/preinstall:
+	$(MAKE) -f navigation/navfn/CMakeFiles/navfn_node.dir/build.make navigation/navfn/CMakeFiles/navfn_node.dir/preinstall
+.PHONY : navfn_node/preinstall
 
 #=============================================================================
 # Target rules for targets named _run_tests_navfn
@@ -6116,6 +6429,11 @@ global_planner/fast:
 	$(MAKE) -f navigation/global_planner/CMakeFiles/global_planner.dir/build.make navigation/global_planner/CMakeFiles/global_planner.dir/build
 .PHONY : global_planner/fast
 
+# Manual pre-install relink rule for target.
+global_planner/preinstall:
+	$(MAKE) -f navigation/global_planner/CMakeFiles/global_planner.dir/build.make navigation/global_planner/CMakeFiles/global_planner.dir/preinstall
+.PHONY : global_planner/preinstall
+
 #=============================================================================
 # Target rules for targets named global_planner_gencfg
 
@@ -6142,6 +6460,11 @@ planner/fast:
 	$(MAKE) -f navigation/global_planner/CMakeFiles/planner.dir/build.make navigation/global_planner/CMakeFiles/planner.dir/build
 .PHONY : planner/fast
 
+# Manual pre-install relink rule for target.
+planner/preinstall:
+	$(MAKE) -f navigation/global_planner/CMakeFiles/planner.dir/build.make navigation/global_planner/CMakeFiles/planner.dir/preinstall
+.PHONY : planner/preinstall
+
 #=============================================================================
 # Target rules for targets named rotate_recovery
 
@@ -6155,6 +6478,11 @@ rotate_recovery/fast:
 	$(MAKE) -f navigation/rotate_recovery/CMakeFiles/rotate_recovery.dir/build.make navigation/rotate_recovery/CMakeFiles/rotate_recovery.dir/build
 .PHONY : rotate_recovery/fast
 
+# Manual pre-install relink rule for target.
+rotate_recovery/preinstall:
+	$(MAKE) -f navigation/rotate_recovery/CMakeFiles/rotate_recovery.dir/build.make navigation/rotate_recovery/CMakeFiles/rotate_recovery.dir/preinstall
+.PHONY : rotate_recovery/preinstall
+
 #=============================================================================
 # Target rules for targets named move_base
 
@@ -6167,6 +6495,11 @@ move_base: cmake_check_build_system
 move_base/fast:
 	$(MAKE) -f navigation/move_base/CMakeFiles/move_base.dir/build.make navigation/move_base/CMakeFiles/move_base.dir/build
 .PHONY : move_base/fast
+
+# Manual pre-install relink rule for target.
+move_base/preinstall:
+	$(MAKE) -f navigation/move_base/CMakeFiles/move_base.dir/build.make navigation/move_base/CMakeFiles/move_base.dir/preinstall
+.PHONY : move_base/preinstall
 
 #=============================================================================
 # Target rules for targets named move_base_gencfg
@@ -6194,6 +6527,11 @@ move_base_node/fast:
 	$(MAKE) -f navigation/move_base/CMakeFiles/move_base_node.dir/build.make navigation/move_base/CMakeFiles/move_base_node.dir/build
 .PHONY : move_base_node/fast
 
+# Manual pre-install relink rule for target.
+move_base_node/preinstall:
+	$(MAKE) -f navigation/move_base/CMakeFiles/move_base_node.dir/build.make navigation/move_base/CMakeFiles/move_base_node.dir/preinstall
+.PHONY : move_base_node/preinstall
+
 #=============================================================================
 # Target rules for targets named wanderer
 
@@ -6219,7 +6557,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... run_tests"
@@ -6282,6 +6619,7 @@ help:
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... cmd_vel"
 	@echo "... dynamic"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_lisp"

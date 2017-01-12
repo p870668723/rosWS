@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -162,6 +152,11 @@ fake_localization: navigation/fake_localization/CMakeFiles/fake_localization.dir
 fake_localization/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/fake_localization/CMakeFiles/fake_localization.dir/build.make navigation/fake_localization/CMakeFiles/fake_localization.dir/build
 .PHONY : fake_localization/fast
+
+# Manual pre-install relink rule for target.
+fake_localization/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/fake_localization/CMakeFiles/fake_localization.dir/preinstall
+.PHONY : fake_localization/preinstall
 
 # Convenience name for target.
 navigation/fake_localization/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
@@ -239,7 +234,6 @@ help:
 	@echo "... fake_localization"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... nav_msgs_generate_messages_cpp"
 	@echo "... nav_msgs_generate_messages_lisp"

@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -190,6 +180,11 @@ navfn: navigation/navfn/CMakeFiles/navfn.dir/rule
 navfn/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn.dir/build.make navigation/navfn/CMakeFiles/navfn.dir/build
 .PHONY : navfn/fast
+
+# Manual pre-install relink rule for target.
+navfn/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn.dir/preinstall
+.PHONY : navfn/preinstall
 
 # Convenience name for target.
 navigation/navfn/CMakeFiles/navfn_gencpp.dir/rule:
@@ -303,6 +298,11 @@ navfn_node/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/navfn/CMakeFiles/navfn_node.dir/build.make navigation/navfn/CMakeFiles/navfn_node.dir/build
 .PHONY : navfn_node/fast
 
+# Manual pre-install relink rule for target.
+navfn_node/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navfn/CMakeFiles/navfn_node.dir/preinstall
+.PHONY : navfn_node/preinstall
+
 src/navfn.o: src/navfn.cpp.o
 .PHONY : src/navfn.o
 
@@ -386,7 +386,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... navfn"
 	@echo "... navfn_gencpp"

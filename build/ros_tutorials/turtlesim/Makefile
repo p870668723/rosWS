@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -261,6 +251,11 @@ draw_square/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/draw_square.dir/build.make ros_tutorials/turtlesim/CMakeFiles/draw_square.dir/build
 .PHONY : draw_square/fast
 
+# Manual pre-install relink rule for target.
+draw_square/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/turtlesim/CMakeFiles/draw_square.dir/preinstall
+.PHONY : draw_square/preinstall
+
 # Convenience name for target.
 ros_tutorials/turtlesim/CMakeFiles/mimic.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/turtlesim/CMakeFiles/mimic.dir/rule
@@ -275,6 +270,11 @@ mimic/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/mimic.dir/build.make ros_tutorials/turtlesim/CMakeFiles/mimic.dir/build
 .PHONY : mimic/fast
 
+# Manual pre-install relink rule for target.
+mimic/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/turtlesim/CMakeFiles/mimic.dir/preinstall
+.PHONY : mimic/preinstall
+
 # Convenience name for target.
 ros_tutorials/turtlesim/CMakeFiles/turtle_teleop_key.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/turtlesim/CMakeFiles/turtle_teleop_key.dir/rule
@@ -288,6 +288,11 @@ turtle_teleop_key: ros_tutorials/turtlesim/CMakeFiles/turtle_teleop_key.dir/rule
 turtle_teleop_key/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/turtle_teleop_key.dir/build.make ros_tutorials/turtlesim/CMakeFiles/turtle_teleop_key.dir/build
 .PHONY : turtle_teleop_key/fast
+
+# Manual pre-install relink rule for target.
+turtle_teleop_key/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/turtlesim/CMakeFiles/turtle_teleop_key.dir/preinstall
+.PHONY : turtle_teleop_key/preinstall
 
 # Convenience name for target.
 ros_tutorials/turtlesim/CMakeFiles/turtlesim_gencpp.dir/rule:
@@ -400,6 +405,11 @@ turtlesim_node: ros_tutorials/turtlesim/CMakeFiles/turtlesim_node.dir/rule
 turtlesim_node/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/turtlesim/CMakeFiles/turtlesim_node.dir/build.make ros_tutorials/turtlesim/CMakeFiles/turtlesim_node.dir/build
 .PHONY : turtlesim_node/fast
+
+# Manual pre-install relink rule for target.
+turtlesim_node/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/turtlesim/CMakeFiles/turtlesim_node.dir/preinstall
+.PHONY : turtlesim_node/preinstall
 
 include/turtlesim/moc_turtle_frame.o: include/turtlesim/moc_turtle_frame.cpp.o
 .PHONY : include/turtlesim/moc_turtle_frame.o
@@ -586,7 +596,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... mimic"
 	@echo "... rebuild_cache"

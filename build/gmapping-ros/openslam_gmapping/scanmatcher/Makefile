@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -162,6 +152,11 @@ scanmatcher: gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.d
 scanmatcher/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/build.make gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/build
 .PHONY : scanmatcher/fast
+
+# Manual pre-install relink rule for target.
+scanmatcher/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/preinstall
+.PHONY : scanmatcher/preinstall
 
 eig3.o: eig3.cpp.o
 .PHONY : eig3.o
@@ -268,7 +263,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... scanmatcher"

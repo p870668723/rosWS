@@ -5,6 +5,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/gridfastslam.dir/motionmodel.cpp.o"
   "/home/pf/rosWS/devel/lib/libgridfastslam.pdb"
   "/home/pf/rosWS/devel/lib/libgridfastslam.so"
+  "/home/pf/rosWS/devel/lib/libgridfastslam.pdb"
+  "CMakeFiles/CMakeRelink.dir/libgridfastslam.so"
 )
 
 # Per-language clean rules from dependency scanning.

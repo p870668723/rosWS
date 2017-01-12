@@ -113,6 +113,47 @@ map_server_EXTERNAL_OBJECTS =
 navigation/map_server/CMakeFiles/map_server.dir/build: /home/pf/rosWS/devel/lib/map_server/map_server
 .PHONY : navigation/map_server/CMakeFiles/map_server.dir/build
 
+# Object files for target map_server
+map_server_OBJECTS = \
+"CMakeFiles/map_server.dir/src/main.cpp.o"
+
+# External object files for target map_server
+map_server_EXTERNAL_OBJECTS =
+
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: navigation/map_server/CMakeFiles/map_server.dir/src/main.cpp.o
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: navigation/map_server/CMakeFiles/map_server.dir/build.make
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /home/pf/rosWS/devel/lib/libmap_server_image_loader.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /opt/ros/indigo/lib/libtf.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /opt/ros/indigo/lib/libtf2_ros.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /opt/ros/indigo/lib/libactionlib.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /opt/ros/indigo/lib/libmessage_filters.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /opt/ros/indigo/lib/libroscpp.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /opt/ros/indigo/lib/libxmlrpcpp.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /opt/ros/indigo/lib/libtf2.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /opt/ros/indigo/lib/librosconsole.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /opt/ros/indigo/lib/librosconsole_log4cxx.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /opt/ros/indigo/lib/librosconsole_backend_interface.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /usr/lib/liblog4cxx.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /opt/ros/indigo/lib/libroscpp_serialization.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /opt/ros/indigo/lib/librostime.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /opt/ros/indigo/lib/libcpp_common.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /usr/lib/x86_64-linux-gnu/libboost_system.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /usr/lib/x86_64-linux-gnu/libpthread.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: /usr/lib/x86_64-linux-gnu/libboost_system.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server: navigation/map_server/CMakeFiles/map_server.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable CMakeFiles/CMakeRelink.dir/map_server"
+	cd /home/pf/rosWS/build/navigation/map_server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/map_server.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+navigation/map_server/CMakeFiles/map_server.dir/preinstall: navigation/map_server/CMakeFiles/CMakeRelink.dir/map_server
+.PHONY : navigation/map_server/CMakeFiles/map_server.dir/preinstall
+
 navigation/map_server/CMakeFiles/map_server.dir/requires: navigation/map_server/CMakeFiles/map_server.dir/src/main.cpp.o.requires
 .PHONY : navigation/map_server/CMakeFiles/map_server.dir/requires
 

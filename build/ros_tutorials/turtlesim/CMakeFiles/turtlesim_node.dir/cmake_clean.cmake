@@ -6,6 +6,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/turtlesim_node.dir/include/turtlesim/moc_turtle_frame.cpp.o"
   "/home/pf/rosWS/devel/lib/turtlesim/turtlesim_node.pdb"
   "/home/pf/rosWS/devel/lib/turtlesim/turtlesim_node"
+  "/home/pf/rosWS/devel/lib/turtlesim/turtlesim_node.pdb"
+  "CMakeFiles/CMakeRelink.dir/turtlesim_node"
 )
 
 # Per-language clean rules from dependency scanning.

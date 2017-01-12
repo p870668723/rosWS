@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -163,6 +153,11 @@ move_base/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/move_base/CMakeFiles/move_base.dir/build.make navigation/move_base/CMakeFiles/move_base.dir/build
 .PHONY : move_base/fast
 
+# Manual pre-install relink rule for target.
+move_base/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/move_base/CMakeFiles/move_base.dir/preinstall
+.PHONY : move_base/preinstall
+
 # Convenience name for target.
 navigation/move_base/CMakeFiles/move_base_gencfg.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/move_base/CMakeFiles/move_base_gencfg.dir/rule
@@ -190,6 +185,11 @@ move_base_node: navigation/move_base/CMakeFiles/move_base_node.dir/rule
 move_base_node/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/move_base/CMakeFiles/move_base_node.dir/build.make navigation/move_base/CMakeFiles/move_base_node.dir/build
 .PHONY : move_base_node/fast
+
+# Manual pre-install relink rule for target.
+move_base_node/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/move_base/CMakeFiles/move_base_node.dir/preinstall
+.PHONY : move_base_node/preinstall
 
 src/move_base.o: src/move_base.cpp.o
 .PHONY : src/move_base.o
@@ -248,7 +248,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... move_base"
 	@echo "... move_base_gencfg"

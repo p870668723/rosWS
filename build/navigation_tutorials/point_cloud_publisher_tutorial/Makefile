@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -163,6 +153,11 @@ point_cloud_publisher/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/build.make navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/build
 .PHONY : point_cloud_publisher/fast
 
+# Manual pre-install relink rule for target.
+point_cloud_publisher/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/preinstall
+.PHONY : point_cloud_publisher/preinstall
+
 src/point_cloud_publisher.o: src/point_cloud_publisher.cpp.o
 .PHONY : src/point_cloud_publisher.o
 
@@ -196,7 +191,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... point_cloud_publisher"
 	@echo "... rebuild_cache"

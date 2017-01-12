@@ -8,6 +8,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/global_planner.dir/src/planner_core.cpp.o"
   "/home/pf/rosWS/devel/lib/libglobal_planner.pdb"
   "/home/pf/rosWS/devel/lib/libglobal_planner.so"
+  "/home/pf/rosWS/devel/lib/libglobal_planner.pdb"
+  "CMakeFiles/CMakeRelink.dir/libglobal_planner.so"
 )
 
 # Per-language clean rules from dependency scanning.

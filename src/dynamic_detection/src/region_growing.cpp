@@ -30,7 +30,7 @@ std::queue<Point_custom> Search_region(int** map,int x_total, int y_total)
                 points.push_back(map_copy[i][j]);
         }
 
-    ROS_INFO("total number of points: %ld",points.size() );//test code
+    //ROS_INFO("total number of points: %ld",points.size() );//test code
     //ROS_INFO("size of points : %ld",points.size());
 
     //对list进行分类,分类标准为:互不联通的单独成为一个组,形成一个独立的区域.
@@ -130,7 +130,7 @@ std::queue<Point_custom> Search_region(int** map,int x_total, int y_total)
             region_center.value = num_pt_region+1;//用value计数本区域的有效点的个数,作为该点的一个特征量,用来匹配.
             if(region_center.value < 300)  //生长区域的总点数大于某个阈值,则可能是墙壁/座椅等静止物体的关于机器人相对运动产生动态性.排除.
                 regions_centers.push(region_center);
-            ROS_INFO("region points number: %d",num_pt_region);//test code
+            //ROS_INFO("region points number: %d",num_pt_region);//test code
             //一个区域完成,清零,准备下一个区域搜索
             sum_x=0;
             sum_y=0;

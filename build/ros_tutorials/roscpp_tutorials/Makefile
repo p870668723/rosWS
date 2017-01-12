@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -177,6 +167,11 @@ add_two_ints_client/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_client.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_client.dir/build
 .PHONY : add_two_ints_client/fast
 
+# Manual pre-install relink rule for target.
+add_two_ints_client/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_client.dir/preinstall
+.PHONY : add_two_ints_client/preinstall
+
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server.dir/rule
@@ -190,6 +185,11 @@ add_two_ints_server: ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_serv
 add_two_ints_server/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server.dir/build
 .PHONY : add_two_ints_server/fast
+
+# Manual pre-install relink rule for target.
+add_two_ints_server/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server.dir/preinstall
+.PHONY : add_two_ints_server/preinstall
 
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server_class.dir/rule:
@@ -205,6 +205,11 @@ add_two_ints_server_class/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server_class.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server_class.dir/build
 .PHONY : add_two_ints_server_class/fast
 
+# Manual pre-install relink rule for target.
+add_two_ints_server_class/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/add_two_ints_server_class.dir/preinstall
+.PHONY : add_two_ints_server_class/preinstall
+
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/anonymous_listener.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/anonymous_listener.dir/rule
@@ -218,6 +223,11 @@ anonymous_listener: ros_tutorials/roscpp_tutorials/CMakeFiles/anonymous_listener
 anonymous_listener/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/anonymous_listener.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/anonymous_listener.dir/build
 .PHONY : anonymous_listener/fast
+
+# Manual pre-install relink rule for target.
+anonymous_listener/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/anonymous_listener.dir/preinstall
+.PHONY : anonymous_listener/preinstall
 
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/babbler.dir/rule:
@@ -233,6 +243,11 @@ babbler/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/babbler.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/babbler.dir/build
 .PHONY : babbler/fast
 
+# Manual pre-install relink rule for target.
+babbler/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/babbler.dir/preinstall
+.PHONY : babbler/preinstall
+
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/custom_callback_processing.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/custom_callback_processing.dir/rule
@@ -246,6 +261,11 @@ custom_callback_processing: ros_tutorials/roscpp_tutorials/CMakeFiles/custom_cal
 custom_callback_processing/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/custom_callback_processing.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/custom_callback_processing.dir/build
 .PHONY : custom_callback_processing/fast
+
+# Manual pre-install relink rule for target.
+custom_callback_processing/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/custom_callback_processing.dir/preinstall
+.PHONY : custom_callback_processing/preinstall
 
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/listener.dir/rule:
@@ -261,6 +281,11 @@ listener/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener.dir/build
 .PHONY : listener/fast
 
+# Manual pre-install relink rule for target.
+listener/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/listener.dir/preinstall
+.PHONY : listener/preinstall
+
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_async_spin.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_async_spin.dir/rule
@@ -274,6 +299,11 @@ listener_async_spin: ros_tutorials/roscpp_tutorials/CMakeFiles/listener_async_sp
 listener_async_spin/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_async_spin.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_async_spin.dir/build
 .PHONY : listener_async_spin/fast
+
+# Manual pre-install relink rule for target.
+listener_async_spin/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_async_spin.dir/preinstall
+.PHONY : listener_async_spin/preinstall
 
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_class.dir/rule:
@@ -289,6 +319,11 @@ listener_class/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_class.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_class.dir/build
 .PHONY : listener_class/fast
 
+# Manual pre-install relink rule for target.
+listener_class/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_class.dir/preinstall
+.PHONY : listener_class/preinstall
+
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_multiple.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_multiple.dir/rule
@@ -302,6 +337,11 @@ listener_multiple: ros_tutorials/roscpp_tutorials/CMakeFiles/listener_multiple.d
 listener_multiple/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_multiple.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_multiple.dir/build
 .PHONY : listener_multiple/fast
+
+# Manual pre-install relink rule for target.
+listener_multiple/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_multiple.dir/preinstall
+.PHONY : listener_multiple/preinstall
 
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_threaded_spin.dir/rule:
@@ -317,6 +357,11 @@ listener_threaded_spin/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_threaded_spin.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_threaded_spin.dir/build
 .PHONY : listener_threaded_spin/fast
 
+# Manual pre-install relink rule for target.
+listener_threaded_spin/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_threaded_spin.dir/preinstall
+.PHONY : listener_threaded_spin/preinstall
+
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_unreliable.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_unreliable.dir/rule
@@ -330,6 +375,11 @@ listener_unreliable: ros_tutorials/roscpp_tutorials/CMakeFiles/listener_unreliab
 listener_unreliable/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_unreliable.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_unreliable.dir/build
 .PHONY : listener_unreliable/fast
+
+# Manual pre-install relink rule for target.
+listener_unreliable/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_unreliable.dir/preinstall
+.PHONY : listener_unreliable/preinstall
 
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_tracked_object.dir/rule:
@@ -345,6 +395,11 @@ listener_with_tracked_object/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_tracked_object.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_tracked_object.dir/build
 .PHONY : listener_with_tracked_object/fast
 
+# Manual pre-install relink rule for target.
+listener_with_tracked_object/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_tracked_object.dir/preinstall
+.PHONY : listener_with_tracked_object/preinstall
+
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_userdata.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_userdata.dir/rule
@@ -358,6 +413,11 @@ listener_with_userdata: ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_
 listener_with_userdata/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_userdata.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_userdata.dir/build
 .PHONY : listener_with_userdata/fast
+
+# Manual pre-install relink rule for target.
+listener_with_userdata/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/listener_with_userdata.dir/preinstall
+.PHONY : listener_with_userdata/preinstall
 
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/node_handle_namespaces.dir/rule:
@@ -373,6 +433,11 @@ node_handle_namespaces/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/node_handle_namespaces.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/node_handle_namespaces.dir/build
 .PHONY : node_handle_namespaces/fast
 
+# Manual pre-install relink rule for target.
+node_handle_namespaces/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/node_handle_namespaces.dir/preinstall
+.PHONY : node_handle_namespaces/preinstall
+
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/notify_connect.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/notify_connect.dir/rule
@@ -387,6 +452,11 @@ notify_connect/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/notify_connect.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/notify_connect.dir/build
 .PHONY : notify_connect/fast
 
+# Manual pre-install relink rule for target.
+notify_connect/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/notify_connect.dir/preinstall
+.PHONY : notify_connect/preinstall
+
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/parameters.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/parameters.dir/rule
@@ -400,6 +470,11 @@ parameters: ros_tutorials/roscpp_tutorials/CMakeFiles/parameters.dir/rule
 parameters/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/parameters.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/parameters.dir/build
 .PHONY : parameters/fast
+
+# Manual pre-install relink rule for target.
+parameters/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/parameters.dir/preinstall
+.PHONY : parameters/preinstall
 
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/roscpp_tutorials_gencpp.dir/rule:
@@ -513,6 +588,11 @@ talker/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/talker.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/talker.dir/build
 .PHONY : talker/fast
 
+# Manual pre-install relink rule for target.
+talker/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/talker.dir/preinstall
+.PHONY : talker/preinstall
+
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/time_api_sleep.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/time_api_sleep.dir/rule
@@ -527,6 +607,11 @@ time_api_sleep/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/time_api_sleep.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/time_api_sleep.dir/build
 .PHONY : time_api_sleep/fast
 
+# Manual pre-install relink rule for target.
+time_api_sleep/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/time_api_sleep.dir/preinstall
+.PHONY : time_api_sleep/preinstall
+
 # Convenience name for target.
 ros_tutorials/roscpp_tutorials/CMakeFiles/timers.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/timers.dir/rule
@@ -540,6 +625,11 @@ timers: ros_tutorials/roscpp_tutorials/CMakeFiles/timers.dir/rule
 timers/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f ros_tutorials/roscpp_tutorials/CMakeFiles/timers.dir/build.make ros_tutorials/roscpp_tutorials/CMakeFiles/timers.dir/build
 .PHONY : timers/fast
+
+# Manual pre-install relink rule for target.
+timers/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 ros_tutorials/roscpp_tutorials/CMakeFiles/timers.dir/preinstall
+.PHONY : timers/preinstall
 
 add_two_ints_client/add_two_ints_client.o: add_two_ints_client/add_two_ints_client.cpp.o
 .PHONY : add_two_ints_client/add_two_ints_client.o
@@ -1037,7 +1127,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... listener"
 	@echo "... listener_async_spin"

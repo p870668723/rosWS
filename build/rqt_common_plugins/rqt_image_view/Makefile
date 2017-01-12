@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -247,6 +237,11 @@ rqt_image_view/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f rqt_common_plugins/rqt_image_view/CMakeFiles/rqt_image_view.dir/build.make rqt_common_plugins/rqt_image_view/CMakeFiles/rqt_image_view.dir/build
 .PHONY : rqt_image_view/fast
 
+# Manual pre-install relink rule for target.
+rqt_image_view/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 rqt_common_plugins/rqt_image_view/CMakeFiles/rqt_image_view.dir/preinstall
+.PHONY : rqt_image_view/preinstall
+
 include/rqt_image_view/moc_image_view.o: include/rqt_image_view/moc_image_view.cxx.o
 .PHONY : include/rqt_image_view/moc_image_view.o
 
@@ -355,7 +350,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... nodelet_generate_messages_cpp"
 	@echo "... nodelet_generate_messages_lisp"

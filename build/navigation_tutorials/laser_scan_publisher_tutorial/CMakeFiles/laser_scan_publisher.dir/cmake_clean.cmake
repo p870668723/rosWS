@@ -2,6 +2,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/laser_scan_publisher.dir/src/laser_scan_publisher.cpp.o"
   "/home/pf/rosWS/devel/lib/laser_scan_publisher_tutorial/laser_scan_publisher.pdb"
   "/home/pf/rosWS/devel/lib/laser_scan_publisher_tutorial/laser_scan_publisher"
+  "/home/pf/rosWS/devel/lib/laser_scan_publisher_tutorial/laser_scan_publisher.pdb"
+  "CMakeFiles/CMakeRelink.dir/laser_scan_publisher"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -168,6 +168,33 @@ gridfastslam_EXTERNAL_OBJECTS =
 gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/build: /home/pf/rosWS/devel/lib/libgridfastslam.so
 .PHONY : gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/build
 
+# Object files for target gridfastslam
+gridfastslam_OBJECTS = \
+"CMakeFiles/gridfastslam.dir/gfsreader.cpp.o" \
+"CMakeFiles/gridfastslam.dir/gridslamprocessor.cpp.o" \
+"CMakeFiles/gridfastslam.dir/gridslamprocessor_tree.cpp.o" \
+"CMakeFiles/gridfastslam.dir/motionmodel.cpp.o"
+
+# External object files for target gridfastslam
+gridfastslam_EXTERNAL_OBJECTS =
+
+gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/CMakeRelink.dir/libgridfastslam.so: gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/gfsreader.cpp.o
+gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/CMakeRelink.dir/libgridfastslam.so: gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/gridslamprocessor.cpp.o
+gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/CMakeRelink.dir/libgridfastslam.so: gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/gridslamprocessor_tree.cpp.o
+gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/CMakeRelink.dir/libgridfastslam.so: gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/motionmodel.cpp.o
+gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/CMakeRelink.dir/libgridfastslam.so: gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/build.make
+gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/CMakeRelink.dir/libgridfastslam.so: /home/pf/rosWS/devel/lib/libscanmatcher.so
+gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/CMakeRelink.dir/libgridfastslam.so: /home/pf/rosWS/devel/lib/libsensor_range.so
+gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/CMakeRelink.dir/libgridfastslam.so: /home/pf/rosWS/devel/lib/libsensor_base.so
+gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/CMakeRelink.dir/libgridfastslam.so: /home/pf/rosWS/devel/lib/libutils.so
+gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/CMakeRelink.dir/libgridfastslam.so: gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library CMakeFiles/CMakeRelink.dir/libgridfastslam.so"
+	cd /home/pf/rosWS/build/gmapping-ros/openslam_gmapping/gridfastslam && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gridfastslam.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/preinstall: gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/CMakeRelink.dir/libgridfastslam.so
+.PHONY : gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/preinstall
+
 gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/requires: gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/gfsreader.cpp.o.requires
 gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/requires: gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/gridslamprocessor.cpp.o.requires
 gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/requires: gmapping-ros/openslam_gmapping/gridfastslam/CMakeFiles/gridfastslam.dir/gridslamprocessor_tree.cpp.o.requires

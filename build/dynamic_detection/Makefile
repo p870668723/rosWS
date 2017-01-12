@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -232,6 +222,20 @@ actionlib_msgs_generate_messages_py: dynamic_detection/CMakeFiles/actionlib_msgs
 actionlib_msgs_generate_messages_py/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f dynamic_detection/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build.make dynamic_detection/CMakeFiles/actionlib_msgs_generate_messages_py.dir/build
 .PHONY : actionlib_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+dynamic_detection/CMakeFiles/cmd_vel.dir/rule:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 dynamic_detection/CMakeFiles/cmd_vel.dir/rule
+.PHONY : dynamic_detection/CMakeFiles/cmd_vel.dir/rule
+
+# Convenience name for target.
+cmd_vel: dynamic_detection/CMakeFiles/cmd_vel.dir/rule
+.PHONY : cmd_vel
+
+# fast build rule for target.
+cmd_vel/fast:
+	cd /home/pf/rosWS/build && $(MAKE) -f dynamic_detection/CMakeFiles/cmd_vel.dir/build.make dynamic_detection/CMakeFiles/cmd_vel.dir/build
+.PHONY : cmd_vel/fast
 
 # Convenience name for target.
 dynamic_detection/CMakeFiles/dynamic.dir/rule:
@@ -439,6 +443,30 @@ src/cal_vel.cpp.s:
 	cd /home/pf/rosWS/build && $(MAKE) -f dynamic_detection/CMakeFiles/dynamic.dir/build.make dynamic_detection/CMakeFiles/dynamic.dir/src/cal_vel.cpp.s
 .PHONY : src/cal_vel.cpp.s
 
+src/cmd_line.o: src/cmd_line.cpp.o
+.PHONY : src/cmd_line.o
+
+# target to build an object file
+src/cmd_line.cpp.o:
+	cd /home/pf/rosWS/build && $(MAKE) -f dynamic_detection/CMakeFiles/cmd_vel.dir/build.make dynamic_detection/CMakeFiles/cmd_vel.dir/src/cmd_line.cpp.o
+.PHONY : src/cmd_line.cpp.o
+
+src/cmd_line.i: src/cmd_line.cpp.i
+.PHONY : src/cmd_line.i
+
+# target to preprocess a source file
+src/cmd_line.cpp.i:
+	cd /home/pf/rosWS/build && $(MAKE) -f dynamic_detection/CMakeFiles/cmd_vel.dir/build.make dynamic_detection/CMakeFiles/cmd_vel.dir/src/cmd_line.cpp.i
+.PHONY : src/cmd_line.cpp.i
+
+src/cmd_line.s: src/cmd_line.cpp.s
+.PHONY : src/cmd_line.s
+
+# target to generate assembly for a file
+src/cmd_line.cpp.s:
+	cd /home/pf/rosWS/build && $(MAKE) -f dynamic_detection/CMakeFiles/cmd_vel.dir/build.make dynamic_detection/CMakeFiles/cmd_vel.dir/src/cmd_line.cpp.s
+.PHONY : src/cmd_line.cpp.s
+
 src/dynamic.o: src/dynamic.cpp.o
 .PHONY : src/dynamic.o
 
@@ -523,6 +551,7 @@ help:
 	@echo "... actionlib_msgs_generate_messages_cpp"
 	@echo "... actionlib_msgs_generate_messages_lisp"
 	@echo "... actionlib_msgs_generate_messages_py"
+	@echo "... cmd_vel"
 	@echo "... dynamic"
 	@echo "... edit_cache"
 	@echo "... geometry_msgs_generate_messages_cpp"
@@ -530,7 +559,6 @@ help:
 	@echo "... geometry_msgs_generate_messages_py"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... sensor_msgs_generate_messages_cpp"
@@ -546,6 +574,9 @@ help:
 	@echo "... src/cal_vel.o"
 	@echo "... src/cal_vel.i"
 	@echo "... src/cal_vel.s"
+	@echo "... src/cmd_line.o"
+	@echo "... src/cmd_line.i"
+	@echo "... src/cmd_line.s"
 	@echo "... src/dynamic.o"
 	@echo "... src/dynamic.i"
 	@echo "... src/dynamic.s"

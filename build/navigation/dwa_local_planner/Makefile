@@ -79,16 +79,6 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: install/strip
-.PHONY : install/strip/fast
-
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -163,6 +153,11 @@ dwa_local_planner/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/build.make navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/build
 .PHONY : dwa_local_planner/fast
 
+# Manual pre-install relink rule for target.
+dwa_local_planner/preinstall:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner.dir/preinstall
+.PHONY : dwa_local_planner/preinstall
+
 # Convenience name for target.
 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner_gencfg.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/dwa_local_planner/CMakeFiles/dwa_local_planner_gencfg.dir/rule
@@ -236,7 +231,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
-	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"

@@ -90,6 +90,24 @@ map_server_image_loader_EXTERNAL_OBJECTS =
 navigation/map_server/CMakeFiles/map_server_image_loader.dir/build: /home/pf/rosWS/devel/lib/libmap_server_image_loader.so
 .PHONY : navigation/map_server/CMakeFiles/map_server_image_loader.dir/build
 
+# Object files for target map_server_image_loader
+map_server_image_loader_OBJECTS = \
+"CMakeFiles/map_server_image_loader.dir/src/image_loader.cpp.o"
+
+# External object files for target map_server_image_loader
+map_server_image_loader_EXTERNAL_OBJECTS =
+
+navigation/map_server/CMakeFiles/CMakeRelink.dir/libmap_server_image_loader.so: navigation/map_server/CMakeFiles/map_server_image_loader.dir/src/image_loader.cpp.o
+navigation/map_server/CMakeFiles/CMakeRelink.dir/libmap_server_image_loader.so: navigation/map_server/CMakeFiles/map_server_image_loader.dir/build.make
+navigation/map_server/CMakeFiles/CMakeRelink.dir/libmap_server_image_loader.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+navigation/map_server/CMakeFiles/CMakeRelink.dir/libmap_server_image_loader.so: navigation/map_server/CMakeFiles/map_server_image_loader.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library CMakeFiles/CMakeRelink.dir/libmap_server_image_loader.so"
+	cd /home/pf/rosWS/build/navigation/map_server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/map_server_image_loader.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+navigation/map_server/CMakeFiles/map_server_image_loader.dir/preinstall: navigation/map_server/CMakeFiles/CMakeRelink.dir/libmap_server_image_loader.so
+.PHONY : navigation/map_server/CMakeFiles/map_server_image_loader.dir/preinstall
+
 navigation/map_server/CMakeFiles/map_server_image_loader.dir/requires: navigation/map_server/CMakeFiles/map_server_image_loader.dir/src/image_loader.cpp.o.requires
 .PHONY : navigation/map_server/CMakeFiles/map_server_image_loader.dir/requires
 

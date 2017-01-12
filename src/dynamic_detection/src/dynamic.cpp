@@ -59,14 +59,14 @@ std::list<Point_custom> LastMAP;//由于存储上一帧地图的有效点
 //x,y卡尔曼滤波的参数
 struct kal_param x_pos_param(0,0,1,2,0,0,0,0);
 struct kal_param y_pos_param(0,0,1,2,0,0,0,0);
-struct kal_param x_vel_param(0,0,1,2,0,0,0,0);
-struct kal_param y_vel_param(0,0,1,2,0,0,0,0);
+struct kal_param x_vel_param(0,0,1,8,0,0,0,0);
+struct kal_param y_vel_param(0,0,1,8,0,0,0,0);
 
 int main(int argc, char *argv[])
 {
     ros::init(argc,argv,"dynamic_detection");
     ros::NodeHandle nh;
-    ROS_INFO("***********START*************");
+    //ROS_INFO("***********START*************");
 
     ros::Publisher pub_map=nh.advertise<nav_msgs::OccupancyGrid>("/substracted",1);  //publish the local map of dynamics
     ros::Publisher pub_velocity=nh.advertise<nav_msgs::Odometry>("/kalman_filter",1);      //publish the velocity of dynamics
@@ -84,7 +84,7 @@ int main(int argc, char *argv[])
     odo.twist.twist.angular.z=0.5;
 */
 
-    ros::Rate rate(10);
+    ros::Rate rate(5);
     while(ros::ok())
     {
         tf::StampedTransform transform;
@@ -180,6 +180,8 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
     std::queue<int> x_group;
     std::queue<int> y_group;
     //int x_last=0,y_last=0;
+    ROS_INFO("interval: %ld",time(NULL)-tm);
+    tm=time(NULL);
 
     while(!mark_beam.empty())
     {
@@ -198,49 +200,45 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
 
     region_ctr = Search_region(map,map_x,map_y);
 
-    std::queue<Point_custom> region_cpy = region_ctr;//复制一份重心地图
+    std::list<Point_custom> region_efficient;//复制一份重心地图
     //清空整个地图,用搜索到中心来重画地图
     //for(int i=0;i<map_x*map_y;i++)
     //    *((int *)map+i)=0;
-
     while(!region_ctr.empty())
     {
-
         Point_custom ctr_p = region_ctr.front();
         Point_custom mt_p = point_match(LastMAP,ctr_p);
 
-        *((int *)map + (ctr_p.x)*map_y + ctr_p.y)=100;  //这里的region_ctr.front().x是以地图的角落为原点的
-        *((int *)map + (mt_p.x)*map_y + mt_p.y)=50;  //输出匹配点到地图上
-        float vel_x = 0;
-        float vel_y = 0;
-        cal_velocity(ctr_p, mt_p, &vel_x, &vel_y);
+        //in 0.2s, the robot have to move more more than 5cm at least in x_direction or y_dir
+        //these points is efficient dyanmic_point
+        if((ctr_p.x != mt_p.x) || (ctr_p.y!=mt_p.y))
+        {
+            *((int *)map + (ctr_p.x)*map_y + ctr_p.y)=100;  //这里的region_ctr.front().x是以地图的角落为原点的
+            *((int *)map + (mt_p.x)*map_y + mt_p.y)=50;     //输出匹配点到地图上
 
-        vel_x = kalman_filter(&x_vel_param, vel_x,0);
-        vel_y = kalman_filter(&y_vel_param, vel_y,0);
+            ctr_p.y_vel = (ctr_p.y - mt_p.y);
+            ctr_p.x_vel = (ctr_p.x - mt_p.x);
+            if(ctr_p.x_vel != ctr_p.x)
+            {
+                ctr_p.x_vel = kalman_filter(&x_vel_param, ctr_p.x_vel,0);
+            }
+            if(ctr_p.y_vel != ctr_p.y)
+            {
+                ctr_p.y_vel = kalman_filter(&y_vel_param, ctr_p.y_vel,0);
+                ROS_INFO("(%d,%d): %f, %f",ctr_p.x, ctr_p.y, ctr_p.x_vel, ctr_p.y_vel);
+            }
 
-        ROS_INFO("vel_x: %f",vel_x);
-        ROS_INFO("vel_y: %f",vel_y);
-
-        int pos_x = kalman_filter(&x_pos_param, ctr_p.x, 0);
-        int pos_y = kalman_filter(&y_pos_param, ctr_p.y, 0);
-
-        //*((int *)map + (pos_x)*map_y + pos_y)=50;    //kalman_flter point
-        //*((int *)map + (mt_p.x)*map_y + mt_p.y)=30;  //matched point
-/*
-        ROS_INFO("r_pos_x: %d",ctr_p.x);
-        ROS_INFO("r_pos_y: %d",ctr_p.y);
-        ROS_INFO("pos_x: %d",pos_x);
-        ROS_INFO("pos_y: %d",pos_y);
+/*            int pos_x = kalman_filter(&x_pos_param, ctr_p.x, 0);
+            int pos_y = kalman_filter(&y_pos_param, ctr_p.y, 0);
+            *((int *)map + (pos_x)*map_y + pos_y)=50;     //print the point from the filter into map
 */
-        //*((int *)map + xx*map_y + yy)=50;  //这里的 region_ctr.front().x 是以地图的角落为原点的
+            region_efficient.push_front(ctr_p);
+        }
+
         region_ctr.pop();
     }
-    LastMAP.clear();            //清空"上一帧有效点"队列,准备更新,
-    while(!region_cpy.empty())
-    {
-        LastMAP.push_front(region_cpy.front());//将本帧地图中的有效点保存到上一帧之中
-        region_cpy.pop();
-    }
+    LastMAP=region_efficient;
+    region_efficient.clear();
 }
 
 /*@des 计算质心函数

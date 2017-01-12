@@ -244,6 +244,155 @@ trajectory_planner_ros_EXTERNAL_OBJECTS =
 navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/build: /home/pf/rosWS/devel/lib/libtrajectory_planner_ros.so
 .PHONY : navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/build
 
+# Object files for target trajectory_planner_ros
+trajectory_planner_ros_OBJECTS = \
+"CMakeFiles/trajectory_planner_ros.dir/src/trajectory_planner.cpp.o" \
+"CMakeFiles/trajectory_planner_ros.dir/src/trajectory_planner_ros.cpp.o"
+
+# External object files for target trajectory_planner_ros
+trajectory_planner_ros_EXTERNAL_OBJECTS =
+
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/src/trajectory_planner.cpp.o
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/src/trajectory_planner_ros.cpp.o
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/build.make
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /home/pf/rosWS/devel/lib/libbase_local_planner.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /home/pf/rosWS/devel/lib/liblayers.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /home/pf/rosWS/devel/lib/libcostmap_2d.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkFiltering.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkImaging.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkGraphics.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkGenericFiltering.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkIO.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkVolumeRendering.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkWidgets.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkParallel.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkInfovis.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkGeovis.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkViews.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libOpenNI2.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/liblaser_geometry.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libpcl_ros_filters.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libpcl_ros_io.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libpcl_ros_tf.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_common.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_octree.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_io.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_kdtree.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_search.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_sample_consensus.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_filters.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_features.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_keypoints.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_segmentation.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_visualization.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_outofcore.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_registration.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_recognition.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_surface.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_people.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_tracking.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_apps.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libqhull.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libOpenNI.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libflann_cpp_s.a
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libOpenNI2.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/liblaser_geometry.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libpcl_ros_filters.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libpcl_ros_io.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libpcl_ros_tf.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_common.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_octree.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_io.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_kdtree.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_search.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_sample_consensus.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_filters.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_features.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_keypoints.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_segmentation.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_visualization.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_outofcore.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_registration.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_recognition.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_surface.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_people.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_tracking.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libpcl_apps.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libboost_serialization.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libqhull.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libOpenNI.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libflann_cpp_s.a
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkCommon.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkRendering.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkHybrid.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkCharts.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libdynamic_reconfigure_config_init_mutex.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libnodeletlib.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libbondcpp.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libuuid.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/librosbag.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/librosbag_storage.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libroslz4.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/liblz4.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libtopic_tools.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libtf.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libtf2_ros.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libactionlib.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libmessage_filters.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libtf2.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /home/pf/rosWS/devel/lib/libvoxel_grid.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libroscpp.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libroscpp_serialization.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libxmlrpcpp.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libclass_loader.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libPocoFoundation.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libdl.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libroslib.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/librosconsole.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/librosconsole_log4cxx.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/librosconsole_backend_interface.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/liblog4cxx.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/librostime.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /opt/ros/indigo/lib/libcpp_common.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkGenericFiltering.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkGeovis.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkCharts.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkViews.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkInfovis.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkWidgets.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkVolumeRendering.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkHybrid.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkParallel.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkRendering.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkImaging.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkGraphics.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkIO.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkFiltering.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtkCommon.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: /usr/lib/libvtksys.so.5.8.0
+navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so: navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so"
+	cd /home/pf/rosWS/build/navigation/base_local_planner && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/trajectory_planner_ros.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/preinstall: navigation/base_local_planner/CMakeFiles/CMakeRelink.dir/libtrajectory_planner_ros.so
+.PHONY : navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/preinstall
+
 navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/requires: navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/src/trajectory_planner.cpp.o.requires
 navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/requires: navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/src/trajectory_planner_ros.cpp.o.requires
 .PHONY : navigation/base_local_planner/CMakeFiles/trajectory_planner_ros.dir/requires

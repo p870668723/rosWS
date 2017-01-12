@@ -167,6 +167,32 @@ scanmatcher_EXTERNAL_OBJECTS =
 gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/build: /home/pf/rosWS/devel/lib/libscanmatcher.so
 .PHONY : gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/build
 
+# Object files for target scanmatcher
+scanmatcher_OBJECTS = \
+"CMakeFiles/scanmatcher.dir/eig3.cpp.o" \
+"CMakeFiles/scanmatcher.dir/scanmatcher.cpp.o" \
+"CMakeFiles/scanmatcher.dir/scanmatcherprocessor.cpp.o" \
+"CMakeFiles/scanmatcher.dir/smmap.cpp.o"
+
+# External object files for target scanmatcher
+scanmatcher_EXTERNAL_OBJECTS =
+
+gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/CMakeRelink.dir/libscanmatcher.so: gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/eig3.cpp.o
+gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/CMakeRelink.dir/libscanmatcher.so: gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/scanmatcher.cpp.o
+gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/CMakeRelink.dir/libscanmatcher.so: gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/scanmatcherprocessor.cpp.o
+gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/CMakeRelink.dir/libscanmatcher.so: gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/smmap.cpp.o
+gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/CMakeRelink.dir/libscanmatcher.so: gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/build.make
+gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/CMakeRelink.dir/libscanmatcher.so: /home/pf/rosWS/devel/lib/libsensor_range.so
+gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/CMakeRelink.dir/libscanmatcher.so: /home/pf/rosWS/devel/lib/libutils.so
+gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/CMakeRelink.dir/libscanmatcher.so: /home/pf/rosWS/devel/lib/libsensor_base.so
+gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/CMakeRelink.dir/libscanmatcher.so: gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/relink.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library CMakeFiles/CMakeRelink.dir/libscanmatcher.so"
+	cd /home/pf/rosWS/build/gmapping-ros/openslam_gmapping/scanmatcher && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/scanmatcher.dir/relink.txt --verbose=$(VERBOSE)
+
+# Rule to relink during preinstall.
+gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/preinstall: gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/CMakeRelink.dir/libscanmatcher.so
+.PHONY : gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/preinstall
+
 gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/requires: gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/eig3.cpp.o.requires
 gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/requires: gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/scanmatcher.cpp.o.requires
 gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/requires: gmapping-ros/openslam_gmapping/scanmatcher/CMakeFiles/scanmatcher.dir/scanmatcherprocessor.cpp.o.requires

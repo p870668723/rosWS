@@ -2,6 +2,8 @@ FILE(REMOVE_RECURSE
   "CMakeFiles/listener_multiple.dir/listener_multiple/listener_multiple.cpp.o"
   "/home/pf/rosWS/devel/lib/roscpp_tutorials/listener_multiple.pdb"
   "/home/pf/rosWS/devel/lib/roscpp_tutorials/listener_multiple"
+  "/home/pf/rosWS/devel/lib/roscpp_tutorials/listener_multiple.pdb"
+  "CMakeFiles/CMakeRelink.dir/listener_multiple"
 )
 
 # Per-language clean rules from dependency scanning.
