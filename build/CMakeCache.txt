@@ -92,6 +92,9 @@ CATKIN_SKIP_TESTING:BOOL=OFF
 //List of ';' separated packages to build
 CATKIN_WHITELIST_PACKAGES:STRING=
 
+//Path to a program.
+CMAKE_AR:FILEPATH=/usr/bin/ar
+
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.
 CMAKE_BUILD_TYPE:STRING=
@@ -161,6 +164,9 @@ CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=OFF
 CMAKE_INSTALL_PREFIX:PATH=/home/pf/rosWS/install
 
 //Path to a program.
+CMAKE_LINKER:FILEPATH=/usr/bin/ld
+
+//Path to a program.
 CMAKE_MAKE_PROGRAM:FILEPATH=/usr/bin/make
 
 //Flags used by the linker during the creation of modules.
@@ -178,8 +184,20 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
 //Flags used by the linker during Release with Debug Info builds.
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
+//Path to a program.
+CMAKE_NM:FILEPATH=/usr/bin/nm
+
+//Path to a program.
+CMAKE_OBJCOPY:FILEPATH=/usr/bin/objcopy
+
+//Path to a program.
+CMAKE_OBJDUMP:FILEPATH=/usr/bin/objdump
+
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=Project
+
+//Path to a program.
+CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
 
 //Flags used by the linker during the creation of dll's.
 CMAKE_SHARED_LINKER_FLAGS:STRING=' '
@@ -217,6 +235,9 @@ CMAKE_STATIC_LINKER_FLAGS_RELEASE:STRING=
 
 //Flags used by the linker during Release with Debug Info builds.
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO:STRING=
+
+//Path to a program.
+CMAKE_STRIP:FILEPATH=/usr/bin/strip
 
 //If true, cmake will use relative paths in makefiles and projects.
 CMAKE_USE_RELATIVE_PATHS:BOOL=OFF
@@ -486,612 +507,6 @@ QHULL_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libqhull.so
 QHULL_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libqhull.so
 
 //Path to a library.
-QT_ARTHURPLUGIN_PLUGIN_DEBUG:FILEPATH=QT_ARTHURPLUGIN_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_ARTHURPLUGIN_PLUGIN_RELEASE:FILEPATH=QT_ARTHURPLUGIN_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_CONTAINEREXTENSION_PLUGIN_DEBUG:FILEPATH=QT_CONTAINEREXTENSION_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_CONTAINEREXTENSION_PLUGIN_RELEASE:FILEPATH=QT_CONTAINEREXTENSION_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_CUSTOMWIDGETPLUGIN_PLUGIN_DEBUG:FILEPATH=QT_CUSTOMWIDGETPLUGIN_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_CUSTOMWIDGETPLUGIN_PLUGIN_RELEASE:FILEPATH=QT_CUSTOMWIDGETPLUGIN_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a program.
-QT_DBUSCPP2XML_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/qdbuscpp2xml
-
-//Path to a program.
-QT_DBUSXML2CPP_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/qdbusxml2cpp
-
-//Path to a program.
-QT_DESIGNER_EXECUTABLE:FILEPATH=QT_DESIGNER_EXECUTABLE-NOTFOUND
-
-//The location of the Qt docs
-QT_DOC_DIR:PATH=/usr/share/qt4/doc
-
-//Path to a program.
-QT_LINGUIST_EXECUTABLE:FILEPATH=QT_LINGUIST_EXECUTABLE-NOTFOUND
-
-//Path to a program.
-QT_LRELEASE_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/lrelease
-
-//Path to a program.
-QT_LUPDATE_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/lupdate
-
-//The location of the Qt mkspecs containing qconfig.pri
-QT_MKSPECS_DIR:PATH=/usr/share/qt4/mkspecs
-
-//Path to a program.
-QT_MOC_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/moc
-
-//Path to a library.
-QT_PHONONWIDGETS_PLUGIN_DEBUG:FILEPATH=QT_PHONONWIDGETS_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_PHONONWIDGETS_PLUGIN_RELEASE:FILEPATH=QT_PHONONWIDGETS_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a file.
-QT_PHONON_INCLUDE_DIR:PATH=QT_PHONON_INCLUDE_DIR-NOTFOUND
-
-//The Qt PHONON library
-QT_PHONON_LIBRARY:STRING=
-
-//Path to a library.
-QT_PHONON_LIBRARY_DEBUG:FILEPATH=QT_PHONON_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_PHONON_LIBRARY_RELEASE:FILEPATH=QT_PHONON_LIBRARY_RELEASE-NOTFOUND
-
-//The location of the Qt plugins
-QT_PLUGINS_DIR:PATH=/usr/lib/x86_64-linux-gnu/qt4/plugins
-
-//Path to a library.
-QT_QCNCODECS_PLUGIN_DEBUG:FILEPATH=QT_QCNCODECS_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QCNCODECS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/codecs/libqcncodecs.so
-
-//Path to a program.
-QT_QCOLLECTIONGENERATOR_EXECUTABLE:FILEPATH=QT_QCOLLECTIONGENERATOR_EXECUTABLE-NOTFOUND
-
-//Path to a library.
-QT_QCOREWLANBEARER_PLUGIN_DEBUG:FILEPATH=QT_QCOREWLANBEARER_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QCOREWLANBEARER_PLUGIN_RELEASE:FILEPATH=QT_QCOREWLANBEARER_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_QDECLARATIVEVIEW_PLUGIN_DEBUG:FILEPATH=QT_QDECLARATIVEVIEW_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QDECLARATIVEVIEW_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/designer/libqdeclarativeview.so
-
-//Path to a library.
-QT_QDECORATIONDEFAULT_PLUGIN_DEBUG:FILEPATH=QT_QDECORATIONDEFAULT_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QDECORATIONDEFAULT_PLUGIN_RELEASE:FILEPATH=QT_QDECORATIONDEFAULT_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_QDECORATIONWINDOWS_PLUGIN_DEBUG:FILEPATH=QT_QDECORATIONWINDOWS_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QDECORATIONWINDOWS_PLUGIN_RELEASE:FILEPATH=QT_QDECORATIONWINDOWS_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_QGENERICBEARER_PLUGIN_DEBUG:FILEPATH=QT_QGENERICBEARER_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QGENERICBEARER_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/bearer/libqgenericbearer.so
-
-//Path to a library.
-QT_QGIF_PLUGIN_DEBUG:FILEPATH=QT_QGIF_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QGIF_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/imageformats/libqgif.so
-
-//Path to a library.
-QT_QGLGRAPHICSSYSTEM_PLUGIN_DEBUG:FILEPATH=QT_QGLGRAPHICSSYSTEM_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QGLGRAPHICSSYSTEM_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/graphicssystems/libqglgraphicssystem.so
-
-//Path to a library.
-QT_QICO_PLUGIN_DEBUG:FILEPATH=QT_QICO_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QICO_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/imageformats/libqico.so
-
-//Path to a library.
-QT_QIMSW_MULTI_PLUGIN_DEBUG:FILEPATH=QT_QIMSW_MULTI_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QIMSW_MULTI_PLUGIN_RELEASE:FILEPATH=QT_QIMSW_MULTI_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_QJPCODECS_PLUGIN_DEBUG:FILEPATH=QT_QJPCODECS_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QJPCODECS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/codecs/libqjpcodecs.so
-
-//Path to a library.
-QT_QJPEG_PLUGIN_DEBUG:FILEPATH=QT_QJPEG_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QJPEG_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/imageformats/libqjpeg.so
-
-//Path to a library.
-QT_QKRCODECS_PLUGIN_DEBUG:FILEPATH=QT_QKRCODECS_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QKRCODECS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/codecs/libqkrcodecs.so
-
-//Where can the qmake-qt4 library be found
-QT_QMAKE_EXECUTABLE:FILEPATH=/usr/bin/qmake-qt4
-
-//Path to a library.
-QT_QMNG_PLUGIN_DEBUG:FILEPATH=QT_QMNG_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QMNG_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/imageformats/libqmng.so
-
-//Path to a library.
-QT_QSQLDB2_PLUGIN_DEBUG:FILEPATH=QT_QSQLDB2_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QSQLDB2_PLUGIN_RELEASE:FILEPATH=QT_QSQLDB2_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_QSQLIBASE_PLUGIN_DEBUG:FILEPATH=QT_QSQLIBASE_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QSQLIBASE_PLUGIN_RELEASE:FILEPATH=QT_QSQLIBASE_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_QSQLITE2_PLUGIN_DEBUG:FILEPATH=QT_QSQLITE2_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QSQLITE2_PLUGIN_RELEASE:FILEPATH=QT_QSQLITE2_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_QSQLITE_PLUGIN_DEBUG:FILEPATH=QT_QSQLITE_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QSQLITE_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/sqldrivers/libqsqlite.so
-
-//Path to a library.
-QT_QSQLMYSQL_PLUGIN_DEBUG:FILEPATH=QT_QSQLMYSQL_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QSQLMYSQL_PLUGIN_RELEASE:FILEPATH=QT_QSQLMYSQL_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_QSQLOCI_PLUGIN_DEBUG:FILEPATH=QT_QSQLOCI_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QSQLOCI_PLUGIN_RELEASE:FILEPATH=QT_QSQLOCI_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_QSQLODBC_PLUGIN_DEBUG:FILEPATH=QT_QSQLODBC_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QSQLODBC_PLUGIN_RELEASE:FILEPATH=QT_QSQLODBC_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_QSQLPSQL_PLUGIN_DEBUG:FILEPATH=QT_QSQLPSQL_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QSQLPSQL_PLUGIN_RELEASE:FILEPATH=QT_QSQLPSQL_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_QSQLTDS_PLUGIN_DEBUG:FILEPATH=QT_QSQLTDS_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QSQLTDS_PLUGIN_RELEASE:FILEPATH=QT_QSQLTDS_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_QSVGICON_PLUGIN_DEBUG:FILEPATH=QT_QSVGICON_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QSVGICON_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/iconengines/libqsvgicon.so
-
-//Path to a library.
-QT_QSVG_PLUGIN_DEBUG:FILEPATH=QT_QSVG_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QSVG_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/imageformats/libqsvg.so
-
-//Path to a library.
-QT_QT3SUPPORTWIDGETS_PLUGIN_DEBUG:FILEPATH=QT_QT3SUPPORTWIDGETS_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QT3SUPPORTWIDGETS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/designer/libqt3supportwidgets.so
-
-//Path to a file.
-QT_QT3SUPPORT_INCLUDE_DIR:PATH=/usr/include/qt4/Qt3Support
-
-//The Qt QT3SUPPORT library
-QT_QT3SUPPORT_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQt3Support.so
-
-//Path to a library.
-QT_QT3SUPPORT_LIBRARY_DEBUG:FILEPATH=QT_QT3SUPPORT_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QT3SUPPORT_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQt3Support.so
-
-//Path to a library.
-QT_QTACCESSIBLECOMPATWIDGETS_PLUGIN_DEBUG:FILEPATH=QT_QTACCESSIBLECOMPATWIDGETS_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTACCESSIBLECOMPATWIDGETS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/accessible/libqtaccessiblecompatwidgets.so
-
-//Path to a library.
-QT_QTACCESSIBLEWIDGETS_PLUGIN_DEBUG:FILEPATH=QT_QTACCESSIBLEWIDGETS_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTACCESSIBLEWIDGETS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/accessible/libqtaccessiblewidgets.so
-
-//Path to a file.
-QT_QTASSISTANTCLIENT_INCLUDE_DIR:PATH=QT_QTASSISTANTCLIENT_INCLUDE_DIR-NOTFOUND
-
-//The Qt QTASSISTANTCLIENT library
-QT_QTASSISTANTCLIENT_LIBRARY:STRING=
-
-//Path to a library.
-QT_QTASSISTANTCLIENT_LIBRARY_DEBUG:FILEPATH=QT_QTASSISTANTCLIENT_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTASSISTANTCLIENT_LIBRARY_RELEASE:FILEPATH=QT_QTASSISTANTCLIENT_LIBRARY_RELEASE-NOTFOUND
-
-//Path to a file.
-QT_QTASSISTANT_INCLUDE_DIR:PATH=QT_QTASSISTANT_INCLUDE_DIR-NOTFOUND
-
-//The Qt QTASSISTANT library
-QT_QTASSISTANT_LIBRARY:STRING=
-
-//Path to a library.
-QT_QTASSISTANT_LIBRARY_DEBUG:FILEPATH=QT_QTASSISTANT_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTASSISTANT_LIBRARY_RELEASE:FILEPATH=QT_QTASSISTANT_LIBRARY_RELEASE-NOTFOUND
-
-//The Qt QTCLUCENE library
-QT_QTCLUCENE_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtCLucene.so
-
-//Path to a library.
-QT_QTCLUCENE_LIBRARY_DEBUG:FILEPATH=QT_QTCLUCENE_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTCLUCENE_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtCLucene.so
-
-//Path to a file.
-QT_QTCORE_INCLUDE_DIR:PATH=/usr/include/qt4/QtCore
-
-//The Qt QTCORE library
-QT_QTCORE_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtCore.so
-
-//Path to a library.
-QT_QTCORE_LIBRARY_DEBUG:FILEPATH=QT_QTCORE_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTCORE_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtCore.so
-
-//Path to a file.
-QT_QTDBUS_INCLUDE_DIR:PATH=/usr/include/qt4/QtDBus
-
-//The Qt QTDBUS library
-QT_QTDBUS_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtDBus.so
-
-//Path to a library.
-QT_QTDBUS_LIBRARY_DEBUG:FILEPATH=QT_QTDBUS_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTDBUS_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtDBus.so
-
-//Path to a file.
-QT_QTDECLARATIVE_INCLUDE_DIR:PATH=/usr/include/qt4/QtDeclarative
-
-//The Qt QTDECLARATIVE library
-QT_QTDECLARATIVE_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtDeclarative.so
-
-//Path to a library.
-QT_QTDECLARATIVE_LIBRARY_DEBUG:FILEPATH=QT_QTDECLARATIVE_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTDECLARATIVE_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtDeclarative.so
-
-//Path to a file.
-QT_QTDESIGNERCOMPONENTS_INCLUDE_DIR:PATH=/usr/include/qt4/QtDesigner
-
-//The Qt QTDESIGNERCOMPONENTS library
-QT_QTDESIGNERCOMPONENTS_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtDesignerComponents.so
-
-//Path to a library.
-QT_QTDESIGNERCOMPONENTS_LIBRARY_DEBUG:FILEPATH=QT_QTDESIGNERCOMPONENTS_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTDESIGNERCOMPONENTS_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtDesignerComponents.so
-
-//Path to a file.
-QT_QTDESIGNER_INCLUDE_DIR:PATH=/usr/include/qt4/QtDesigner
-
-//The Qt QTDESIGNER library
-QT_QTDESIGNER_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtDesigner.so
-
-//Path to a library.
-QT_QTDESIGNER_LIBRARY_DEBUG:FILEPATH=QT_QTDESIGNER_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTDESIGNER_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtDesigner.so
-
-//Path to a file.
-QT_QTGUI_INCLUDE_DIR:PATH=/usr/include/qt4/QtGui
-
-//The Qt QTGUI library
-QT_QTGUI_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtGui.so
-
-//Path to a library.
-QT_QTGUI_LIBRARY_DEBUG:FILEPATH=QT_QTGUI_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTGUI_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtGui.so
-
-//Path to a file.
-QT_QTHELP_INCLUDE_DIR:PATH=/usr/include/qt4/QtHelp
-
-//The Qt QTHELP library
-QT_QTHELP_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtHelp.so
-
-//Path to a library.
-QT_QTHELP_LIBRARY_DEBUG:FILEPATH=QT_QTHELP_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTHELP_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtHelp.so
-
-//Path to a library.
-QT_QTIFF_PLUGIN_DEBUG:FILEPATH=QT_QTIFF_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTIFF_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/imageformats/libqtiff.so
-
-//Path to a file.
-QT_QTMOTIF_INCLUDE_DIR:PATH=QT_QTMOTIF_INCLUDE_DIR-NOTFOUND
-
-//The Qt QTMOTIF library
-QT_QTMOTIF_LIBRARY:STRING=
-
-//Path to a library.
-QT_QTMOTIF_LIBRARY_DEBUG:FILEPATH=QT_QTMOTIF_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTMOTIF_LIBRARY_RELEASE:FILEPATH=QT_QTMOTIF_LIBRARY_RELEASE-NOTFOUND
-
-//Path to a file.
-QT_QTMULTIMEDIA_INCLUDE_DIR:PATH=QT_QTMULTIMEDIA_INCLUDE_DIR-NOTFOUND
-
-//The Qt QTMULTIMEDIA library
-QT_QTMULTIMEDIA_LIBRARY:STRING=
-
-//Path to a library.
-QT_QTMULTIMEDIA_LIBRARY_DEBUG:FILEPATH=QT_QTMULTIMEDIA_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTMULTIMEDIA_LIBRARY_RELEASE:FILEPATH=QT_QTMULTIMEDIA_LIBRARY_RELEASE-NOTFOUND
-
-//Path to a file.
-QT_QTNETWORK_INCLUDE_DIR:PATH=/usr/include/qt4/QtNetwork
-
-//The Qt QTNETWORK library
-QT_QTNETWORK_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtNetwork.so
-
-//Path to a library.
-QT_QTNETWORK_LIBRARY_DEBUG:FILEPATH=QT_QTNETWORK_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTNETWORK_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtNetwork.so
-
-//Path to a file.
-QT_QTNSPLUGIN_INCLUDE_DIR:PATH=QT_QTNSPLUGIN_INCLUDE_DIR-NOTFOUND
-
-//The Qt QTNSPLUGIN library
-QT_QTNSPLUGIN_LIBRARY:STRING=
-
-//Path to a library.
-QT_QTNSPLUGIN_LIBRARY_DEBUG:FILEPATH=QT_QTNSPLUGIN_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTNSPLUGIN_LIBRARY_RELEASE:FILEPATH=QT_QTNSPLUGIN_LIBRARY_RELEASE-NOTFOUND
-
-//Path to a file.
-QT_QTOPENGL_INCLUDE_DIR:PATH=/usr/include/qt4/QtOpenGL
-
-//The Qt QTOPENGL library
-QT_QTOPENGL_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtOpenGL.so
-
-//Path to a library.
-QT_QTOPENGL_LIBRARY_DEBUG:FILEPATH=QT_QTOPENGL_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTOPENGL_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtOpenGL.so
-
-//Path to a library.
-QT_QTRACEGRAPHICSSYSTEM_PLUGIN_DEBUG:FILEPATH=QT_QTRACEGRAPHICSSYSTEM_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTRACEGRAPHICSSYSTEM_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/graphicssystems/libqtracegraphicssystem.so
-
-//Path to a library.
-QT_QTSCRIPTDBUS_PLUGIN_DEBUG:FILEPATH=QT_QTSCRIPTDBUS_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTSCRIPTDBUS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/script/libqtscriptdbus.so
-
-//Path to a file.
-QT_QTSCRIPTTOOLS_INCLUDE_DIR:PATH=/usr/include/qt4/QtScriptTools
-
-//The Qt QTSCRIPTTOOLS library
-QT_QTSCRIPTTOOLS_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtScriptTools.so
-
-//Path to a library.
-QT_QTSCRIPTTOOLS_LIBRARY_DEBUG:FILEPATH=QT_QTSCRIPTTOOLS_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTSCRIPTTOOLS_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtScriptTools.so
-
-//Path to a file.
-QT_QTSCRIPT_INCLUDE_DIR:PATH=/usr/include/qt4/QtScript
-
-//The Qt QTSCRIPT library
-QT_QTSCRIPT_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtScript.so
-
-//Path to a library.
-QT_QTSCRIPT_LIBRARY_DEBUG:FILEPATH=QT_QTSCRIPT_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTSCRIPT_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtScript.so
-
-//Path to a file.
-QT_QTSQL_INCLUDE_DIR:PATH=/usr/include/qt4/QtSql
-
-//The Qt QTSQL library
-QT_QTSQL_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtSql.so
-
-//Path to a library.
-QT_QTSQL_LIBRARY_DEBUG:FILEPATH=QT_QTSQL_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTSQL_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtSql.so
-
-//Path to a file.
-QT_QTSVG_INCLUDE_DIR:PATH=/usr/include/qt4/QtSvg
-
-//The Qt QTSVG library
-QT_QTSVG_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtSvg.so
-
-//Path to a library.
-QT_QTSVG_LIBRARY_DEBUG:FILEPATH=QT_QTSVG_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTSVG_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtSvg.so
-
-//Path to a file.
-QT_QTTEST_INCLUDE_DIR:PATH=/usr/include/qt4/QtTest
-
-//The Qt QTTEST library
-QT_QTTEST_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtTest.so
-
-//Path to a library.
-QT_QTTEST_LIBRARY_DEBUG:FILEPATH=QT_QTTEST_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTTEST_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtTest.so
-
-//Path to a file.
-QT_QTUITOOLS_INCLUDE_DIR:PATH=/usr/include/qt4/QtUiTools
-
-//The Qt QTUITOOLS library
-QT_QTUITOOLS_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtUiTools.a
-
-//Path to a library.
-QT_QTUITOOLS_LIBRARY_DEBUG:FILEPATH=QT_QTUITOOLS_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTUITOOLS_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtUiTools.a
-
-//Path to a library.
-QT_QTWCODECS_PLUGIN_DEBUG:FILEPATH=QT_QTWCODECS_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTWCODECS_PLUGIN_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/plugins/codecs/libqtwcodecs.so
-
-//Path to a file.
-QT_QTWEBKIT_INCLUDE_DIR:PATH=/usr/include/qt4/QtWebKit
-
-//The Qt QTWEBKIT library
-QT_QTWEBKIT_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtWebKit.so
-
-//Path to a library.
-QT_QTWEBKIT_LIBRARY_DEBUG:FILEPATH=QT_QTWEBKIT_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTWEBKIT_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtWebKit.so
-
-//Path to a file.
-QT_QTXMLPATTERNS_INCLUDE_DIR:PATH=/usr/include/qt4/QtXmlPatterns
-
-//The Qt QTXMLPATTERNS library
-QT_QTXMLPATTERNS_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtXmlPatterns.so
-
-//Path to a library.
-QT_QTXMLPATTERNS_LIBRARY_DEBUG:FILEPATH=QT_QTXMLPATTERNS_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTXMLPATTERNS_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtXmlPatterns.so
-
-//Path to a file.
-QT_QTXML_INCLUDE_DIR:PATH=/usr/include/qt4/QtXml
-
-//The Qt QTXML library
-QT_QTXML_LIBRARY:STRING=/usr/lib/x86_64-linux-gnu/libQtXml.so
-
-//Path to a library.
-QT_QTXML_LIBRARY_DEBUG:FILEPATH=QT_QTXML_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QTXML_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libQtXml.so
-
-//Path to a library.
-QT_QWEBVIEW_PLUGIN_DEBUG:FILEPATH=QT_QWEBVIEW_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QWEBVIEW_PLUGIN_RELEASE:FILEPATH=QT_QWEBVIEW_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a library.
-QT_QWSTSLIBMOUSEHANDLER_PLUGIN_DEBUG:FILEPATH=QT_QWSTSLIBMOUSEHANDLER_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_QWSTSLIBMOUSEHANDLER_PLUGIN_RELEASE:FILEPATH=QT_QWSTSLIBMOUSEHANDLER_PLUGIN_RELEASE-NOTFOUND
-
-//Path to a program.
-QT_RCC_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/rcc
-
-//Path to a library.
-QT_TASKMENUEXTENSION_PLUGIN_DEBUG:FILEPATH=QT_TASKMENUEXTENSION_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_TASKMENUEXTENSION_PLUGIN_RELEASE:FILEPATH=QT_TASKMENUEXTENSION_PLUGIN_RELEASE-NOTFOUND
-
-//The location of the Qt translations
-QT_TRANSLATIONS_DIR:PATH=/usr/share/qt4/translations
-
-//Path to a program.
-QT_UIC3_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/uic3
-
-//Path to a program.
-QT_UIC_EXECUTABLE:FILEPATH=/usr/lib/x86_64-linux-gnu/qt4/bin/uic
-
-//Path to a library.
-QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEBUG:FILEPATH=QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEBUG-NOTFOUND
-
-//Path to a library.
-QT_WORLDTIMECLOCKPLUGIN_PLUGIN_RELEASE:FILEPATH=QT_WORLDTIMECLOCKPLUGIN_PLUGIN_RELEASE-NOTFOUND
-
-//The directory containing a CMake configuration file for Qt5Core.
-Qt5Core_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Core
-
-//The directory containing a CMake configuration file for Qt5Gui.
-Qt5Gui_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui
-
-//The directory containing a CMake configuration file for Qt5Widgets.
-Qt5Widgets_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets
-
-//Path to a library.
 RT_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/librt.so
 
 //Enable debian style python package layout
@@ -1111,9 +526,6 @@ _CATKIN_GTEST_SRC:FILEPATH=/usr/src/gtest/src/gtest.cc
 
 //Path to a file.
 _file_name:FILEPATH=/home/pf/rosWS/src/navigation/clear_costmap_recovery/test/clear_tests.launch
-
-//Path to a file.
-_path_name:FILEPATH=/home/pf/rosWS/src/rqt_common_plugins/rqt_py_common/test
 
 //The directory containing a CMake configuration file for actionlib.
 actionlib_DIR:PATH=/opt/ros/indigo/share/actionlib/cmake
@@ -1199,9 +611,6 @@ costmap_2d_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation/costmap_2d
 //The directory containing a CMake configuration file for cpp_common.
 cpp_common_DIR:PATH=/opt/ros/indigo/share/cpp_common/cmake
 
-//The directory containing a CMake configuration file for cv_bridge.
-cv_bridge_DIR:PATH=/opt/ros/indigo/share/cv_bridge/cmake
-
 //Value Computed by CMake
 dwa_local_planner_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation/dwa_local_planner
 
@@ -1260,15 +669,6 @@ global_planner_LIB_DEPENDS:STATIC=general;navfn;general;costmap_2d;general;layer
 global_planner_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation/global_planner
 
 //Value Computed by CMake
-gmapping_BINARY_DIR:STATIC=/home/pf/rosWS/build/gmapping-ros/slam_gmapping/gmapping
-
-//Value Computed by CMake
-gmapping_SOURCE_DIR:STATIC=/home/pf/rosWS/src/gmapping-ros/slam_gmapping/gmapping
-
-//Dependencies for the target
-gridfastslam_LIB_DEPENDS:STATIC=general;scanmatcher;general;sensor_range;
-
-//Value Computed by CMake
 gtest_BINARY_DIR:STATIC=/home/pf/rosWS/build/gtest
 
 //The directory containing a CMake configuration file for gtest.
@@ -1296,33 +696,6 @@ gtest_force_shared_crt:BOOL=OFF
 //Dependencies for the target
 gtest_main_LIB_DEPENDS:STATIC=general;-lpthread;general;gtest;
 
-//Value Computed by CMake
-husky_desktop_BINARY_DIR:STATIC=/home/pf/rosWS/build/husky_desktop/husky_desktop
-
-//Value Computed by CMake
-husky_desktop_SOURCE_DIR:STATIC=/home/pf/rosWS/src/husky_desktop/husky_desktop
-
-//Value Computed by CMake
-husky_gazebo_BINARY_DIR:STATIC=/home/pf/rosWS/build/husky_simulator/husky_gazebo
-
-//Value Computed by CMake
-husky_gazebo_SOURCE_DIR:STATIC=/home/pf/rosWS/src/husky_simulator/husky_gazebo
-
-//Value Computed by CMake
-husky_simulator_BINARY_DIR:STATIC=/home/pf/rosWS/build/husky_simulator/husky_simulator
-
-//Value Computed by CMake
-husky_simulator_SOURCE_DIR:STATIC=/home/pf/rosWS/src/husky_simulator/husky_simulator
-
-//Value Computed by CMake
-husky_viz_BINARY_DIR:STATIC=/home/pf/rosWS/build/husky_desktop/husky_viz
-
-//Value Computed by CMake
-husky_viz_SOURCE_DIR:STATIC=/home/pf/rosWS/src/husky_desktop/husky_viz
-
-//The directory containing a CMake configuration file for image_transport.
-image_transport_DIR:PATH=/opt/ros/indigo/share/image_transport/cmake
-
 //The directory containing a CMake configuration file for laser_geometry.
 laser_geometry_DIR:PATH=/opt/ros/indigo/share/laser_geometry/cmake
 
@@ -1336,13 +709,7 @@ laser_scan_publisher_tutorial_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tu
 layers_LIB_DEPENDS:STATIC=general;costmap_2d;
 
 //Path to a library.
-lib:FILEPATH=/opt/ros/indigo/lib/libxmlrpcpp.so
-
-//Value Computed by CMake
-map_load_BINARY_DIR:STATIC=/home/pf/rosWS/build/map_load
-
-//Value Computed by CMake
-map_load_SOURCE_DIR:STATIC=/home/pf/rosWS/src/map_load
+lib:FILEPATH=/opt/ros/indigo/lib/libtopic_tools.so
 
 //The directory containing a CMake configuration file for map_msgs.
 map_msgs_DIR:PATH=/opt/ros/indigo/share/map_msgs/cmake
@@ -1449,15 +816,6 @@ odometry_publisher_tutorial_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation_tu
 //Value Computed by CMake
 odometry_publisher_tutorial_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/odometry_publisher_tutorial
 
-//Value Computed by CMake
-openslam_gmapping_BINARY_DIR:STATIC=/home/pf/rosWS/build/gmapping-ros/openslam_gmapping
-
-//The directory containing a CMake configuration file for openslam_gmapping.
-openslam_gmapping_DIR:PATH=/home/pf/rosWS/devel/share/openslam_gmapping/cmake
-
-//Value Computed by CMake
-openslam_gmapping_SOURCE_DIR:STATIC=/home/pf/rosWS/src/gmapping-ros/openslam_gmapping
-
 //The directory containing a CMake configuration file for pcl_conversions.
 pcl_conversions_DIR:PATH=/opt/ros/indigo/share/pcl_conversions/cmake
 
@@ -1475,60 +833,6 @@ point_cloud_publisher_tutorial_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation
 
 //Value Computed by CMake
 point_cloud_publisher_tutorial_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/point_cloud_publisher_tutorial
-
-//The directory containing a CMake configuration file for qt_gui.
-qt_gui_DIR:PATH=/opt/ros/indigo/share/qt_gui/cmake
-
-//The directory containing a CMake configuration file for qt_gui_cpp.
-qt_gui_cpp_DIR:PATH=/opt/ros/indigo/share/qt_gui_cpp/cmake
-
-//Value Computed by CMake
-rbx1_BINARY_DIR:STATIC=/home/pf/rosWS/build/rbx1/rbx1
-
-//Value Computed by CMake
-rbx1_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rbx1/rbx1
-
-//Value Computed by CMake
-rbx1_apps_BINARY_DIR:STATIC=/home/pf/rosWS/build/rbx1/rbx1_apps
-
-//Value Computed by CMake
-rbx1_apps_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rbx1/rbx1_apps
-
-//Value Computed by CMake
-rbx1_bringup_BINARY_DIR:STATIC=/home/pf/rosWS/build/rbx1/rbx1_bringup
-
-//Value Computed by CMake
-rbx1_bringup_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rbx1/rbx1_bringup
-
-//Value Computed by CMake
-rbx1_description_BINARY_DIR:STATIC=/home/pf/rosWS/build/rbx1/rbx1_description
-
-//Value Computed by CMake
-rbx1_description_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rbx1/rbx1_description
-
-//Value Computed by CMake
-rbx1_dynamixels_BINARY_DIR:STATIC=/home/pf/rosWS/build/rbx1/rbx1_dynamixels
-
-//Value Computed by CMake
-rbx1_dynamixels_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rbx1/rbx1_dynamixels
-
-//Value Computed by CMake
-rbx1_nav_BINARY_DIR:STATIC=/home/pf/rosWS/build/rbx1/rbx1_nav
-
-//Value Computed by CMake
-rbx1_nav_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rbx1/rbx1_nav
-
-//Value Computed by CMake
-rbx1_speech_BINARY_DIR:STATIC=/home/pf/rosWS/build/rbx1/rbx1_speech
-
-//Value Computed by CMake
-rbx1_speech_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rbx1/rbx1_speech
-
-//Value Computed by CMake
-rbx1_vision_BINARY_DIR:STATIC=/home/pf/rosWS/build/rbx1/rbx1_vision
-
-//Value Computed by CMake
-rbx1_vision_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rbx1/rbx1_vision
 
 //Value Computed by CMake
 robot_pose_ekf_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation/robot_pose_ekf
@@ -1548,12 +852,6 @@ roomba_stage_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation_tutorials/roomba_
 //Value Computed by CMake
 roomba_stage_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/roomba_stage
 
-//Value Computed by CMake
-ros_tutorials_BINARY_DIR:STATIC=/home/pf/rosWS/build/ros_tutorials/ros_tutorials
-
-//Value Computed by CMake
-ros_tutorials_SOURCE_DIR:STATIC=/home/pf/rosWS/src/ros_tutorials/ros_tutorials
-
 //The directory containing a CMake configuration file for rosbag.
 rosbag_DIR:PATH=/opt/ros/indigo/share/rosbag/cmake
 
@@ -1572,20 +870,11 @@ roscpp_serialization_DIR:PATH=/opt/ros/indigo/share/roscpp_serialization/cmake
 //The directory containing a CMake configuration file for roscpp_traits.
 roscpp_traits_DIR:PATH=/opt/ros/indigo/share/roscpp_traits/cmake
 
-//Value Computed by CMake
-roscpp_tutorials_BINARY_DIR:STATIC=/home/pf/rosWS/build/ros_tutorials/roscpp_tutorials
-
-//Value Computed by CMake
-roscpp_tutorials_SOURCE_DIR:STATIC=/home/pf/rosWS/src/ros_tutorials/roscpp_tutorials
-
 //The directory containing a CMake configuration file for rosgraph.
 rosgraph_DIR:PATH=/opt/ros/indigo/share/rosgraph/cmake
 
 //The directory containing a CMake configuration file for rosgraph_msgs.
 rosgraph_msgs_DIR:PATH=/opt/ros/indigo/share/rosgraph_msgs/cmake
-
-//The directory containing a CMake configuration file for roslaunch.
-roslaunch_DIR:PATH=/opt/ros/indigo/share/roslaunch/cmake
 
 //The directory containing a CMake configuration file for roslib.
 roslib_DIR:PATH=/opt/ros/indigo/share/roslib/cmake
@@ -1595,12 +884,6 @@ roslz4_DIR:PATH=/opt/ros/indigo/share/roslz4/cmake
 
 //The directory containing a CMake configuration file for rospy.
 rospy_DIR:PATH=/opt/ros/indigo/share/rospy/cmake
-
-//Value Computed by CMake
-rospy_tutorials_BINARY_DIR:STATIC=/home/pf/rosWS/build/ros_tutorials/rospy_tutorials
-
-//Value Computed by CMake
-rospy_tutorials_SOURCE_DIR:STATIC=/home/pf/rosWS/src/ros_tutorials/rospy_tutorials
 
 //The directory containing a CMake configuration file for rostest.
 rostest_DIR:PATH=/opt/ros/indigo/share/rostest/cmake
@@ -1617,173 +900,14 @@ rotate_recovery_LIB_DEPENDS:STATIC=general;base_local_planner;general;trajectory
 //Value Computed by CMake
 rotate_recovery_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation/rotate_recovery
 
-//Value Computed by CMake
-rqt_action_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_action
-
-//Value Computed by CMake
-rqt_action_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_action
-
-//Value Computed by CMake
-rqt_bag_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_bag
-
-//Value Computed by CMake
-rqt_bag_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_bag
-
-//Value Computed by CMake
-rqt_bag_plugins_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_bag_plugins
-
-//Value Computed by CMake
-rqt_bag_plugins_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_bag_plugins
-
-//Value Computed by CMake
-rqt_common_plugins_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_common_plugins
-
-//Value Computed by CMake
-rqt_common_plugins_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_common_plugins
-
-//Value Computed by CMake
-rqt_console_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_console
-
-//Value Computed by CMake
-rqt_console_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_console
-
-//Value Computed by CMake
-rqt_dep_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_dep
-
-//Value Computed by CMake
-rqt_dep_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_dep
-
-//Value Computed by CMake
-rqt_graph_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_graph
-
-//Value Computed by CMake
-rqt_graph_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_graph
-
-//The directory containing a CMake configuration file for rqt_gui.
-rqt_gui_DIR:PATH=/opt/ros/indigo/share/rqt_gui/cmake
-
-//The directory containing a CMake configuration file for rqt_gui_cpp.
-rqt_gui_cpp_DIR:PATH=/opt/ros/indigo/share/rqt_gui_cpp/cmake
-
-//Value Computed by CMake
-rqt_image_view_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_image_view
-
-//Dependencies for the target
-rqt_image_view_LIB_DEPENDS:STATIC=general;/opt/ros/indigo/lib/librqt_gui_cpp.so;general;/opt/ros/indigo/lib/libqt_gui_cpp.so;general;/opt/ros/indigo/lib/libnodeletlib.so;general;/opt/ros/indigo/lib/libbondcpp.so;general;/usr/lib/x86_64-linux-gnu/libuuid.so;general;/opt/ros/indigo/lib/libimage_transport.so;general;/opt/ros/indigo/lib/libmessage_filters.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/indigo/lib/libclass_loader.so;general;/usr/lib/libPocoFoundation.so;general;/usr/lib/x86_64-linux-gnu/libdl.so;general;/opt/ros/indigo/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/opt/ros/indigo/lib/libxmlrpcpp.so;general;/opt/ros/indigo/lib/libroslib.so;general;/opt/ros/indigo/lib/libcv_bridge.so;general;/usr/lib/x86_64-linux-gnu/libopencv_videostab.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_video.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_superres.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_stitching.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_photo.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_ocl.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_objdetect.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_ml.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_legacy.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_highgui.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_gpu.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_flann.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_features2d.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_contrib.so.2.4.8;general;/usr/lib/x86_64-linux-gnu/libopencv_calib3d.so.2.4.8;general;/opt/ros/indigo/lib/librosconsole.so;general;/opt/ros/indigo/lib/librosconsole_log4cxx.so;general;/opt/ros/indigo/lib/librosconsole_backend_interface.so;general;/usr/lib/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/indigo/lib/libroscpp_serialization.so;general;/opt/ros/indigo/lib/librostime.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/opt/ros/indigo/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;/usr/lib/x86_64-linux-gnu/libQtCore.so;general;/usr/lib/x86_64-linux-gnu/libQtGui.so;
-
-//Value Computed by CMake
-rqt_image_view_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_image_view
-
-//Value Computed by CMake
-rqt_launch_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_launch
-
-//Value Computed by CMake
-rqt_launch_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_launch
-
-//Value Computed by CMake
-rqt_logger_level_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_logger_level
-
-//Value Computed by CMake
-rqt_logger_level_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_logger_level
-
-//Value Computed by CMake
-rqt_msg_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_msg
-
-//Value Computed by CMake
-rqt_msg_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_msg
-
-//Value Computed by CMake
-rqt_plot_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_plot
-
-//Value Computed by CMake
-rqt_plot_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_plot
-
-//Value Computed by CMake
-rqt_publisher_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_publisher
-
-//Value Computed by CMake
-rqt_publisher_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_publisher
-
-//Value Computed by CMake
-rqt_py_common_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_py_common
-
-//Value Computed by CMake
-rqt_py_common_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_py_common
-
-//Value Computed by CMake
-rqt_py_console_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_py_console
-
-//Value Computed by CMake
-rqt_py_console_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_py_console
-
-//Value Computed by CMake
-rqt_reconfigure_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_reconfigure
-
-//Value Computed by CMake
-rqt_reconfigure_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_reconfigure
-
-//Value Computed by CMake
-rqt_service_caller_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_service_caller
-
-//Value Computed by CMake
-rqt_service_caller_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_service_caller
-
-//Value Computed by CMake
-rqt_shell_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_shell
-
-//Value Computed by CMake
-rqt_shell_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_shell
-
-//Value Computed by CMake
-rqt_srv_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_srv
-
-//Value Computed by CMake
-rqt_srv_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_srv
-
-//Value Computed by CMake
-rqt_top_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_top
-
-//Value Computed by CMake
-rqt_top_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_top
-
-//Value Computed by CMake
-rqt_topic_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_topic
-
-//Value Computed by CMake
-rqt_topic_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_topic
-
-//Value Computed by CMake
-rqt_web_BINARY_DIR:STATIC=/home/pf/rosWS/build/rqt_common_plugins/rqt_web
-
-//Value Computed by CMake
-rqt_web_SOURCE_DIR:STATIC=/home/pf/rosWS/src/rqt_common_plugins/rqt_web
-
-//Dependencies for the target
-scanmatcher_LIB_DEPENDS:STATIC=general;sensor_range;general;utils;
-
-//Dependencies for target
-sensor_base_LIB_DEPENDS:STATIC=
-
 //The directory containing a CMake configuration file for sensor_msgs.
 sensor_msgs_DIR:PATH=/opt/ros/indigo/share/sensor_msgs/cmake
-
-//Dependencies for the target
-sensor_odometry_LIB_DEPENDS:STATIC=general;sensor_base;
-
-//Dependencies for the target
-sensor_range_LIB_DEPENDS:STATIC=general;sensor_base;
 
 //Value Computed by CMake
 simple_navigation_goals_tutorial_BINARY_DIR:STATIC=/home/pf/rosWS/build/navigation_tutorials/simple_navigation_goals_tutorial
 
 //Value Computed by CMake
 simple_navigation_goals_tutorial_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation_tutorials/simple_navigation_goals_tutorial
-
-//Value Computed by CMake
-slam_gmapping_BINARY_DIR:STATIC=/home/pf/rosWS/build/gmapping-ros/slam_gmapping/slam_gmapping
-
-//Value Computed by CMake
-slam_gmapping_SOURCE_DIR:STATIC=/home/pf/rosWS/src/gmapping-ros/slam_gmapping/slam_gmapping
 
 //The directory containing a CMake configuration file for smclib.
 smclib_DIR:PATH=/opt/ros/indigo/share/smclib/cmake
@@ -1803,12 +927,6 @@ std_msgs_DIR:PATH=/opt/ros/indigo/share/std_msgs/cmake
 //The directory containing a CMake configuration file for std_srvs.
 std_srvs_DIR:PATH=/opt/ros/indigo/share/std_srvs/cmake
 
-//Value Computed by CMake
-teleop_twist_keyboard_BINARY_DIR:STATIC=/home/pf/rosWS/build/teleop_twist_keyboard
-
-//Value Computed by CMake
-teleop_twist_keyboard_SOURCE_DIR:STATIC=/home/pf/rosWS/src/teleop_twist_keyboard
-
 //The directory containing a CMake configuration file for tf2.
 tf2_DIR:PATH=/opt/ros/indigo/share/tf2/cmake
 
@@ -1824,26 +942,11 @@ tf2_ros_DIR:PATH=/opt/ros/indigo/share/tf2_ros/cmake
 //The directory containing a CMake configuration file for tf.
 tf_DIR:PATH=/opt/ros/indigo/share/tf/cmake
 
-//Value Computed by CMake
-timer_package_BINARY_DIR:STATIC=/home/pf/rosWS/build/timer_package
-
-//Value Computed by CMake
-timer_package_SOURCE_DIR:STATIC=/home/pf/rosWS/src/timer_package
-
 //The directory containing a CMake configuration file for topic_tools.
 topic_tools_DIR:PATH=/opt/ros/indigo/share/topic_tools/cmake
 
 //Dependencies for the target
 trajectory_planner_ros_LIB_DEPENDS:STATIC=general;base_local_planner;
-
-//Value Computed by CMake
-turtlesim_BINARY_DIR:STATIC=/home/pf/rosWS/build/ros_tutorials/turtlesim
-
-//Value Computed by CMake
-turtlesim_SOURCE_DIR:STATIC=/home/pf/rosWS/src/ros_tutorials/turtlesim
-
-//Dependencies for target
-utils_LIB_DEPENDS:STATIC=
 
 //The directory containing a CMake configuration file for visualization_msgs.
 visualization_msgs_DIR:PATH=/opt/ros/indigo/share/visualization_msgs/cmake
@@ -1859,12 +962,6 @@ voxel_grid_LIB_DEPENDS:STATIC=general;/opt/ros/indigo/lib/libroscpp.so;general;/
 
 //Value Computed by CMake
 voxel_grid_SOURCE_DIR:STATIC=/home/pf/rosWS/src/navigation/voxel_grid
-
-//Value Computed by CMake
-wanderer_BINARY_DIR:STATIC=/home/pf/rosWS/build/wanderer
-
-//Value Computed by CMake
-wanderer_SOURCE_DIR:STATIC=/home/pf/rosWS/src/wanderer
 
 //The directory containing a CMake configuration file for xmlrpcpp.
 xmlrpcpp_DIR:PATH=/opt/ros/indigo/share/xmlrpcpp/cmake
@@ -1949,6 +1046,8 @@ Boost_THREAD_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //catkin environment
 CATKIN_ENV:INTERNAL=/home/pf/rosWS/build/catkin_generated/env_cached.sh
 CATKIN_TEST_RESULTS_DIR:INTERNAL=/home/pf/rosWS/build/test_results
+//ADVANCED property for variable: CMAKE_AR
+CMAKE_AR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_BUILD_TOOL
 CMAKE_BUILD_TOOL-ADVANCED:INTERNAL=1
 //What is the target build tool cmake is generating for.
@@ -1969,6 +1068,8 @@ CMAKE_COMMAND:INTERNAL=/usr/bin/cmake
 CMAKE_CPACK_COMMAND:INTERNAL=/usr/bin/cpack
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=/usr/bin/ctest
+//ADVANCED property for variable: CMAKE_CXX_COMPILER
+CMAKE_CXX_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS
 CMAKE_CXX_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_DEBUG
@@ -1979,6 +1080,8 @@ CMAKE_CXX_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_CXX_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS_RELWITHDEBINFO
 CMAKE_CXX_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_C_COMPILER
+CMAKE_C_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS
 CMAKE_C_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_DEBUG
@@ -1989,6 +1092,8 @@ CMAKE_C_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_C_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_C_FLAGS_RELWITHDEBINFO
 CMAKE_C_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//Executable file format
+CMAKE_EXECUTABLE_FORMAT:INTERNAL=ELF
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS
 CMAKE_EXE_LINKER_FLAGS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_EXE_LINKER_FLAGS_DEBUG
@@ -2018,6 +1123,8 @@ CMAKE_HAVE_PTHREAD_H:INTERNAL=1
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/pf/rosWS/src
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
+//ADVANCED property for variable: CMAKE_LINKER
+CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM
 CMAKE_MAKE_PROGRAM-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS
@@ -2030,8 +1137,16 @@ CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_MODULE_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_NM
+CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=85
+CMAKE_NUMBER_OF_LOCAL_GENERATORS:INTERNAL=33
+//ADVANCED property for variable: CMAKE_OBJCOPY
+CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_OBJDUMP
+CMAKE_OBJDUMP-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_RANLIB
+CMAKE_RANLIB-ADVANCED:INTERNAL=1
 //Path to CMake installation.
 CMAKE_ROOT:INTERNAL=/usr/share/cmake-2.8
 //ADVANCED property for variable: CMAKE_SHARED_LINKER_FLAGS
@@ -2058,6 +1173,8 @@ CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL-ADVANCED:INTERNAL=1
 CMAKE_STATIC_LINKER_FLAGS_RELEASE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO
 CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_STRIP
+CMAKE_STRIP-ADVANCED:INTERNAL=1
 //uname command
 CMAKE_UNAME:INTERNAL=/bin/uname
 //ADVANCED property for variable: CMAKE_USE_RELATIVE_PATHS
@@ -2116,8 +1233,6 @@ FIND_PACKAGE_MESSAGE_DETAILS_PCL_VISUALIZATION:INTERNAL=[/usr/lib/libpcl_visuali
 FIND_PACKAGE_MESSAGE_DETAILS_PkgConfig:INTERNAL=[/usr/bin/pkg-config][v0.26()]
 //Details about finding PythonInterp
 FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python][v2.7.6()]
-//Details about finding Qt4
-FIND_PACKAGE_MESSAGE_DETAILS_Qt4:INTERNAL=[/usr/bin/qmake-qt4][/usr/lib/x86_64-linux-gnu/qt4/bin/moc][/usr/lib/x86_64-linux-gnu/qt4/bin/rcc][/usr/include/qt4][/usr/lib/x86_64-linux-gnu][/usr/include/qt4/QtCore][/usr/lib/x86_64-linux-gnu/libQtCore.so][/usr/include/qt4/QtGui][/usr/lib/x86_64-linux-gnu/libQtGui.so][/usr/lib/x86_64-linux-gnu/qt4/bin/uic][v4.8.6()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //Details about finding eigen
@@ -2143,8 +1258,6 @@ GTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
 GTEST_MAIN_LIBRARY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GTEST_MAIN_LIBRARY_DEBUG
 GTEST_MAIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//Result of TRY_COMPILE
-LD_ACCEPTS_VERSION_SCRIPT:INTERNAL=TRUE
 //Have include FL/Fl.H
 NAVFN_HAVE_FLTK:INTERNAL=1
 //Have include pgm.h
@@ -2399,416 +1512,6 @@ PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
 //  And it needs to match.  But setuptools won't tell us where
 // it will install things.
 PYTHON_INSTALL_DIR:INTERNAL=lib/python2.7/dist-packages
-//ADVANCED property for variable: QT_ARTHURPLUGIN_PLUGIN_DEBUG
-QT_ARTHURPLUGIN_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_ARTHURPLUGIN_PLUGIN_RELEASE
-QT_ARTHURPLUGIN_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-QT_BINARY_DIR:INTERNAL=/usr/lib/x86_64-linux-gnu/qt4/bin
-//ADVANCED property for variable: QT_CONTAINEREXTENSION_PLUGIN_DEBUG
-QT_CONTAINEREXTENSION_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_CONTAINEREXTENSION_PLUGIN_RELEASE
-QT_CONTAINEREXTENSION_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_CUSTOMWIDGETPLUGIN_PLUGIN_DEBUG
-QT_CUSTOMWIDGETPLUGIN_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_CUSTOMWIDGETPLUGIN_PLUGIN_RELEASE
-QT_CUSTOMWIDGETPLUGIN_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_DBUSCPP2XML_EXECUTABLE
-QT_DBUSCPP2XML_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_DBUSXML2CPP_EXECUTABLE
-QT_DBUSXML2CPP_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_DESIGNER_EXECUTABLE
-QT_DESIGNER_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_DOC_DIR
-QT_DOC_DIR-ADVANCED:INTERNAL=1
-QT_HEADERS_DIR:INTERNAL=/usr/include/qt4
-//ADVANCED property for variable: QT_LIBRARY_DIR
-QT_LIBRARY_DIR-ADVANCED:INTERNAL=1
-//Qt library dir
-QT_LIBRARY_DIR:INTERNAL=/usr/lib/x86_64-linux-gnu
-//ADVANCED property for variable: QT_LINGUIST_EXECUTABLE
-QT_LINGUIST_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_LRELEASE_EXECUTABLE
-QT_LRELEASE_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_LUPDATE_EXECUTABLE
-QT_LUPDATE_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_MKSPECS_DIR
-QT_MKSPECS_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_MOC_EXECUTABLE
-QT_MOC_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_PHONONWIDGETS_PLUGIN_DEBUG
-QT_PHONONWIDGETS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_PHONONWIDGETS_PLUGIN_RELEASE
-QT_PHONONWIDGETS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_PHONON_INCLUDE_DIR
-QT_PHONON_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_PHONON_LIBRARY
-QT_PHONON_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_PHONON_LIBRARY_DEBUG
-QT_PHONON_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_PHONON_LIBRARY_RELEASE
-QT_PHONON_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_PLUGINS_DIR
-QT_PLUGINS_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QCNCODECS_PLUGIN_DEBUG
-QT_QCNCODECS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QCNCODECS_PLUGIN_RELEASE
-QT_QCNCODECS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QCOLLECTIONGENERATOR_EXECUTABLE
-QT_QCOLLECTIONGENERATOR_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QCOREWLANBEARER_PLUGIN_DEBUG
-QT_QCOREWLANBEARER_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QCOREWLANBEARER_PLUGIN_RELEASE
-QT_QCOREWLANBEARER_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QDECLARATIVEVIEW_PLUGIN_DEBUG
-QT_QDECLARATIVEVIEW_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QDECLARATIVEVIEW_PLUGIN_RELEASE
-QT_QDECLARATIVEVIEW_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QDECORATIONDEFAULT_PLUGIN_DEBUG
-QT_QDECORATIONDEFAULT_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QDECORATIONDEFAULT_PLUGIN_RELEASE
-QT_QDECORATIONDEFAULT_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QDECORATIONWINDOWS_PLUGIN_DEBUG
-QT_QDECORATIONWINDOWS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QDECORATIONWINDOWS_PLUGIN_RELEASE
-QT_QDECORATIONWINDOWS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QGENERICBEARER_PLUGIN_DEBUG
-QT_QGENERICBEARER_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QGENERICBEARER_PLUGIN_RELEASE
-QT_QGENERICBEARER_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QGIF_PLUGIN_DEBUG
-QT_QGIF_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QGIF_PLUGIN_RELEASE
-QT_QGIF_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QGLGRAPHICSSYSTEM_PLUGIN_DEBUG
-QT_QGLGRAPHICSSYSTEM_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QGLGRAPHICSSYSTEM_PLUGIN_RELEASE
-QT_QGLGRAPHICSSYSTEM_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QICO_PLUGIN_DEBUG
-QT_QICO_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QICO_PLUGIN_RELEASE
-QT_QICO_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QIMSW_MULTI_PLUGIN_DEBUG
-QT_QIMSW_MULTI_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QIMSW_MULTI_PLUGIN_RELEASE
-QT_QIMSW_MULTI_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QJPCODECS_PLUGIN_DEBUG
-QT_QJPCODECS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QJPCODECS_PLUGIN_RELEASE
-QT_QJPCODECS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QJPEG_PLUGIN_DEBUG
-QT_QJPEG_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QJPEG_PLUGIN_RELEASE
-QT_QJPEG_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QKRCODECS_PLUGIN_DEBUG
-QT_QKRCODECS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QKRCODECS_PLUGIN_RELEASE
-QT_QKRCODECS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QMNG_PLUGIN_DEBUG
-QT_QMNG_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QMNG_PLUGIN_RELEASE
-QT_QMNG_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLDB2_PLUGIN_DEBUG
-QT_QSQLDB2_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLDB2_PLUGIN_RELEASE
-QT_QSQLDB2_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLIBASE_PLUGIN_DEBUG
-QT_QSQLIBASE_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLIBASE_PLUGIN_RELEASE
-QT_QSQLIBASE_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLITE2_PLUGIN_DEBUG
-QT_QSQLITE2_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLITE2_PLUGIN_RELEASE
-QT_QSQLITE2_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLITE_PLUGIN_DEBUG
-QT_QSQLITE_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLITE_PLUGIN_RELEASE
-QT_QSQLITE_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLMYSQL_PLUGIN_DEBUG
-QT_QSQLMYSQL_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLMYSQL_PLUGIN_RELEASE
-QT_QSQLMYSQL_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLOCI_PLUGIN_DEBUG
-QT_QSQLOCI_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLOCI_PLUGIN_RELEASE
-QT_QSQLOCI_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLODBC_PLUGIN_DEBUG
-QT_QSQLODBC_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLODBC_PLUGIN_RELEASE
-QT_QSQLODBC_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLPSQL_PLUGIN_DEBUG
-QT_QSQLPSQL_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLPSQL_PLUGIN_RELEASE
-QT_QSQLPSQL_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLTDS_PLUGIN_DEBUG
-QT_QSQLTDS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSQLTDS_PLUGIN_RELEASE
-QT_QSQLTDS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSVGICON_PLUGIN_DEBUG
-QT_QSVGICON_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSVGICON_PLUGIN_RELEASE
-QT_QSVGICON_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSVG_PLUGIN_DEBUG
-QT_QSVG_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QSVG_PLUGIN_RELEASE
-QT_QSVG_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QT3SUPPORTWIDGETS_PLUGIN_DEBUG
-QT_QT3SUPPORTWIDGETS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QT3SUPPORTWIDGETS_PLUGIN_RELEASE
-QT_QT3SUPPORTWIDGETS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QT3SUPPORT_INCLUDE_DIR
-QT_QT3SUPPORT_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QT3SUPPORT_LIBRARY
-QT_QT3SUPPORT_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QT3SUPPORT_LIBRARY_DEBUG
-QT_QT3SUPPORT_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QT3SUPPORT_LIBRARY_RELEASE
-QT_QT3SUPPORT_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTACCESSIBLECOMPATWIDGETS_PLUGIN_DEBUG
-QT_QTACCESSIBLECOMPATWIDGETS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTACCESSIBLECOMPATWIDGETS_PLUGIN_RELEASE
-QT_QTACCESSIBLECOMPATWIDGETS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTACCESSIBLEWIDGETS_PLUGIN_DEBUG
-QT_QTACCESSIBLEWIDGETS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTACCESSIBLEWIDGETS_PLUGIN_RELEASE
-QT_QTACCESSIBLEWIDGETS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTASSISTANTCLIENT_INCLUDE_DIR
-QT_QTASSISTANTCLIENT_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTASSISTANTCLIENT_LIBRARY
-QT_QTASSISTANTCLIENT_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTASSISTANTCLIENT_LIBRARY_DEBUG
-QT_QTASSISTANTCLIENT_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTASSISTANTCLIENT_LIBRARY_RELEASE
-QT_QTASSISTANTCLIENT_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTASSISTANT_INCLUDE_DIR
-QT_QTASSISTANT_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTASSISTANT_LIBRARY
-QT_QTASSISTANT_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTASSISTANT_LIBRARY_DEBUG
-QT_QTASSISTANT_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTASSISTANT_LIBRARY_RELEASE
-QT_QTASSISTANT_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTCLUCENE_LIBRARY
-QT_QTCLUCENE_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTCLUCENE_LIBRARY_DEBUG
-QT_QTCLUCENE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTCLUCENE_LIBRARY_RELEASE
-QT_QTCLUCENE_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTCORE_INCLUDE_DIR
-QT_QTCORE_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTCORE_LIBRARY
-QT_QTCORE_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTCORE_LIBRARY_DEBUG
-QT_QTCORE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTCORE_LIBRARY_RELEASE
-QT_QTCORE_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDBUS_INCLUDE_DIR
-QT_QTDBUS_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDBUS_LIBRARY
-QT_QTDBUS_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDBUS_LIBRARY_DEBUG
-QT_QTDBUS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDBUS_LIBRARY_RELEASE
-QT_QTDBUS_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDECLARATIVE_INCLUDE_DIR
-QT_QTDECLARATIVE_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDECLARATIVE_LIBRARY
-QT_QTDECLARATIVE_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDECLARATIVE_LIBRARY_DEBUG
-QT_QTDECLARATIVE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDECLARATIVE_LIBRARY_RELEASE
-QT_QTDECLARATIVE_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDESIGNERCOMPONENTS_INCLUDE_DIR
-QT_QTDESIGNERCOMPONENTS_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDESIGNERCOMPONENTS_LIBRARY
-QT_QTDESIGNERCOMPONENTS_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDESIGNERCOMPONENTS_LIBRARY_DEBUG
-QT_QTDESIGNERCOMPONENTS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDESIGNERCOMPONENTS_LIBRARY_RELEASE
-QT_QTDESIGNERCOMPONENTS_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDESIGNER_INCLUDE_DIR
-QT_QTDESIGNER_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDESIGNER_LIBRARY
-QT_QTDESIGNER_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDESIGNER_LIBRARY_DEBUG
-QT_QTDESIGNER_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTDESIGNER_LIBRARY_RELEASE
-QT_QTDESIGNER_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTGUI_INCLUDE_DIR
-QT_QTGUI_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTGUI_LIBRARY
-QT_QTGUI_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTGUI_LIBRARY_DEBUG
-QT_QTGUI_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTGUI_LIBRARY_RELEASE
-QT_QTGUI_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTHELP_INCLUDE_DIR
-QT_QTHELP_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTHELP_LIBRARY
-QT_QTHELP_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTHELP_LIBRARY_DEBUG
-QT_QTHELP_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTHELP_LIBRARY_RELEASE
-QT_QTHELP_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTIFF_PLUGIN_DEBUG
-QT_QTIFF_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTIFF_PLUGIN_RELEASE
-QT_QTIFF_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTMOTIF_INCLUDE_DIR
-QT_QTMOTIF_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTMOTIF_LIBRARY
-QT_QTMOTIF_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTMOTIF_LIBRARY_DEBUG
-QT_QTMOTIF_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTMOTIF_LIBRARY_RELEASE
-QT_QTMOTIF_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTMULTIMEDIA_INCLUDE_DIR
-QT_QTMULTIMEDIA_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTMULTIMEDIA_LIBRARY
-QT_QTMULTIMEDIA_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTMULTIMEDIA_LIBRARY_DEBUG
-QT_QTMULTIMEDIA_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTMULTIMEDIA_LIBRARY_RELEASE
-QT_QTMULTIMEDIA_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTNETWORK_INCLUDE_DIR
-QT_QTNETWORK_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTNETWORK_LIBRARY
-QT_QTNETWORK_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTNETWORK_LIBRARY_DEBUG
-QT_QTNETWORK_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTNETWORK_LIBRARY_RELEASE
-QT_QTNETWORK_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTNSPLUGIN_INCLUDE_DIR
-QT_QTNSPLUGIN_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTNSPLUGIN_LIBRARY
-QT_QTNSPLUGIN_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTNSPLUGIN_LIBRARY_DEBUG
-QT_QTNSPLUGIN_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTNSPLUGIN_LIBRARY_RELEASE
-QT_QTNSPLUGIN_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTOPENGL_INCLUDE_DIR
-QT_QTOPENGL_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTOPENGL_LIBRARY
-QT_QTOPENGL_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTOPENGL_LIBRARY_DEBUG
-QT_QTOPENGL_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTOPENGL_LIBRARY_RELEASE
-QT_QTOPENGL_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTRACEGRAPHICSSYSTEM_PLUGIN_DEBUG
-QT_QTRACEGRAPHICSSYSTEM_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTRACEGRAPHICSSYSTEM_PLUGIN_RELEASE
-QT_QTRACEGRAPHICSSYSTEM_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSCRIPTDBUS_PLUGIN_DEBUG
-QT_QTSCRIPTDBUS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSCRIPTDBUS_PLUGIN_RELEASE
-QT_QTSCRIPTDBUS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSCRIPTTOOLS_INCLUDE_DIR
-QT_QTSCRIPTTOOLS_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSCRIPTTOOLS_LIBRARY
-QT_QTSCRIPTTOOLS_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSCRIPTTOOLS_LIBRARY_DEBUG
-QT_QTSCRIPTTOOLS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSCRIPTTOOLS_LIBRARY_RELEASE
-QT_QTSCRIPTTOOLS_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSCRIPT_INCLUDE_DIR
-QT_QTSCRIPT_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSCRIPT_LIBRARY
-QT_QTSCRIPT_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSCRIPT_LIBRARY_DEBUG
-QT_QTSCRIPT_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSCRIPT_LIBRARY_RELEASE
-QT_QTSCRIPT_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSQL_INCLUDE_DIR
-QT_QTSQL_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSQL_LIBRARY
-QT_QTSQL_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSQL_LIBRARY_DEBUG
-QT_QTSQL_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSQL_LIBRARY_RELEASE
-QT_QTSQL_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSVG_INCLUDE_DIR
-QT_QTSVG_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSVG_LIBRARY
-QT_QTSVG_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSVG_LIBRARY_DEBUG
-QT_QTSVG_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTSVG_LIBRARY_RELEASE
-QT_QTSVG_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTTEST_INCLUDE_DIR
-QT_QTTEST_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTTEST_LIBRARY
-QT_QTTEST_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTTEST_LIBRARY_DEBUG
-QT_QTTEST_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTTEST_LIBRARY_RELEASE
-QT_QTTEST_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTUITOOLS_INCLUDE_DIR
-QT_QTUITOOLS_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTUITOOLS_LIBRARY
-QT_QTUITOOLS_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTUITOOLS_LIBRARY_DEBUG
-QT_QTUITOOLS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTUITOOLS_LIBRARY_RELEASE
-QT_QTUITOOLS_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTWCODECS_PLUGIN_DEBUG
-QT_QTWCODECS_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTWCODECS_PLUGIN_RELEASE
-QT_QTWCODECS_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTWEBKIT_INCLUDE_DIR
-QT_QTWEBKIT_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTWEBKIT_LIBRARY
-QT_QTWEBKIT_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTWEBKIT_LIBRARY_DEBUG
-QT_QTWEBKIT_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTWEBKIT_LIBRARY_RELEASE
-QT_QTWEBKIT_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTXMLPATTERNS_INCLUDE_DIR
-QT_QTXMLPATTERNS_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTXMLPATTERNS_LIBRARY
-QT_QTXMLPATTERNS_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTXMLPATTERNS_LIBRARY_DEBUG
-QT_QTXMLPATTERNS_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTXMLPATTERNS_LIBRARY_RELEASE
-QT_QTXMLPATTERNS_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTXML_INCLUDE_DIR
-QT_QTXML_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTXML_LIBRARY
-QT_QTXML_LIBRARY-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTXML_LIBRARY_DEBUG
-QT_QTXML_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QTXML_LIBRARY_RELEASE
-QT_QTXML_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QWEBVIEW_PLUGIN_DEBUG
-QT_QWEBVIEW_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QWEBVIEW_PLUGIN_RELEASE
-QT_QWEBVIEW_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QWSTSLIBMOUSEHANDLER_PLUGIN_DEBUG
-QT_QWSTSLIBMOUSEHANDLER_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_QWSTSLIBMOUSEHANDLER_PLUGIN_RELEASE
-QT_QWSTSLIBMOUSEHANDLER_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_RCC_EXECUTABLE
-QT_RCC_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_TASKMENUEXTENSION_PLUGIN_DEBUG
-QT_TASKMENUEXTENSION_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_TASKMENUEXTENSION_PLUGIN_RELEASE
-QT_TASKMENUEXTENSION_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_TRANSLATIONS_DIR
-QT_TRANSLATIONS_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_UIC3_EXECUTABLE
-QT_UIC3_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_UIC_EXECUTABLE
-QT_UIC_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEBUG
-QT_WORLDTIMECLOCKPLUGIN_PLUGIN_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: QT_WORLDTIMECLOCKPLUGIN_PLUGIN_RELEASE
-QT_WORLDTIMECLOCKPLUGIN_PLUGIN_RELEASE-ADVANCED:INTERNAL=1
-//Have symbol Q_WS_MAC
-Q_WS_MAC:INTERNAL=
-//Have symbol Q_WS_QWS
-Q_WS_QWS:INTERNAL=
-//Have symbol Q_WS_WIN
-Q_WS_WIN:INTERNAL=
-//Have symbol Q_WS_X11
-Q_WS_X11:INTERNAL=1
 //Last used BOOST_INCLUDEDIR value.
 _BOOST_INCLUDEDIR_LAST:INTERNAL=/usr/include
 //Last used Boost_ADDITIONAL_VERSIONS value.

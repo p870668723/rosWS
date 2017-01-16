@@ -79,6 +79,16 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -153,11 +163,6 @@ tf_broadcaster/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_broadcaster.dir/build.make navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_broadcaster.dir/build
 .PHONY : tf_broadcaster/fast
 
-# Manual pre-install relink rule for target.
-tf_broadcaster/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_broadcaster.dir/preinstall
-.PHONY : tf_broadcaster/preinstall
-
 # Convenience name for target.
 navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_listener.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_listener.dir/rule
@@ -171,11 +176,6 @@ tf_listener: navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_listener
 tf_listener/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_listener.dir/build.make navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_listener.dir/build
 .PHONY : tf_listener/fast
-
-# Manual pre-install relink rule for target.
-tf_listener/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_listener.dir/preinstall
-.PHONY : tf_listener/preinstall
 
 src/tf_broadcaster.o: src/tf_broadcaster.cpp.o
 .PHONY : src/tf_broadcaster.o
@@ -234,6 +234,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"

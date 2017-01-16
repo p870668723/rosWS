@@ -79,6 +79,16 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -294,6 +304,48 @@ array_parser_test/fast:
 .PHONY : array_parser_test/fast
 
 # Convenience name for target.
+navigation/costmap_2d/CMakeFiles/bond_generate_messages_cpp.dir/rule:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/bond_generate_messages_cpp.dir/rule
+.PHONY : navigation/costmap_2d/CMakeFiles/bond_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+bond_generate_messages_cpp: navigation/costmap_2d/CMakeFiles/bond_generate_messages_cpp.dir/rule
+.PHONY : bond_generate_messages_cpp
+
+# fast build rule for target.
+bond_generate_messages_cpp/fast:
+	cd /home/pf/rosWS/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/bond_generate_messages_cpp.dir/build.make navigation/costmap_2d/CMakeFiles/bond_generate_messages_cpp.dir/build
+.PHONY : bond_generate_messages_cpp/fast
+
+# Convenience name for target.
+navigation/costmap_2d/CMakeFiles/bond_generate_messages_lisp.dir/rule:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/bond_generate_messages_lisp.dir/rule
+.PHONY : navigation/costmap_2d/CMakeFiles/bond_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+bond_generate_messages_lisp: navigation/costmap_2d/CMakeFiles/bond_generate_messages_lisp.dir/rule
+.PHONY : bond_generate_messages_lisp
+
+# fast build rule for target.
+bond_generate_messages_lisp/fast:
+	cd /home/pf/rosWS/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/bond_generate_messages_lisp.dir/build.make navigation/costmap_2d/CMakeFiles/bond_generate_messages_lisp.dir/build
+.PHONY : bond_generate_messages_lisp/fast
+
+# Convenience name for target.
+navigation/costmap_2d/CMakeFiles/bond_generate_messages_py.dir/rule:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/bond_generate_messages_py.dir/rule
+.PHONY : navigation/costmap_2d/CMakeFiles/bond_generate_messages_py.dir/rule
+
+# Convenience name for target.
+bond_generate_messages_py: navigation/costmap_2d/CMakeFiles/bond_generate_messages_py.dir/rule
+.PHONY : bond_generate_messages_py
+
+# fast build rule for target.
+bond_generate_messages_py/fast:
+	cd /home/pf/rosWS/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/bond_generate_messages_py.dir/build.make navigation/costmap_2d/CMakeFiles/bond_generate_messages_py.dir/build
+.PHONY : bond_generate_messages_py/fast
+
+# Convenience name for target.
 navigation/costmap_2d/CMakeFiles/clean_test_results_costmap_2d.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/clean_test_results_costmap_2d.dir/rule
 .PHONY : navigation/costmap_2d/CMakeFiles/clean_test_results_costmap_2d.dir/rule
@@ -321,11 +373,6 @@ costmap_2d/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d.dir/build
 .PHONY : costmap_2d/fast
 
-# Manual pre-install relink rule for target.
-costmap_2d/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/costmap_2d.dir/preinstall
-.PHONY : costmap_2d/preinstall
-
 # Convenience name for target.
 navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir/rule
@@ -339,11 +386,6 @@ costmap_2d_cloud: navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir/rule
 costmap_2d_cloud/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir/build
 .PHONY : costmap_2d_cloud/fast
-
-# Manual pre-install relink rule for target.
-costmap_2d_cloud/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/costmap_2d_cloud.dir/preinstall
-.PHONY : costmap_2d_cloud/preinstall
 
 # Convenience name for target.
 navigation/costmap_2d/CMakeFiles/costmap_2d_gencfg.dir/rule:
@@ -471,11 +513,6 @@ costmap_2d_markers/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d_markers.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d_markers.dir/build
 .PHONY : costmap_2d_markers/fast
 
-# Manual pre-install relink rule for target.
-costmap_2d_markers/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/costmap_2d_markers.dir/preinstall
-.PHONY : costmap_2d_markers/preinstall
-
 # Convenience name for target.
 navigation/costmap_2d/CMakeFiles/costmap_2d_node.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/costmap_2d_node.dir/rule
@@ -489,11 +526,6 @@ costmap_2d_node: navigation/costmap_2d/CMakeFiles/costmap_2d_node.dir/rule
 costmap_2d_node/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/costmap_2d_node.dir/build.make navigation/costmap_2d/CMakeFiles/costmap_2d_node.dir/build
 .PHONY : costmap_2d_node/fast
-
-# Manual pre-install relink rule for target.
-costmap_2d_node/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/costmap_2d_node.dir/preinstall
-.PHONY : costmap_2d_node/preinstall
 
 # Convenience name for target.
 navigation/costmap_2d/CMakeFiles/costmap_2d_simple_driving_test_indexed.bag.dir/rule:
@@ -579,11 +611,6 @@ layers/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/layers.dir/build.make navigation/costmap_2d/CMakeFiles/layers.dir/build
 .PHONY : layers/fast
 
-# Manual pre-install relink rule for target.
-layers/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/layers.dir/preinstall
-.PHONY : layers/preinstall
-
 # Convenience name for target.
 navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_cpp.dir/rule
@@ -625,6 +652,48 @@ map_msgs_generate_messages_py: navigation/costmap_2d/CMakeFiles/map_msgs_generat
 map_msgs_generate_messages_py/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_py.dir/build.make navigation/costmap_2d/CMakeFiles/map_msgs_generate_messages_py.dir/build
 .PHONY : map_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_cpp.dir/rule:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
+.PHONY : navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+nodelet_generate_messages_cpp: navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
+.PHONY : nodelet_generate_messages_cpp
+
+# fast build rule for target.
+nodelet_generate_messages_cpp/fast:
+	cd /home/pf/rosWS/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_cpp.dir/build
+.PHONY : nodelet_generate_messages_cpp/fast
+
+# Convenience name for target.
+navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_lisp.dir/rule:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+.PHONY : navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+nodelet_generate_messages_lisp: navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
+.PHONY : nodelet_generate_messages_lisp
+
+# fast build rule for target.
+nodelet_generate_messages_lisp/fast:
+	cd /home/pf/rosWS/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_lisp.dir/build
+.PHONY : nodelet_generate_messages_lisp/fast
+
+# Convenience name for target.
+navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_py.dir/rule:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_py.dir/rule
+.PHONY : navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_py.dir/rule
+
+# Convenience name for target.
+nodelet_generate_messages_py: navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_py.dir/rule
+.PHONY : nodelet_generate_messages_py
+
+# fast build rule for target.
+nodelet_generate_messages_py/fast:
+	cd /home/pf/rosWS/build && $(MAKE) -f navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_py.dir/build.make navigation/costmap_2d/CMakeFiles/nodelet_generate_messages_py.dir/build
+.PHONY : nodelet_generate_messages_py/fast
 
 # Convenience name for target.
 navigation/costmap_2d/CMakeFiles/obstacle_tests.dir/rule:
@@ -1408,6 +1477,9 @@ help:
 	@echo "... _run_tests_costmap_2d_rostest_test_simple_driving_test.xml"
 	@echo "... _run_tests_costmap_2d_rostest_test_static_tests.launch"
 	@echo "... array_parser_test"
+	@echo "... bond_generate_messages_cpp"
+	@echo "... bond_generate_messages_lisp"
+	@echo "... bond_generate_messages_py"
 	@echo "... clean_test_results_costmap_2d"
 	@echo "... costmap_2d"
 	@echo "... costmap_2d_cloud"
@@ -1429,11 +1501,15 @@ help:
 	@echo "... inflation_tests"
 	@echo "... install"
 	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... layers"
 	@echo "... list_install_components"
 	@echo "... map_msgs_generate_messages_cpp"
 	@echo "... map_msgs_generate_messages_lisp"
 	@echo "... map_msgs_generate_messages_py"
+	@echo "... nodelet_generate_messages_cpp"
+	@echo "... nodelet_generate_messages_lisp"
+	@echo "... nodelet_generate_messages_py"
 	@echo "... obstacle_tests"
 	@echo "... pcl_msgs_generate_messages_cpp"
 	@echo "... pcl_msgs_generate_messages_lisp"

@@ -48,6 +48,20 @@ IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/point_cloud_publisher_tutorial" TYPE EXECUTABLE FILES "/home/pf/rosWS/build/navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher")
+  IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/point_cloud_publisher_tutorial/point_cloud_publisher" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/point_cloud_publisher_tutorial/point_cloud_publisher")
+    FILE(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/point_cloud_publisher_tutorial/point_cloud_publisher"
+         RPATH "")
+  ENDIF()
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/point_cloud_publisher_tutorial" TYPE EXECUTABLE FILES "/home/pf/rosWS/devel/lib/point_cloud_publisher_tutorial/point_cloud_publisher")
+  IF(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/point_cloud_publisher_tutorial/point_cloud_publisher" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/point_cloud_publisher_tutorial/point_cloud_publisher")
+    FILE(RPATH_REMOVE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/point_cloud_publisher_tutorial/point_cloud_publisher")
+    IF(CMAKE_INSTALL_DO_STRIP)
+      EXECUTE_PROCESS(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/point_cloud_publisher_tutorial/point_cloud_publisher")
+    ENDIF(CMAKE_INSTALL_DO_STRIP)
+  ENDIF()
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

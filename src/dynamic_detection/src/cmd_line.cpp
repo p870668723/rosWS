@@ -13,7 +13,8 @@ int main(int argc, char *argv[])
 
     vel.linear.x = atof(argv[1]);
     //ROS_INFO("argv[1]: %f",atof(argv[1]));
-    vel.linear.y = 0;
+    vel.linear.y = atof(argv[2]);
+    vel.angular.z = atof(argv[3]);
     ros::Rate rate(10);
     while(ros::ok())
     {

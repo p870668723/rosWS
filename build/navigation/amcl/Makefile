@@ -79,6 +79,16 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -293,11 +303,6 @@ amcl/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/amcl/CMakeFiles/amcl.dir/build.make navigation/amcl/CMakeFiles/amcl.dir/build
 .PHONY : amcl/fast
 
-# Manual pre-install relink rule for target.
-amcl/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/amcl/CMakeFiles/amcl.dir/preinstall
-.PHONY : amcl/preinstall
-
 # Convenience name for target.
 navigation/amcl/CMakeFiles/amcl_basic_localization_stage_indexed.bag.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/amcl/CMakeFiles/amcl_basic_localization_stage_indexed.bag.dir/rule
@@ -395,11 +400,6 @@ amcl_sensors: navigation/amcl/CMakeFiles/amcl_sensors.dir/rule
 amcl_sensors/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/amcl/CMakeFiles/amcl_sensors.dir/build.make navigation/amcl/CMakeFiles/amcl_sensors.dir/build
 .PHONY : amcl_sensors/fast
-
-# Manual pre-install relink rule for target.
-amcl_sensors/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/amcl/CMakeFiles/amcl_sensors.dir/preinstall
-.PHONY : amcl_sensors/preinstall
 
 # Convenience name for target.
 navigation/amcl/CMakeFiles/amcl_small_loop_crazy_driving_prg_indexed.bag.dir/rule:
@@ -1135,6 +1135,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... run_tests_amcl"

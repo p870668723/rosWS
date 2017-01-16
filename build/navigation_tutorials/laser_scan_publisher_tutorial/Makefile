@@ -79,6 +79,16 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -153,11 +163,6 @@ laser_scan_publisher/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation_tutorials/laser_scan_publisher_tutorial/CMakeFiles/laser_scan_publisher.dir/build.make navigation_tutorials/laser_scan_publisher_tutorial/CMakeFiles/laser_scan_publisher.dir/build
 .PHONY : laser_scan_publisher/fast
 
-# Manual pre-install relink rule for target.
-laser_scan_publisher/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation_tutorials/laser_scan_publisher_tutorial/CMakeFiles/laser_scan_publisher.dir/preinstall
-.PHONY : laser_scan_publisher/preinstall
-
 src/laser_scan_publisher.o: src/laser_scan_publisher.cpp.o
 .PHONY : src/laser_scan_publisher.o
 
@@ -191,6 +196,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... laser_scan_publisher"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"

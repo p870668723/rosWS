@@ -79,6 +79,16 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -237,11 +247,6 @@ map_server/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/map_server/CMakeFiles/map_server.dir/build.make navigation/map_server/CMakeFiles/map_server.dir/build
 .PHONY : map_server/fast
 
-# Manual pre-install relink rule for target.
-map_server/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/map_server/CMakeFiles/map_server.dir/preinstall
-.PHONY : map_server/preinstall
-
 # Convenience name for target.
 navigation/map_server/CMakeFiles/map_server-map_saver.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/map_server/CMakeFiles/map_server-map_saver.dir/rule
@@ -256,11 +261,6 @@ map_server-map_saver/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/map_server/CMakeFiles/map_server-map_saver.dir/build.make navigation/map_server/CMakeFiles/map_server-map_saver.dir/build
 .PHONY : map_server-map_saver/fast
 
-# Manual pre-install relink rule for target.
-map_server-map_saver/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/map_server/CMakeFiles/map_server-map_saver.dir/preinstall
-.PHONY : map_server-map_saver/preinstall
-
 # Convenience name for target.
 navigation/map_server/CMakeFiles/map_server_image_loader.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/map_server/CMakeFiles/map_server_image_loader.dir/rule
@@ -274,11 +274,6 @@ map_server_image_loader: navigation/map_server/CMakeFiles/map_server_image_loade
 map_server_image_loader/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/map_server/CMakeFiles/map_server_image_loader.dir/build.make navigation/map_server/CMakeFiles/map_server_image_loader.dir/build
 .PHONY : map_server_image_loader/fast
-
-# Manual pre-install relink rule for target.
-map_server_image_loader/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/map_server/CMakeFiles/map_server_image_loader.dir/preinstall
-.PHONY : map_server_image_loader/preinstall
 
 # Convenience name for target.
 navigation/map_server/CMakeFiles/map_server_utest.dir/rule:
@@ -540,6 +535,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... map_server"
 	@echo "... map_server-map_saver"

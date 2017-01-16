@@ -79,6 +79,16 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -139,15 +149,31 @@ depend:
 	cd /home/pf/rosWS/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+navigation/navigation/CMakeFiles/_catkin_empty_exported_target.dir/rule:
+	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/navigation/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : navigation/navigation/CMakeFiles/_catkin_empty_exported_target.dir/rule
+
+# Convenience name for target.
+_catkin_empty_exported_target: navigation/navigation/CMakeFiles/_catkin_empty_exported_target.dir/rule
+.PHONY : _catkin_empty_exported_target
+
+# fast build rule for target.
+_catkin_empty_exported_target/fast:
+	cd /home/pf/rosWS/build && $(MAKE) -f navigation/navigation/CMakeFiles/_catkin_empty_exported_target.dir/build.make navigation/navigation/CMakeFiles/_catkin_empty_exported_target.dir/build
+.PHONY : _catkin_empty_exported_target/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... _catkin_empty_exported_target"
 	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"

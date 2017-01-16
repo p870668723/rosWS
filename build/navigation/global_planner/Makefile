@@ -79,6 +79,16 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -153,11 +163,6 @@ global_planner/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/global_planner/CMakeFiles/global_planner.dir/build.make navigation/global_planner/CMakeFiles/global_planner.dir/build
 .PHONY : global_planner/fast
 
-# Manual pre-install relink rule for target.
-global_planner/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/global_planner/CMakeFiles/global_planner.dir/preinstall
-.PHONY : global_planner/preinstall
-
 # Convenience name for target.
 navigation/global_planner/CMakeFiles/global_planner_gencfg.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/global_planner/CMakeFiles/global_planner_gencfg.dir/rule
@@ -185,11 +190,6 @@ planner: navigation/global_planner/CMakeFiles/planner.dir/rule
 planner/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f navigation/global_planner/CMakeFiles/planner.dir/build.make navigation/global_planner/CMakeFiles/planner.dir/build
 .PHONY : planner/fast
-
-# Manual pre-install relink rule for target.
-planner/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 navigation/global_planner/CMakeFiles/planner.dir/preinstall
-.PHONY : planner/preinstall
 
 src/astar.o: src/astar.cpp.o
 .PHONY : src/astar.o
@@ -394,6 +394,7 @@ help:
 	@echo "... global_planner_gencfg"
 	@echo "... install"
 	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... planner"
 	@echo "... rebuild_cache"

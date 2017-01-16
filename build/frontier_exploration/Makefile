@@ -79,6 +79,16 @@ install/local: preinstall
 install/local/fast: install/local
 .PHONY : install/local/fast
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: install/strip
+.PHONY : install/strip/fast
+
 # Special rule for the target list_install_components
 list_install_components:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
@@ -391,11 +401,6 @@ explore_client/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f frontier_exploration/CMakeFiles/explore_client.dir/build.make frontier_exploration/CMakeFiles/explore_client.dir/build
 .PHONY : explore_client/fast
 
-# Manual pre-install relink rule for target.
-explore_client/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 frontier_exploration/CMakeFiles/explore_client.dir/preinstall
-.PHONY : explore_client/preinstall
-
 # Convenience name for target.
 frontier_exploration/CMakeFiles/explore_costmap.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 frontier_exploration/CMakeFiles/explore_costmap.dir/rule
@@ -410,11 +415,6 @@ explore_costmap/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f frontier_exploration/CMakeFiles/explore_costmap.dir/build.make frontier_exploration/CMakeFiles/explore_costmap.dir/build
 .PHONY : explore_costmap/fast
 
-# Manual pre-install relink rule for target.
-explore_costmap/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 frontier_exploration/CMakeFiles/explore_costmap.dir/preinstall
-.PHONY : explore_costmap/preinstall
-
 # Convenience name for target.
 frontier_exploration/CMakeFiles/explore_server.dir/rule:
 	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 frontier_exploration/CMakeFiles/explore_server.dir/rule
@@ -428,11 +428,6 @@ explore_server: frontier_exploration/CMakeFiles/explore_server.dir/rule
 explore_server/fast:
 	cd /home/pf/rosWS/build && $(MAKE) -f frontier_exploration/CMakeFiles/explore_server.dir/build.make frontier_exploration/CMakeFiles/explore_server.dir/build
 .PHONY : explore_server/fast
-
-# Manual pre-install relink rule for target.
-explore_server/preinstall:
-	cd /home/pf/rosWS/build && $(MAKE) -f CMakeFiles/Makefile2 frontier_exploration/CMakeFiles/explore_server.dir/preinstall
-.PHONY : explore_server/preinstall
 
 # Convenience name for target.
 frontier_exploration/CMakeFiles/frontier_exploration_gencpp.dir/rule:
@@ -878,6 +873,7 @@ help:
 	@echo "... geometry_tools_tests"
 	@echo "... install"
 	@echo "... install/local"
+	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... run_tests_frontier_exploration"

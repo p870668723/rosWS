@@ -30,11 +30,13 @@
 #define SOLUTION 0.05
 #define map_x 200
 #define map_y 200
-
+#define G_origin 1969120
+#define G_width 1984
 
 /********************************话题订阅回调函数声明*****************************************/
 /*************************************************************************************/
 void data_substract(const sensor_msgs::LaserScan& msg);
+void cpy_map(const nav_msgs::OccupancyGrid& msg);
 
 /********************************普通函数声明*****************************************/
 /*************************************************************************************/
@@ -44,13 +46,14 @@ void cal_centroid(std::queue<int> group_x,std::queue<int> group_y,int *centroid)
 void pthread_publish(void);
 std::queue<int> beam_substract(float *minuend,float * subtrahend,int n );//激光束对应的beam作差,如果超过阈值,则认为有动态物体.
 void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m);//地图更新函数,根据mark_beam来跟新动态物体的位置
-
+void deal_Gmap(void);
 
 time_t tm;
+nav_msgs::OccupancyGrid Gmap;
+bool deal_flag=false;
 float scan_data[11][1081]={{0}};      //一共保存11帧数据,每组数据有1081个beams.
 static int frames=0;            //静态数据
 nav_msgs::OccupancyGrid Map_Msg;//栅格地图消息
-//nav_msgs::Path Velocity_Msg;
 geometry_msgs::Pose RobotCenter;//地图中心,应该定义为机器人的中心
 int map[map_x][map_y];          //地图数组
 float AngleIncrement;           //激光雷达的增角
@@ -59,51 +62,91 @@ std::list<Point_custom> LastMAP;//由于存储上一帧地图的有效点
 //x,y卡尔曼滤波的参数
 struct kal_param x_pos_param(0,0,1,2,0,0,0,0);
 struct kal_param y_pos_param(0,0,1,2,0,0,0,0);
-struct kal_param x_vel_param(0,0,1,8,0,0,0,0);
-struct kal_param y_vel_param(0,0,1,8,0,0,0,0);
+struct kal_param x_vel_param(0,0,1,2,0,0,0,0);
+struct kal_param y_vel_param(0,0,1,2,0,0,0,0);
 
 int main(int argc, char *argv[])
 {
     ros::init(argc,argv,"dynamic_detection");
     ros::NodeHandle nh;
-    //ROS_INFO("***********START*************");
+    geometry_msgs::PointStamped laser_point;
+    geometry_msgs::PointStamped Gmap_point;
+
+    tf::TransformBroadcaster br;
+    tf::Transform trans_br;
+    tf::StampedTransform transform;
+
+
+    ROS_INFO("***********START*************");
+
 
     ros::Publisher pub_map=nh.advertise<nav_msgs::OccupancyGrid>("/substracted",1);  //publish the local map of dynamics
-    ros::Publisher pub_velocity=nh.advertise<nav_msgs::Odometry>("/kalman_filter",1);      //publish the velocity of dynamics
+    ros::Publisher pub_Gmap=nh.advertise<nav_msgs::OccupancyGrid>("/Gmap_tpc",1);  //publish the local map of dynamics
     ros::Subscriber sub=nh.subscribe("/base_scan",1,&data_substract);                                  //subscribe the laser data
-    tf::TransformListener listener;
+    ros::Subscriber sub_cpy=nh.subscribe("/map",1,&cpy_map);                                  //subscribe the laser data
+    tf::TransformListener listener(ros::Duration(10));
+    ros::Rate rate(10);
 
-/*    //test: if wanna to  send velocity by nav_msgs::Odmetry, you have to specify the tf relationship between this and another frame.I GUESS!
-    nav_msgs::Odometry odo;
-    odo.header.frame_id="odome";
-    odo.pose.pose.position.x=4;
-    odo.pose.pose.position.y=4;
-    odo.pose.pose.orientation=tf::createQuaternionMsgFromYaw(2.1);
-    odo.twist.twist.linear.x=0.5;
-    odo.twist.twist.linear.y=0.5;
-    odo.twist.twist.angular.z=0.5;
-*/
+    laser_point.header.frame_id = "/substracted";
+    laser_point.header.stamp = ros::Time();
+    laser_point.point.z = 0;
 
-    ros::Rate rate(5);
     while(ros::ok())
     {
-        tf::StampedTransform transform;
+        try{
         listener.waitForTransform("/map","/base_laser_link",ros::Time(0),ros::Duration(10.0));
         listener.lookupTransform("/map","/base_laser_link",ros::Time(0),transform);
+        } catch (tf::TransformException ex){
+            ROS_ERROR("%s",ex.what());
+        }
 
+        if(deal_flag)
+        {
+            Gmap.data.assign(G_width*G_width,0);
+            Gmap.data[G_origin]=100;
+            for(int i=0; i<map_x; i++)
+               for(int j=0; j<map_y; j++)
+               {
+                   if(map[i][j])
+                   {
+                       //laser_point.point.x = 0.05*(i-100);
+                       //laser_point.point.y = 0.05*(j-100);
+                       laser_point.point.x = (i-100);
+                       laser_point.point.y = (j-100);
+                       //listener.transformPoint("/map",laser_point,Gmap_point);  //坐标转换
+                       //int xx=(int) (Gmap_point.point.x + 20*transform.getOrigin().x());
+                       //int yy=(int) (Gmap_point.point.y + 20*transform.getOrigin().y());
+                       int xx = j -100 + 20*transform.getOrigin().x(); //因为局部地图的问题,所以在这里的J值才是局部地图的x值.
+                       int yy = i -100 + 20*transform.getOrigin().y();
+
+                       //int xx=(int) (20*Gmap_point.point.x);
+                       //int yy=(int) (20*Gmap_point.point.y);
+                       Gmap.data[G_origin + (int)(yy * G_width) + (int)(xx)]=100;
+                       //Gmap.data[G_origin + (int)(xx * G_width) + (int)(yy)]=100;
+                       //ROS_INFO("(%d,%d)---->(%d,%d)",0,0,(int) (xx),(int) ( yy));
+                   }
+               }
+        }
+
+        //跟新地图的基本信息
         AglRbt = tf::getYaw( transform.getRotation() );//change the quaternion to Eular angle. use the angle to correct the pose of robot
-        RobotCenter.position.x=transform.getOrigin().x()-5;
+        RobotCenter.position.x=transform.getOrigin().x()-5;//
         RobotCenter.position.y=transform.getOrigin().y()-5;
-        RobotCenter.orientation.z=0;
         Map_Msg.info.width=map_x;
         Map_Msg.info.height=map_y;
         Map_Msg.info.resolution=SOLUTION;
         Map_Msg.info.origin=RobotCenter;
         pub_map.publish(Map_Msg);
+        pub_Gmap.publish(Gmap);
 
-//        pub_velocity.publish(odo);//test
+        //局部地图的tf坐标系
+        trans_br.setOrigin(tf::Vector3(RobotCenter.position.x+5, RobotCenter.position.y+5 ,0));
+        //trans_br.setOrigin(tf::Vector3(5, 5 ,0));
+        tf::Quaternion quaternion_br=tf::createQuaternionFromRPY(0,0,0);
+        trans_br.setRotation(quaternion_br.normalize());
+        br.sendTransform(tf::StampedTransform(trans_br, ros::Time::now(),"/map","/substracted"));
 
-//        pub_velocity.publish(Velocity_Msg);
+
         ROS_INFO("PUBLISH...");
         ros::spinOnce();
         rate.sleep();
@@ -112,7 +155,16 @@ int main(int argc, char *argv[])
     return 0;
 }
 
+void cpy_map(const nav_msgs::OccupancyGrid& msg)
+{
+    Gmap = msg;
+    ROS_INFO("copied!");
+    deal_flag = true;
+}
+void deal_Gmap(void)
+{
 
+}
 //在回调函数中建立地图,回调函数0.1s执行一次
 void data_substract(const sensor_msgs::LaserScan& msg)
 {
@@ -140,7 +192,7 @@ void data_substract(const sensor_msgs::LaserScan& msg)
     }
 
     std::vector<signed char> VMap(*map,*map+(map_x*map_y));//将数组地图转化为向量,用以发布消息的赋值.
-    Map_Msg.data=VMap;//
+    Map_Msg.data=VMap;//用二维数组更新地图
 
     frames++;
     if(frames>10) {frames=0;}
@@ -185,14 +237,12 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
 
     while(!mark_beam.empty())
     {
-//        theta=2.35562 + AglRbt_m + AngleIncrement*mark_beam.front();//此处的2.355 (3*PI/4)为地图与机器人坐标的矫正值
         theta= 2.35562 + AglRbt_m + AngleIncrement*mark_beam.front();//此处的2.355 (3*PI/4)为地图与机器人坐标的矫正值
 
         range=beams[mark_beam.front()];//0.3是调整参数,调整激光折算到栅格地图不匹配的问题
         mark_beam.pop();
         if(range > MAX_RANGE-0.2) continue;//雷达边界附近的激光舍去
-		//x_grid=(range*cos(theta)/SOLUTION) ;//变动激光击中的点的x坐标,以地图中心为原点
-        //y_grid=-(range*sin(theta)/SOLUTION);//变动激光击中的点的y坐标,以地图中心为原点
+
         x_grid = ( range*cos(theta) / SOLUTION) ;//变动激光击中的点的x坐标,以地图中心为原点
         y_grid = -(range*sin(theta) / SOLUTION);//变动激光击中的点的y坐标,以地图中心为原点        //将所有的击中点标记到地图之中,以提供给Search_region()函数搜索
         *((int *)map +(map_x*map_y/2+map_y/2)+ (x_grid-1)*map_y + y_grid)=20;

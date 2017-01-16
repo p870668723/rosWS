@@ -106,40 +106,6 @@ point_cloud_publisher_EXTERNAL_OBJECTS =
 navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/build: /home/pf/rosWS/devel/lib/point_cloud_publisher_tutorial/point_cloud_publisher
 .PHONY : navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/build
 
-# Object files for target point_cloud_publisher
-point_cloud_publisher_OBJECTS = \
-"CMakeFiles/point_cloud_publisher.dir/src/point_cloud_publisher.cpp.o"
-
-# External object files for target point_cloud_publisher
-point_cloud_publisher_EXTERNAL_OBJECTS =
-
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/src/point_cloud_publisher.cpp.o
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/build.make
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /opt/ros/indigo/lib/libroscpp.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /opt/ros/indigo/lib/librosconsole.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /opt/ros/indigo/lib/librosconsole_log4cxx.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /opt/ros/indigo/lib/librosconsole_backend_interface.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /usr/lib/liblog4cxx.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /opt/ros/indigo/lib/libroscpp_serialization.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /opt/ros/indigo/lib/librostime.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /opt/ros/indigo/lib/libxmlrpcpp.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /opt/ros/indigo/lib/libcpp_common.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /usr/lib/x86_64-linux-gnu/libboost_system.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /usr/lib/x86_64-linux-gnu/libpthread.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher: navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/relink.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX executable CMakeFiles/CMakeRelink.dir/point_cloud_publisher"
-	cd /home/pf/rosWS/build/navigation_tutorials/point_cloud_publisher_tutorial && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/point_cloud_publisher.dir/relink.txt --verbose=$(VERBOSE)
-
-# Rule to relink during preinstall.
-navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/preinstall: navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/CMakeRelink.dir/point_cloud_publisher
-.PHONY : navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/preinstall
-
 navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/requires: navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/src/point_cloud_publisher.cpp.o.requires
 .PHONY : navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir/requires
 
