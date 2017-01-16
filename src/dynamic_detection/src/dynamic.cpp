@@ -99,32 +99,41 @@ int main(int argc, char *argv[])
         } catch (tf::TransformException ex){
             ROS_ERROR("%s",ex.what());
         }
-
+        //将局部地图更新进大地图
+        //因为局部地图不是完全固定在机器人上,而是像窗口一样的平移.所以物体的实际坐标是
+        //"在局部地图中的坐标 简单的加上 局部地图的世界坐标"
         if(deal_flag)
         {
             Gmap.data.assign(G_width*G_width,0);
-            Gmap.data[G_origin]=100;
+            Gmap.data[G_origin+8*G_width+8]=100;
             for(int i=0; i<map_x; i++)
                for(int j=0; j<map_y; j++)
                {
-                   if(map[i][j])
+                   if(map[i][j]==100)
                    {
-                       //laser_point.point.x = 0.05*(i-100);
-                       //laser_point.point.y = 0.05*(j-100);
-                       laser_point.point.x = (i-100);
-                       laser_point.point.y = (j-100);
-                       //listener.transformPoint("/map",laser_point,Gmap_point);  //坐标转换
-                       //int xx=(int) (Gmap_point.point.x + 20*transform.getOrigin().x());
-                       //int yy=(int) (Gmap_point.point.y + 20*transform.getOrigin().y());
-                       int xx = j -100 + 20*transform.getOrigin().x(); //因为局部地图的问题,所以在这里的J值才是局部地图的x值.
-                       int yy = i -100 + 20*transform.getOrigin().y();
+                        //laser_point.point.x = -1.05*(i-100);
+                        //laser_point.point.y = 0.05*(j-100);
+                        laser_point.point.x = (i-100);
+                        laser_point.point.y = (j-100);
+                        //listener.transformPoint("/map",laser_point,Gmap_point);  //坐标转换
+                        //int xx=(int) (Gmap_point.point.x + 20*transform.getOrigin().x());
+                        //int yy=(int) (Gmap_point.point.y + 20*transform.getOrigin().y());
+                        int xx = j -100 + 20*transform.getOrigin().x(); //因为局部地图的问题,所以在这里的J值才是局部地图的x值.
+                        int yy = i -100 + 20*transform.getOrigin().y();
 
-                       //int xx=(int) (20*Gmap_point.point.x);
-                       //int yy=(int) (20*Gmap_point.point.y);
-                       Gmap.data[G_origin + (int)(yy * G_width) + (int)(xx)]=100;
-                       //Gmap.data[G_origin + (int)(xx * G_width) + (int)(yy)]=100;
-                       //ROS_INFO("(%d,%d)---->(%d,%d)",0,0,(int) (xx),(int) ( yy));
+                        //int xx=(int) (20*Gmap_point.point.x);
+                        //int yy=(int) (20*Gmap_point.point.y);
+                        Gmap.data[G_origin + (yy+8) * G_width + xx+8]=100;//这里的xx与yy都加8,是为了修正,似乎地图数组的中心与地图坐标原点的中心各差了8个像素单位
+                        //Gmap.data[G_origin + (int)(xx * G_width) + (int)(yy)]=100;
+                        //ROS_INFO("(%d,%d)---->(%d,%d)",0,0,(int) (xx),(int) ( yy));
                    }
+                   if(map[i][j]==50)
+                   {
+                        int xx = j -100 + 20*transform.getOrigin().x(); //因为局部地图的问题,所以在这里的J值才是局部地图的x值.
+                        int yy = i -100 + 20*transform.getOrigin().y();
+                        Gmap.data[G_origin + (yy+8) * G_width + xx+8]=50;//这里的xx与yy都加8,是为了修正,似乎地图数组的中心与地图坐标原点的中心各差了8个像素单位
+                   }
+
                }
         }
 
@@ -140,12 +149,10 @@ int main(int argc, char *argv[])
         pub_Gmap.publish(Gmap);
 
         //局部地图的tf坐标系
-        trans_br.setOrigin(tf::Vector3(RobotCenter.position.x+5, RobotCenter.position.y+5 ,0));
-        //trans_br.setOrigin(tf::Vector3(5, 5 ,0));
-        tf::Quaternion quaternion_br=tf::createQuaternionFromRPY(0,0,0);
-        trans_br.setRotation(quaternion_br.normalize());
-        br.sendTransform(tf::StampedTransform(trans_br, ros::Time::now(),"/map","/substracted"));
-
+        //trans_br.setOrigin(tf::Vector3(RobotCenter.position.x+5, RobotCenter.position.y+5 ,0));
+        //tf::Quaternion quaternion_br=tf::createQuaternionFromRPY(0,0,0);
+        //trans_br.setRotation(quaternion_br.normalize());
+        //br.sendTransform(tf::StampedTransform(trans_br, ros::Time::now(),"/map","/substracted"));
 
         ROS_INFO("PUBLISH...");
         ros::spinOnce();
