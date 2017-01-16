@@ -127,12 +127,6 @@ int main(int argc, char *argv[])
                         //Gmap.data[G_origin + (int)(xx * G_width) + (int)(yy)]=100;
                         //ROS_INFO("(%d,%d)---->(%d,%d)",0,0,(int) (xx),(int) ( yy));
                    }
-                   if(map[i][j]==50)
-                   {
-                        int xx = j -100 + 20*transform.getOrigin().x(); //因为局部地图的问题,所以在这里的J值才是局部地图的x值.
-                        int yy = i -100 + 20*transform.getOrigin().y();
-                        Gmap.data[G_origin + (yy+8) * G_width + xx+8]=50;//这里的xx与yy都加8,是为了修正,似乎地图数组的中心与地图坐标原点的中心各差了8个像素单位
-                   }
 
                }
         }
@@ -261,6 +255,7 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
     //清空整个地图,用搜索到中心来重画地图
     //for(int i=0;i<map_x*map_y;i++)
     //    *((int *)map+i)=0;
+/*
     while(!region_ctr.empty())
     {
         Point_custom ctr_p = region_ctr.front();
@@ -271,7 +266,6 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
         if((ctr_p.x != mt_p.x) || (ctr_p.y!=mt_p.y))
         {
             *((int *)map + (ctr_p.x)*map_y + ctr_p.y)=100;  //这里的region_ctr.front().x是以地图的角落为原点的
-            *((int *)map + (mt_p.x)*map_y + mt_p.y)=50;     //输出匹配点到地图上
 
             ctr_p.y_vel = (ctr_p.y - mt_p.y);
             ctr_p.x_vel = (ctr_p.x - mt_p.x);
@@ -285,15 +279,22 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
                 ROS_INFO("(%d,%d): %f, %f",ctr_p.x, ctr_p.y, ctr_p.x_vel, ctr_p.y_vel);
             }
 
-/*            int pos_x = kalman_filter(&x_pos_param, ctr_p.x, 0);
-            int pos_y = kalman_filter(&y_pos_param, ctr_p.y, 0);
-            *((int *)map + (pos_x)*map_y + pos_y)=50;     //print the point from the filter into map
-*/
             region_efficient.push_front(ctr_p);
         }
 
         region_ctr.pop();
     }
+*/
+    //将重心输出到地图局部地图上
+    while(!region_ctr.empty())
+    {
+        Point_custom ctr_p = region_ctr.front();
+        *((int *)map + (ctr_p.x)*map_y + ctr_p.y)=100;  //这里的region_ctr.front().x是以地图的角落为原点的
+        region_efficient.push_front(ctr_p);
+
+        region_ctr.pop();
+    }
+
     LastMAP=region_efficient;
     region_efficient.clear();
 }
