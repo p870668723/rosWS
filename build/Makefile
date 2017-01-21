@@ -384,6 +384,45 @@ _catkin_empty_exported_target/fast:
 .PHONY : _catkin_empty_exported_target/fast
 
 #=============================================================================
+# Target rules for targets named serial_test
+
+# Build rule for target.
+serial_test: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 serial_test
+.PHONY : serial_test
+
+# fast build rule for target.
+serial_test/fast:
+	$(MAKE) -f serial_test/CMakeFiles/serial_test.dir/build.make serial_test/CMakeFiles/serial_test.dir/build
+.PHONY : serial_test/fast
+
+#=============================================================================
+# Target rules for targets named subscribe
+
+# Build rule for target.
+subscribe: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 subscribe
+.PHONY : subscribe
+
+# fast build rule for target.
+subscribe/fast:
+	$(MAKE) -f timer_package/CMakeFiles/subscribe.dir/build.make timer_package/CMakeFiles/subscribe.dir/build
+.PHONY : subscribe/fast
+
+#=============================================================================
+# Target rules for targets named timer_package_node
+
+# Build rule for target.
+timer_package_node: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 timer_package_node
+.PHONY : timer_package_node
+
+# fast build rule for target.
+timer_package_node/fast:
+	$(MAKE) -f timer_package/CMakeFiles/timer_package_node.dir/build.make timer_package/CMakeFiles/timer_package_node.dir/build
+.PHONY : timer_package_node/fast
+
+#=============================================================================
 # Target rules for targets named actionlib_generate_messages_cpp
 
 # Build rule for target.
@@ -1500,6 +1539,19 @@ odometry_publisher: cmake_check_build_system
 odometry_publisher/fast:
 	$(MAKE) -f navigation_tutorials/odometry_publisher_tutorial/CMakeFiles/odometry_publisher.dir/build.make navigation_tutorials/odometry_publisher_tutorial/CMakeFiles/odometry_publisher.dir/build
 .PHONY : odometry_publisher/fast
+
+#=============================================================================
+# Target rules for targets named rbx1_nav_gencfg
+
+# Build rule for target.
+rbx1_nav_gencfg: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 rbx1_nav_gencfg
+.PHONY : rbx1_nav_gencfg
+
+# fast build rule for target.
+rbx1_nav_gencfg/fast:
+	$(MAKE) -f rbx1/rbx1_nav/CMakeFiles/rbx1_nav_gencfg.dir/build.make rbx1/rbx1_nav/CMakeFiles/rbx1_nav_gencfg.dir/build
+.PHONY : rbx1_nav_gencfg/fast
 
 #=============================================================================
 # Target rules for targets named _robot_pose_ekf_generate_messages_check_deps_GetStatus
@@ -4140,6 +4192,19 @@ move_base_node/fast:
 	$(MAKE) -f navigation/move_base/CMakeFiles/move_base_node.dir/build.make navigation/move_base/CMakeFiles/move_base_node.dir/build
 .PHONY : move_base_node/fast
 
+#=============================================================================
+# Target rules for targets named wanderer
+
+# Build rule for target.
+wanderer: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 wanderer
+.PHONY : wanderer
+
+# fast build rule for target.
+wanderer/fast:
+	$(MAKE) -f wanderer/CMakeFiles/wanderer.dir/build.make wanderer/CMakeFiles/wanderer.dir/build
+.PHONY : wanderer/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -4171,6 +4236,9 @@ help:
 	@echo "... std_msgs_generate_messages_lisp"
 	@echo "... std_msgs_generate_messages_py"
 	@echo "... _catkin_empty_exported_target"
+	@echo "... serial_test"
+	@echo "... subscribe"
+	@echo "... timer_package_node"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_lisp"
 	@echo "... actionlib_generate_messages_py"
@@ -4257,6 +4325,7 @@ help:
 	@echo "... topic_tools_generate_messages_lisp"
 	@echo "... topic_tools_generate_messages_py"
 	@echo "... odometry_publisher"
+	@echo "... rbx1_nav_gencfg"
 	@echo "... _robot_pose_ekf_generate_messages_check_deps_GetStatus"
 	@echo "... _run_tests_robot_pose_ekf"
 	@echo "... _run_tests_robot_pose_ekf_rostest"
@@ -4460,6 +4529,7 @@ help:
 	@echo "... move_base"
 	@echo "... move_base_gencfg"
 	@echo "... move_base_node"
+	@echo "... wanderer"
 .PHONY : help
 
 

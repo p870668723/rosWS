@@ -205,6 +205,7 @@
 /home/pf/rosWS/build/navigation/global_planner/CMakeFiles/planner.dir
 /home/pf/rosWS/build/navigation_tutorials/point_cloud_publisher_tutorial/CMakeFiles/point_cloud_publisher.dir
 /home/pf/rosWS/build/navigation/base_local_planner/CMakeFiles/point_grid.dir
+/home/pf/rosWS/build/rbx1/rbx1_nav/CMakeFiles/rbx1_nav_gencfg.dir
 /home/pf/rosWS/build/navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf.dir
 /home/pf/rosWS/build/navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_gencpp.dir
 /home/pf/rosWS/build/navigation/robot_pose_ekf/CMakeFiles/robot_pose_ekf_generate_messages.dir
@@ -275,6 +276,7 @@
 /home/pf/rosWS/build/dynamic_detection/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 /home/pf/rosWS/build/dynamic_detection/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
 /home/pf/rosWS/build/dynamic_detection/CMakeFiles/sensor_msgs_generate_messages_py.dir
+/home/pf/rosWS/build/serial_test/CMakeFiles/serial_test.dir
 /home/pf/rosWS/build/navigation_tutorials/simple_navigation_goals_tutorial/CMakeFiles/simple_navigation_goals.dir
 /home/pf/rosWS/build/stage_ros/CMakeFiles/stageros.dir
 /home/pf/rosWS/build/navigation/costmap_2d/CMakeFiles/static_tests.dir
@@ -285,6 +287,7 @@
 /home/pf/rosWS/build/stage_ros/CMakeFiles/std_srvs_generate_messages_lisp.dir
 /home/pf/rosWS/build/stage_ros/CMakeFiles/std_srvs_generate_messages_py.dir
 /home/pf/rosWS/build/my_stage/CMakeFiles/stopper.dir
+/home/pf/rosWS/build/timer_package/CMakeFiles/subscribe.dir
 /home/pf/rosWS/build/navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf.dir
 /home/pf/rosWS/build/navigation/robot_pose_ekf/CMakeFiles/test_robot_pose_ekf_zero_covariance.dir
 /home/pf/rosWS/build/CMakeFiles/tests.dir
@@ -296,6 +299,7 @@
 /home/pf/rosWS/build/dynamic_detection/CMakeFiles/tf_generate_messages_lisp.dir
 /home/pf/rosWS/build/dynamic_detection/CMakeFiles/tf_generate_messages_py.dir
 /home/pf/rosWS/build/navigation_tutorials/robot_setup_tf_tutorial/CMakeFiles/tf_listener.dir
+/home/pf/rosWS/build/timer_package/CMakeFiles/timer_package_node.dir
 /home/pf/rosWS/build/navigation/amcl/CMakeFiles/topic_tools_generate_messages_cpp.dir
 /home/pf/rosWS/build/navigation/amcl/CMakeFiles/topic_tools_generate_messages_lisp.dir
 /home/pf/rosWS/build/navigation/amcl/CMakeFiles/topic_tools_generate_messages_py.dir
@@ -305,3 +309,4 @@
 /home/pf/rosWS/build/frontier_exploration/CMakeFiles/visualization_msgs_generate_messages_py.dir
 /home/pf/rosWS/build/navigation/voxel_grid/CMakeFiles/voxel_grid.dir
 /home/pf/rosWS/build/navigation/voxel_grid/CMakeFiles/voxel_grid_tests.dir
+/home/pf/rosWS/build/wanderer/CMakeFiles/wanderer.dir

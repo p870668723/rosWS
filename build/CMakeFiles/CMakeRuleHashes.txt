@@ -23,6 +23,8 @@ ff3c95165e05cd42da5b1ddc14db0109 /home/pf/rosWS/devel/include/global_planner/Glo
 cbd82e98bee24fa277672093cc1f014d /home/pf/rosWS/devel/include/move_base/MoveBaseConfig.h
 52b3c63b67a4bad9ee8a36c09ff6dbbe /home/pf/rosWS/devel/include/navfn/MakeNavPlan.h
 279bac211751ebc402f9b8b1d66eb4a6 /home/pf/rosWS/devel/include/navfn/SetCostmap.h
+2fb19807f807355a474a4f60045f0f8e /home/pf/rosWS/devel/include/rbx1_nav/CalibrateAngularConfig.h
+cd106d409d145ab8b59fa4f1daf5a23b /home/pf/rosWS/devel/include/rbx1_nav/CalibrateLinearConfig.h
 61c59b02e4751c9eed019aa17650a873 /home/pf/rosWS/devel/include/robot_pose_ekf/GetStatus.h
 4c71d5a672d872345040383b15852701 /home/pf/rosWS/devel/lib/python2.7/dist-packages/base_local_planner/msg/_Position2DInt.py
 5d92a8b5524502cecb43e58f04f3bcaf /home/pf/rosWS/devel/lib/python2.7/dist-packages/base_local_planner/msg/__init__.py
@@ -292,6 +294,7 @@ bc870ba8ec6b7b92973ee37e0b42e1db navigation/voxel_grid/CMakeFiles/run_tests_voxe
 5434fa8255b2927a6633b9088de6c91a navigation_tutorials/simple_navigation_goals_tutorial/CMakeFiles/move_base_msgs_generate_messages_cpp
 5434fa8255b2927a6633b9088de6c91a navigation_tutorials/simple_navigation_goals_tutorial/CMakeFiles/move_base_msgs_generate_messages_lisp
 5434fa8255b2927a6633b9088de6c91a navigation_tutorials/simple_navigation_goals_tutorial/CMakeFiles/move_base_msgs_generate_messages_py
+2fb1bff011fc428f6e6079509eba2fa0 rbx1/rbx1_nav/CMakeFiles/rbx1_nav_gencfg
 617c90022e2333a904a23b08a661d790 stage_ros/CMakeFiles/_run_tests_stage_ros
 617c90022e2333a904a23b08a661d790 stage_ros/CMakeFiles/_run_tests_stage_ros_rostest
 870ae8f1b55804d3b04deec0a46827f7 stage_ros/CMakeFiles/_run_tests_stage_ros_rostest_test_hztest.xml

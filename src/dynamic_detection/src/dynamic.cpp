@@ -21,7 +21,8 @@
 #include "region_growing.h"
 #include "filter.h"
 #include "cal_vel.h"
-
+#include <eigen3/Eigen/Core>
+#include <eigen3/Eigen/Dense>
 
 #define PI 3.14159
 #define BEAM_THRESH 0.1
@@ -59,6 +60,11 @@ int map[map_x][map_y];          //地图数组
 float AngleIncrement;           //激光雷达的增角
 float AglRbt;                   //机器人的角度姿态
 std::list<Point_custom> LastMAP;//由于存储上一帧地图的有效点
+float Bia_XX;                   //局部坐标系在全局坐标系中的描述
+float Bia_YY;                   //
+float Bia_XX_last;              //上一次部坐标系在全局坐标系中的描述
+float Bia_YY_last;              //
+
 //x,y卡尔曼滤波的参数
 struct kal_param x_pos_param(0,0,1,2,0,0,0,0);
 struct kal_param y_pos_param(0,0,1,2,0,0,0,0);
@@ -99,6 +105,10 @@ int main(int argc, char *argv[])
         } catch (tf::TransformException ex){
             ROS_ERROR("%s",ex.what());
         }
+        Bia_XX_last = Bia_XX;
+        Bia_YY_last = Bia_YY;
+        Bia_XX = transform.getOrigin().x();
+        Bia_YY = transform.getOrigin().y();
         //将局部地图更新进大地图
         //因为局部地图不是完全固定在机器人上,而是像窗口一样的平移.所以物体的实际坐标是
         //"在局部地图中的坐标 简单的加上 局部地图的世界坐标"
@@ -106,7 +116,7 @@ int main(int argc, char *argv[])
         {
             Gmap.data.assign(G_width*G_width,0);
             Gmap.data[G_origin+8*G_width+8]=100;
-            for(int i=0; i<map_x; i++)
+            for(int i=0; i<map_x; i++)          //从局部地图中搜索障碍物的重心
                for(int j=0; j<map_y; j++)
                {
                    if(map[i][j]==100)
@@ -118,23 +128,36 @@ int main(int argc, char *argv[])
                         //listener.transformPoint("/map",laser_point,Gmap_point);  //坐标转换
                         //int xx=(int) (Gmap_point.point.x + 20*transform.getOrigin().x());
                         //int yy=(int) (Gmap_point.point.y + 20*transform.getOrigin().y());
-                        int xx = j -100 + 20*transform.getOrigin().x(); //因为局部地图的问题,所以在这里的J值才是局部地图的x值.
-                        int yy = i -100 + 20*transform.getOrigin().y();
+                        int xx = j -100 + 20*Bia_XX; //因为局部地图的问题,所以在这里的J值才是局部地图的x值.
+                        int yy = i -100 + 20*Bia_YY;
 
                         //int xx=(int) (20*Gmap_point.point.x);
                         //int yy=(int) (20*Gmap_point.point.y);
                         Gmap.data[G_origin + (yy+8) * G_width + xx+8]=100;//这里的xx与yy都加8,是为了修正,似乎地图数组的中心与地图坐标原点的中心各差了8个像素单位
                         //Gmap.data[G_origin + (int)(xx * G_width) + (int)(yy)]=100;
+                        ROS_INFO("(%d,%d)---->(%d,%d)",0,0,(int) (xx),(int) ( yy));
+                   }
+                   if(map[i][j]==50)            //上一帧的匹配点
+                   {
+                        laser_point.point.x = (i-100);
+                        laser_point.point.y = (j-100);
+                        //int yy=(int) (Gmap_point.point.y + 20*transform.getOrigin().y());
+                        int xx = j -100 + 20*Bia_XX_last; //因为局部地图的问题,所以在这里的J值才是局部地图的x值.
+                        int yy = i -100 + 20*Bia_YY_last;
+
+                        //int xx=(int) (20*Gmap_point.point.x);
+                        //int yy=(int) (20*Gmap_point.point.y);
+                        Gmap.data[G_origin + (yy+8) * G_width + xx+8]=50;//这里的xx与yy都加8,是为了修正,似乎地图数组的中心与地图坐标原点的中心各差了8个像素单位
+                        //Gmap.data[G_origin + (int)(xx * G_width) + (int)(yy)]=100;
                         //ROS_INFO("(%d,%d)---->(%d,%d)",0,0,(int) (xx),(int) ( yy));
                    }
-
                }
         }
 
         //跟新地图的基本信息
         AglRbt = tf::getYaw( transform.getRotation() );//change the quaternion to Eular angle. use the angle to correct the pose of robot
-        RobotCenter.position.x=transform.getOrigin().x()-5;//
-        RobotCenter.position.y=transform.getOrigin().y()-5;
+        RobotCenter.position.x=Bia_XX-5;
+        RobotCenter.position.y=Bia_YY-5;
         Map_Msg.info.width=map_x;
         Map_Msg.info.height=map_y;
         Map_Msg.info.resolution=SOLUTION;
@@ -289,6 +312,9 @@ void map_update(int **map,float *beams, std::queue<int> mark_beam,float AglRbt_m
     while(!region_ctr.empty())
     {
         Point_custom ctr_p = region_ctr.front();
+        Point_custom mt_p = point_match(LastMAP,ctr_p);
+
+        *((int *)map + (mt_p.x)*map_y + mt_p.y)=50;  //这里的region_ctr.front().x是以地图的角落为原点的
         *((int *)map + (ctr_p.x)*map_y + ctr_p.y)=100;  //这里的region_ctr.front().x是以地图的角落为原点的
         region_efficient.push_front(ctr_p);
 
